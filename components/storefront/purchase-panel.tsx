@@ -7,6 +7,12 @@ import { getCategoryLabel, type Product } from "@/data/products";
 import { useCart } from "@/components/storefront/cart-provider";
 import { formatPrice } from "@/lib/storefront";
 
+export const PRODUCT_COLOR_HEX: Record<string, string> = {
+  "Warm Sand": "#D9C2A7",
+  Black: "#111111",
+  "Soft Ivory": "#F5F1E8",
+};
+
 export function PurchasePanel({ product }: { product: Product }) {
   const router = useRouter();
   const { addToCart } = useCart();
@@ -24,6 +30,7 @@ export function PurchasePanel({ product }: { product: Product }) {
   }, [addedToCart]);
 
   const handleAddCurrentItem = () => {
+    if (addedToCart) return false;
     if (isFashion && (!selectedSize || !selectedColor)) return false;
 
     addToCart({
@@ -36,8 +43,7 @@ export function PurchasePanel({ product }: { product: Product }) {
       image: product.images[0],
       size: isFashion ? selectedSize : "One Size",
       color: isFashion ? selectedColor : product.material ?? "Decor",
-      colorHex: "#1C1917",
-      quantity: 1,
+      colorHex: PRODUCT_COLOR_HEX[selectedColor] ?? "#1C1917",
     });
     setAddedToCart(true);
     return true;
@@ -54,7 +60,7 @@ export function PurchasePanel({ product }: { product: Product }) {
       <div className="space-y-4">
         <p className="eyebrow">{getCategoryLabel(product.category)}</p>
         <div className="space-y-3">
-          <h1 className="text-balance text-4xl font-semibold text-dark sm:text-5xl">
+          <h1 className="text-3xl font-semibold text-dark sm:text-4xl">
             {product.title}
           </h1>
           <p className="max-w-xl text-base leading-7 text-text-secondary">
@@ -115,7 +121,14 @@ export function PurchasePanel({ product }: { product: Product }) {
                       : "border-line bg-white/70 text-text-secondary hover:-translate-y-0.5 hover:border-dark"
                   }`}
                 >
-                  {color}
+                  <span className="flex items-center gap-2">
+                    <span
+                      className="h-4 w-4 rounded-full border border-dark/10"
+                      style={{ backgroundColor: PRODUCT_COLOR_HEX[color] ?? "#1C1917" }}
+                      aria-hidden="true"
+                    />
+                    <span>{color}</span>
+                  </span>
                 </button>
               ))}
             </div>

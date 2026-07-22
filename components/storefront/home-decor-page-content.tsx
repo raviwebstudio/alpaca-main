@@ -22,7 +22,7 @@ type DecorFilters = {
   maxPrice: number;
 };
 
-const MATERIALS = ["all", "Wood", "Metal", "Glass"];
+const MATERIALS = ["all", "Wood", "Metal", "Glass", "Plastics", "Ceramic"];
 const STYLES = ["all", "Minimal", "Modern"];
 
 export function HomeDecorPageContent() {
@@ -51,9 +51,9 @@ export function HomeDecorPageContent() {
 
   return (
     <div className="overflow-hidden">
-      <section className="relative min-h-[500px] overflow-hidden">
+      <section className="relative min-h-[600px] overflow-hidden">
         <Image
-          src="/assets/images/home_decor.webp"
+          src="/assets/images/home-decor-bg.webp"
           alt="ALPACA home decor"
           fill
           priority
@@ -82,9 +82,9 @@ export function HomeDecorPageContent() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+      <section className="mx-auto max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
         <FadeIn>
-          <p className="eyebrow">ALPACA Home</p>
+          <p className="eyebrow">ALPACA Home Decor</p>
           <h2 className="mt-4 text-balance text-5xl text-dark sm:text-6xl">
             Designed for stillness.
           </h2>
@@ -157,7 +157,10 @@ export function HomeDecorPageContent() {
 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-text-secondary">
+                    <p
+                      id="price-filter-label"
+                      className="text-sm font-semibold uppercase tracking-[0.24em] text-text-secondary"
+                    >
                       Price
                     </p>
                     <span className="text-sm font-semibold text-dark">
@@ -176,6 +179,8 @@ export function HomeDecorPageContent() {
                         maxPrice: Number(event.target.value),
                       }))
                     }
+                    aria-labelledby="price-filter-label"
+                    title="Maximum price"
                     className="w-full accent-[#1C1917]"
                   />
                 </div>

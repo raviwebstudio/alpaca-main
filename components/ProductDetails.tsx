@@ -9,7 +9,7 @@ import {
 import { FadeIn } from "@/components/storefront/fade-in";
 import { ProductCarousel } from "@/components/storefront/product-carousel";
 import { ProductGallery } from "@/components/storefront/product-gallery";
-import { PurchasePanel } from "@/components/storefront/purchase-panel";
+import { PRODUCT_COLOR_HEX, PurchasePanel } from "@/components/storefront/purchase-panel";
 import { formatPrice } from "@/lib/storefront";
 
 const PRODUCT_FAQS = [
@@ -138,7 +138,12 @@ export function ProductDetails({ product }: { product: Product }) {
                             key={color}
                             className="flex items-center gap-3 rounded-xl border border-line bg-background px-4 py-2.5 text-sm font-semibold text-dark"
                           >
-                            {color}
+                            <span
+                              className="h-4 w-4 rounded-full border border-dark/10"
+                              style={{ backgroundColor: PRODUCT_COLOR_HEX[color] ?? "#1C1917" }}
+                              aria-hidden="true"
+                            />
+                            <span>{color}</span>
                           </div>
                         ))}
                       </div>

@@ -39,15 +39,17 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setActiveImage(image)}
-            className={`surface-card relative aspect-[4/5] min-w-[88px] flex-[0_0_88px] overflow-hidden rounded-2xl transition ${
-              activeImage === image ? "ring-1 ring-dark" : "opacity-75 hover:opacity-100"
+            className={`relative h-16 w-16 flex-none overflow-hidden rounded-xl border bg-white transition md:h-20 md:w-20 ${
+              activeImage === image
+                ? "border-dark ring-1 ring-dark"
+                : "border-line opacity-80 hover:border-dark hover:opacity-100"
             }`}
           >
             <Image
               src={image}
               alt={`${alt} view ${index + 1}`}
               fill
-              sizes="88px"
+              sizes="(min-width: 768px) 80px, 64px"
               className="object-cover"
             />
           </motion.button>

@@ -50,7 +50,7 @@ type CheckoutOverrides = {
   paymentMethod?: PaymentMethod;
 };
 
-type CartProductInput = Omit<CartItem, "id">;
+type CartProductInput = Omit<CartItem, "id" | "quantity">;
 
 type CartContextValue = {
   hydrated: boolean;
@@ -92,34 +92,35 @@ const getShipping = (subtotal: number, itemCount: number) =>
   subtotal >= 4999 ? 0 : itemCount ? 249 : 0;
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>(() => {
-    if (typeof window === "undefined") {
-      return [];
-    }
-
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      return stored ? (JSON.parse(stored) as CartItem[]) : [];
-    } catch {
-      return [];
-    }
-  });
+  const [items, setItems] = useState<CartItem[]>([]);
   const [checkoutAddress, setCheckoutAddress] = useState<CheckoutAddress>(DEFAULT_ADDRESS);
   const [paymentMethod, setPaymentMethodState] = useState<PaymentMethod>("upi");
   const [lastOrder, setLastOrder] = useState<OrderRecord | null>(null);
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      setItems(stored ? (JSON.parse(stored) as CartItem[]) : []);
+    } catch {
+      localStorage.removeItem(STORAGE_KEY);
+      setItems([]);
+    }
+
     setHydrated(true);
   }, []);
 
   useEffect(() => {
+    if (!hydrated) {
+      return;
+    }
+
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     } catch {
       // Ignore unavailable storage so cart interactions keep working in memory.
     }
-  }, [items]);
+  }, [hydrated, items]);
 
   useEffect(() => {
     try {
@@ -154,18 +155,16 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const addItem = (newItem: CartProductInput) => {
     setItems((prev) => {
+      const itemId = `${newItem.sellerId}-${newItem.productId}-${newItem.size}-${newItem.colorHex}`;
       const existingIndex = prev.findIndex(
-        (item) =>
-          item.productId === newItem.productId &&
-          item.size === newItem.size &&
-          item.color === newItem.color,
+        (item) => item.id === itemId,
       );
 
       if (existingIndex > -1) {
         const updated = [...prev];
         updated[existingIndex] = {
           ...updated[existingIndex],
-          quantity: updated[existingIndex].quantity + newItem.quantity,
+          quantity: updated[existingIndex].quantity + 1,
         };
         return updated;
       }
@@ -174,7 +173,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
         ...prev,
         {
           ...newItem,
-          id: `${newItem.sellerId}-${newItem.productId}-${newItem.size}-${newItem.colorHex}`,
+          id: itemId,
+          quantity: 1,
         },
       ];
     });

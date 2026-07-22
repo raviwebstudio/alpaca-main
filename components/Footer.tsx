@@ -52,7 +52,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
             {/* LEFT SIDE: Brand & Description */}
             <div className="lg:col-span-1">
-              <a href="/"><img src="/assets/logo-white.png" alt="ALPACA" className="w-42 h-20 mb-4" /></a>
+              <a href="/"><img src="/assets/logo-white.png" alt="ALPACA" className="footer-logo mb-5" /></a>
               <p className="mt-4 text-sm leading-relaxed text-white/60">
                 Minimal, premium essentials for everyday movement. Curated
                 oversized tees, refined basics, and new drops.

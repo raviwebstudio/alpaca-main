@@ -57,7 +57,6 @@ export type LegalDocument = {
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/shop", label: "Shop" },
-  { href: "/new-arrivals", label: "New Arrivals" },
   { href: "/home-decor", label: "Home Decor" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

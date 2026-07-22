@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
-import Footer from "@/components/Footer";
 
 const favicon = "/assets/favicon-black.png";
 
@@ -56,7 +55,6 @@ export default function RootLayout({
       <body>
         <CartProvider>
           {children}
-          <Footer />
         </CartProvider>
       </body>
     </html>

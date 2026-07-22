@@ -14,10 +14,10 @@ html {
   background: #f8f5f2;
 }
 
-.space-y-14 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: 30px !important;
-    margin-bottom: calc(3.5rem * var(--tw-space-y-reverse));
+.space-y-14> :not([hidden])~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: 30px !important;
+  margin-bottom: calc(3.5rem * var(--tw-space-y-reverse));
 }
 
 body {
@@ -61,7 +61,12 @@ img {
   max-width: 100%;
 }
 
+.footer-logo {
+  width: 190px !important
+}
+
 @layer base {
+
   h1,
   h2,
   h3,

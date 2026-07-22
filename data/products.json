@@ -1,0 +1,315 @@
+[
+  {
+    "id": "1",
+    "title": "Plain White T-shirt for Mens",
+    "slug": "plain-white-t-shirt-for-mens",
+    "price": 490,
+    "type": "fashion",
+    "category": "oversized",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Warm Sand",
+        "hex": "#D1C4A5"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Soft Ivory",
+        "hex": "#F0EDE1"
+      }
+    ],
+    "material": "100% heavyweight cotton",
+    "images": [
+      {
+        "url": "/inventory/men/tshirts/plain-white-t-shirt01.jpg",
+        "alt": "Plain White T-shirt for Mens"
+      },
+      {
+        "url": "/inventory/men/tshirts/plain-white-t-shirt02.webp",
+        "alt": "Plain White T-shirt for Mens"
+      },
+      {
+        "url": "/inventory/men/tshirts/plain-white-t-shirt03.jpg",
+        "alt": "Plain White T-shirt for Mens"
+      }
+    ],
+    "description": "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+    "summary": "A dense oversized tee built for everyday rotation and clean structure.",
+    "highlights": [
+      "240 GSM knit",
+      "Structured neckline",
+      "Easy everyday drape"
+    ],
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "featured": true,
+    "bestSeller": true
+  },
+  {
+    "id": "2",
+    "title": "Plain Black T-shirt for Mens",
+    "slug": "plain-black-t-shirt-for-mens",
+    "price": 490,
+    "type": "fashion",
+    "category": "basics",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "material": "95% cotton, 5% elastane rib",
+    "images": [
+      {
+        "url": "/inventory/men/tshirts/mens-black-t-shirt01.webp",
+        "alt": "Plain Black T-shirt for Mens"
+      },
+      {
+        "url": "/inventory/men/tshirts/mens-black-t-shirt02.webp",
+        "alt": "Plain Black T-shirt for Mens"
+      }
+    ],
+    "description": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
+    "summary": "A close-fit tee designed for layering, warm days, and a cleaner line.",
+    "highlights": [
+      "Soft stretch",
+      "Clean shoulder line",
+      "Layering-ready"
+    ],
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "bestSeller": true
+  },
+  {
+    "id": "3",
+    "title": "Green T-shirt for Men",
+    "slug": "green-t-shirt-for-men",
+    "price": 599,
+    "type": "fashion",
+    "category": "oversized",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Warm Sand",
+        "hex": "#D1C4A5"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Soft Ivory",
+        "hex": "#F0EDE1"
+      }
+    ],
+    "material": "100% heavyweight cotton",
+    "images": [
+      {
+        "url": "/inventory/men/tshirts/green-men-tshirt-01.webp",
+        "alt": "Green T-shirt for Men"
+      },
+      {
+        "url": "/inventory/men/tshirts/green-men-tshirt-02.webp",
+        "alt": "Green T-shirt for Men"
+      }
+    ],
+    "description": "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+    "summary": "A dense oversized tee built for everyday rotation and clean structure.",
+    "highlights": [
+      "240 GSM knit",
+      "Structured neckline",
+      "Easy everyday drape"
+    ],
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "featured": true,
+    "bestSeller": true
+  },
+  {
+    "id": "4",
+    "title": "Men's Grey T-shirt",
+    "slug": "mens-grey-t-shirt",
+    "price": 599,
+    "type": "fashion",
+    "category": "basics",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "material": "95% cotton, 5% elastane rib",
+    "images": [
+      {
+        "url": "/inventory/men/tshirts/grey-mens-tshirt-01.webp",
+        "alt": "Men's Grey T-shirt"
+      },
+      {
+        "url": "/inventory/men/tshirts/grey-mens-tshirt-02.webp",
+        "alt": "Men's Grey T-shirt"
+      },
+      {
+        "url": "/inventory/men/tshirts/grey-mens-tshirt-03.webp",
+        "alt": "Men's Grey T-shirt"
+      }
+    ],
+    "description": "A minimal grey tee with a closer fit, soft hand-feel, and clean daily utility.",
+    "summary": "A close-fit tee designed for layering, warm days, and a cleaner line.",
+    "highlights": [
+      "Soft stretch",
+      "Clean shoulder line",
+      "Layering-ready"
+    ],
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "bestSeller": true
+  },
+  {
+    "id": "101",
+    "title": "Radha Krishna Photo Frame | Home Decor |  12x18 inch",
+    "slug": "12x18-photo-frame",
+    "price": 399,
+    "type": "decor",
+    "category": "frames",
+    "sizes": [],
+    "colors": [],
+    "material": "Wood",
+    "style": "Minimal",
+    "images": [
+      {
+        "url": "/home_decor/Frame-01/01.jpg",
+        "alt": "Photo Frame"
+      },
+      {
+        "url": "/home_decor/Frame-01/02.jpg",
+        "alt": "Photo Frame"
+      },
+      {
+        "url": "/home_decor/Frame-01/03.jpg",
+        "alt": "Photo Frame"
+      },
+      {
+        "url": "/home_decor/Frame-01/04.jpg",
+        "alt": "Photo Frame"
+      }
+    ],
+    "description": "A slim wood frame designed to bring structure and warmth to calm everyday spaces.",
+    "summary": "Slim wood framing for shelves, desks, and quiet walls.",
+    "highlights": [
+      "Hand-finished edge",
+      "Portrait or landscape use",
+      "Ready for modern rooms"
+    ],
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "featured": true,
+    "bestSeller": true
+  },
+  {
+    "id": "102",
+    "title": "Radha Krishna Photo Frame | Home Decor |  12x18 inch",
+    "slug": "radha-krishna-photo-frame",
+    "price": 399,
+    "type": "decor",
+    "category": "frames",
+    "sizes": [],
+    "colors": [],
+    "material": "Wood",
+    "style": "Minimal",
+    "images": [
+      {
+        "url": "/home_decor/Frame-02/01.jpg",
+        "alt": "Photo Frame"
+      },
+      {
+        "url": "/home_decor/Frame-02/02.jpg",
+        "alt": "Photo Frame"
+      },
+      {
+        "url": "/home_decor/Frame-02/03.jpg",
+        "alt": "Photo Frame"
+      },
+      {
+        "url": "/home_decor/Frame-02/04.jpg",
+        "alt": "Photo Frame"
+      }
+    ],
+    "description": "A balanced wall piece with quiet geometry and enough presence to anchor a room.",
+    "summary": "Modern wall art with restrained proportion and soft contrast.",
+    "highlights": [
+      "Matte finish",
+      "Lightweight mount",
+      "Modern graphic system"
+    ],
+    "shippingLeadTime": "Dispatches within 2-3 days",
+    "newDrop": true
+  },
+  {
+    "id": "103",
+    "title": "Photo Frame | Home Decor |  12x18 inch",
+    "slug": "12x18-photo-frame-new",
+    "price": 399,
+    "type": "decor",
+    "category": "frames",
+    "sizes": [],
+    "colors": [],
+    "material": "Wood",
+    "style": "Minimal",
+    "images": [
+      {
+        "url": "/home_decor/Frame-03/01.jpg",
+        "alt": "Photo Frame"
+      },
+      {
+        "url": "/home_decor/Frame-03/02.jpg",
+        "alt": "Photo Frame"
+      },
+      {
+        "url": "/home_decor/Frame-03/03.jpg",
+        "alt": "Photo Frame"
+      },
+      {
+        "url": "/home_decor/Frame-03/04.jpg",
+        "alt": "Photo Frame"
+      }
+    ],
+    "description": "A slim wood frame designed to bring structure and warmth to calm everyday spaces.",
+    "summary": "Slim wood framing for shelves, desks, and quiet walls.",
+    "highlights": [
+      "Hand-finished surface",
+      "Compact footprint",
+      "Works solo or grouped"
+    ],
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "featured": true,
+    "newDrop": true
+  }
+]

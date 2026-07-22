@@ -10,9 +10,9 @@ import {
   filterProducts,
   getCategoryLabel,
   productCategoryOptions,
-  products,
   productSizes,
   type ProductCategory,
+  type Product,
 } from "@/data/products";
 
 type Filters = {
@@ -22,9 +22,10 @@ type Filters = {
 
 type ShopPageContentProps = {
   initialFilters: Filters;
+  products: Product[];
 };
 
-export function ShopPageContent({ initialFilters }: ShopPageContentProps) {
+export function ShopPageContent({ initialFilters, products }: ShopPageContentProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
@@ -85,10 +86,10 @@ export function ShopPageContent({ initialFilters }: ShopPageContentProps) {
               <div className="space-y-8">
                 <div className="space-y-3">
                   <p className="eyebrow">Filters</p>
-                  <h2 className="text-3xl text-dark">Narrow the catalog.</h2>
-                  <p className="text-sm leading-6 text-text-secondary">
+                  <h2 className="text-3xl text-dark">Narrow the catalog</h2>
+                  {/* <p className="text-sm leading-6 text-text-secondary">
                     Start with a category, then pick the size you want to buy.
-                  </p>
+                    </p> */}
                 </div>
 
                 <div className="space-y-3">
@@ -114,7 +115,7 @@ export function ShopPageContent({ initialFilters }: ShopPageContentProps) {
                           filters.category === "all" ? "text-white/80" : "text-text-secondary"
                         }`}
                       >
-                        Browse the full ALPACA catalog.
+                        Browse the full catalog
                       </p>
                     </button>
 

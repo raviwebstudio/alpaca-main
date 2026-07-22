@@ -50,9 +50,9 @@ export const categoryLabels: Record<ProductCategory, string> = {
 };
 
 export const categoryDescriptions: Record<ProductCategory, string> = {
-  oversized: "Relaxed silhouettes with premium weight and a roomier line.",
-  basics: "Closer-to-body everyday essentials built for repeat wear.",
-  outerwear: "Layering pieces for commute, travel, and changing weather.",
+  oversized: "Relaxed silhouettes with premium weight",
+  basics: "Closer-to-body everyday essentials",
+  outerwear: "Layering pieces for commute, travel, and changing weather",
   frames: "Structured frames for shelves, desks, and calm wall systems.",
   "wall-art": "Quiet graphic pieces designed to anchor modern rooms.",
   "table-decor": "Small objects that bring function and stillness to daily spaces.",
@@ -213,8 +213,8 @@ export const products: Product[] = [
       "/home_decor/last03.jpg",
       "/home_decor/last04.jpg",
     ],
-    description: "A small glass object for tables, shelves, and entry spaces that need a quieter center.",
-    summary: "A calm table object built for everyday rituals.",
+    "description": "A slim wood frame designed to bring structure and warmth to calm everyday spaces.",
+    "summary": "Slim wood framing for shelves, desks, and quiet walls.",
     highlights: ["Hand-finished surface", "Compact footprint", "Works solo or grouped"],
     shippingLeadTime: "Dispatches within 48 hours",
     featured: true,

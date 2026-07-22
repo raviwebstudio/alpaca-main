@@ -2,18 +2,75 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, ShoppingBag, X } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu, ShoppingBag, User, X } from "lucide-react";
 import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { navigation } from "@/lib/storefront";
 import { useCart } from "@/components/storefront/cart-provider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+type StoredUser = {
+  username?: string;
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+};
+
+const fallbackUser: StoredUser = {
+  username: "alpaca-user",
+  name: "John Doe",
+  email: "user@alpaca.com",
+  phone: "9999999999",
+  address: "Delhi",
+};
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const router = useRouter();
   const { itemCount } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [user, setUser] = useState<StoredUser | null>(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    const role = localStorage.getItem("role");
+
+    if (storedUser) {
+      try {
+        setUser(JSON.parse(storedUser));
+        return;
+      } catch {
+        localStorage.removeItem("user");
+      }
+    }
+
+    if (role === "user") {
+      localStorage.setItem("user", JSON.stringify(fallbackUser));
+      setUser(fallbackUser);
+    }
+  }, [pathname]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("alpaca_session");
+    localStorage.removeItem("role");
+    localStorage.removeItem("email");
+    localStorage.removeItem("user");
+    setUser(null);
+    setProfileOpen(false);
+    router.push("/login");
+  };
+
+  const initials = user?.name
+    ? user.name
+      .split(" ")
+      .map((part) => part[0])
+      .join("")
+      .slice(0, 2)
+      .toUpperCase()
+    : "U";
 
   return (
     <header className="sticky top-0 z-40 border-b border-line/60 bg-background/80 backdrop-blur-xl">
@@ -33,8 +90,7 @@ export function SiteHeader() {
             <Image
               src="/assets/logo-black.png"
               alt="ALPACA Logo"
-              // className="h-10 w-10"
-              width={80}
+              width={150}
               height={80}
             />
           </span>
@@ -56,8 +112,50 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <div className="relative">
+            {user ? (
+              <button
+                type="button"
+                onClick={() => setProfileOpen((open) => !open)}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-sm font-semibold text-dark transition hover:-translate-y-0.5"
+                aria-expanded={profileOpen}
+                aria-label="Open user profile"
+              >
+                {initials}
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-dark transition hover:-translate-y-0.5"
+                aria-label="Login"
+              >
+                <User className="h-4 w-4" />
+              </Link>
+            )}
+
+            {profileOpen && user ? (
+              <div className="absolute right-0 top-14 z-50 w-72 rounded-2xl border border-line bg-white p-5 text-sm shadow-soft">
+                <div className="space-y-2 text-text-secondary">
+                  <p className="text-base font-semibold text-dark">{user.name}</p>
+                  <p>Username: {user.username ?? "alpaca-user"}</p>
+                  <p>Name: {user.name}</p>
+                  <p>Email: {user.email}</p>
+                  <p>Phone: +91 {user.phone}</p>
+                  <p>Address: {user.address}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  className="mt-5 inline-flex w-full items-center justify-center rounded-xl border border-dark bg-dark px-4 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : null}
+          </div>
+
           <Link
-            href="/cart"
+            href="/checkout/cart"
             onClick={() => setMenuOpen(false)}
             className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-dark transition-transform duration-300 hover:-translate-y-0.5"
           >
