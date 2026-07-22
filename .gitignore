@@ -30,3 +30,6 @@ alpaca-db-link/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+.env*
