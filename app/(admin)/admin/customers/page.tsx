@@ -19,7 +19,7 @@ export default async function CustomersPage() {
     orderBy: { createdAt: 'desc' }
   });
 
-  const formattedCustomers = customers.map(c => ({
+  const formattedCustomers = customers.map((c: (typeof customers)[number]) => ({
     ...c,
     totalSpent: c.orders.reduce((sum, o) => sum + o.total, 0),
     orderCount: c._count.orders
