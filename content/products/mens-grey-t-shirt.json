@@ -4,73 +4,24 @@
   "slug": "mens-grey-t-shirt",
   "price": 599,
   "mrp": 958,
-  "stock": 200,
+  "stock": 300,
   "lowStockThreshold": 10,
   "sku": "ALP-BAS-004",
   "category": "basics",
   "type": "fashion",
   "status": "published",
   "sizes": [
-    "S",
     "M",
     "L",
     "XL"
   ],
   "colors": [
+    "White",
     "Black",
-    "White"
+    "Maroon",
+    "Green"
   ],
   "variants": [
-    {
-      "sku": "ALP-BAS-004-BLA-S",
-      "size": "S",
-      "color": "Black",
-      "colorHex": "#000000",
-      "price": 599,
-      "mrp": 958,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
-    },
-    {
-      "sku": "ALP-BAS-004-BLA-M",
-      "size": "M",
-      "color": "Black",
-      "colorHex": "#000000",
-      "price": 599,
-      "mrp": 958,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
-    },
-    {
-      "sku": "ALP-BAS-004-BLA-L",
-      "size": "L",
-      "color": "Black",
-      "colorHex": "#000000",
-      "price": 599,
-      "mrp": 958,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
-    },
-    {
-      "sku": "ALP-BAS-004-BLA-XL",
-      "size": "XL",
-      "color": "Black",
-      "colorHex": "#000000",
-      "price": 599,
-      "mrp": 958,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
-    },
-    {
-      "sku": "ALP-BAS-004-WHI-S",
-      "size": "S",
-      "color": "White",
-      "colorHex": "#FFFFFF",
-      "price": 599,
-      "mrp": 958,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
-    },
     {
       "sku": "ALP-BAS-004-WHI-M",
       "size": "M",
@@ -79,7 +30,7 @@
       "price": 599,
       "mrp": 958,
       "stock": 25,
-      "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
     },
     {
       "sku": "ALP-BAS-004-WHI-L",
@@ -89,7 +40,7 @@
       "price": 599,
       "mrp": 958,
       "stock": 25,
-      "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
     },
     {
       "sku": "ALP-BAS-004-WHI-XL",
@@ -99,29 +50,119 @@
       "price": 599,
       "mrp": 958,
       "stock": 25,
-      "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-BAS-004-BLA-M",
+      "size": "M",
+      "color": "Black",
+      "colorHex": "#000000",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-BAS-004-BLA-L",
+      "size": "L",
+      "color": "Black",
+      "colorHex": "#000000",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-BAS-004-BLA-XL",
+      "size": "XL",
+      "color": "Black",
+      "colorHex": "#000000",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-BAS-004-MAR-M",
+      "size": "M",
+      "color": "Maroon",
+      "colorHex": "#800000",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-BAS-004-MAR-L",
+      "size": "L",
+      "color": "Maroon",
+      "colorHex": "#800000",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-BAS-004-MAR-XL",
+      "size": "XL",
+      "color": "Maroon",
+      "colorHex": "#800000",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-BAS-004-GRE-M",
+      "size": "M",
+      "color": "Green",
+      "colorHex": "#2E5A36",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-BAS-004-GRE-L",
+      "size": "L",
+      "color": "Green",
+      "colorHex": "#2E5A36",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-BAS-004-GRE-XL",
+      "size": "XL",
+      "color": "Green",
+      "colorHex": "#2E5A36",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
     }
   ],
   "images": [
-    "/inventory/men/tshirts/grey-mens-tshirt-01.webp",
-    "/inventory/men/tshirts/grey-mens-tshirt-02.webp",
-    "/inventory/men/tshirts/grey-mens-tshirt-03.webp"
+    "/inventory/men/tshirts/maroon-mens-tshirt-01.webp",
+    "/inventory/men/tshirts/maroon-mens-tshirt-01-02.webp",
+    "/inventory/men/tshirts/maroon-mens-tshirt-01-03.webp"
   ],
-  "description": "A minimal grey tee with a closer fit, soft hand-feel, and clean daily utility.",
-  "summary": "A close-fit tee designed for layering, warm days, and a cleaner line.",
+  "description": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
+  "summary": " ",
   "highlights": [
     "Soft stretch",
     "Clean shoulder line",
     "Layering-ready"
   ],
-  "material": "95% cotton, 5% elastane rib",
+  "material": "100% Cotton",
   "shippingLeadTime": "Dispatches within 48 hours",
   "featured": false,
   "bestSeller": true,
   "newDrop": false,
   "seo": {
     "metaTitle": "Men's Grey T-shirt | ALPAZA Luxury Essentials",
-    "metaDescription": "A close-fit tee designed for layering, warm days, and a cleaner line.",
+    "metaDescription": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
     "keywords": [
       "alpaca",
       "basics",
@@ -129,5 +170,5 @@
       "minimalist"
     ]
   },
-  "updatedAt": "2026-08-18T09:22:20.616Z"
+  "updatedAt": "2026-08-18T14:17:48.557Z"
 }

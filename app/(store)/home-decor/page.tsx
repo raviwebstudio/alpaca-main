@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
+import { ENABLE_HOME_DECOR } from "@/data/products";
 import { HomeDecorPageContent } from "@/components/storefront/home-decor-page-content";
 
 export const metadata: Metadata = {
@@ -8,5 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default function HomeDecorPage() {
+  if (!ENABLE_HOME_DECOR) {
+    redirect("/shop");
+  }
   return <HomeDecorPageContent />;
 }

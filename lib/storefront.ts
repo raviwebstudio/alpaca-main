@@ -54,10 +54,12 @@ export type LegalDocument = {
   }>;
 };
 
+import { ENABLE_HOME_DECOR } from "@/data/products";
+
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/shop", label: "Shop" },
-  { href: "/home-decor", label: "Home Decor" },
+  ...(ENABLE_HOME_DECOR ? [{ href: "/home-decor", label: "Home Decor" }] : []),
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

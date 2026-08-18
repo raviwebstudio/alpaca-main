@@ -7,7 +7,7 @@ import { BlogCard } from "@/components/storefront/blog-card";
 import { FadeIn } from "@/components/storefront/fade-in";
 import { ProductCarousel } from "@/components/storefront/product-carousel";
 import { SectionHeading } from "@/components/storefront/section-heading";
-import { getBestSellerProducts, getFallbackProducts, getNewDropProducts } from "@/data/products";
+import { getBestSellerProducts, getFallbackProducts } from "@/data/products";
 import { blogPosts, collections, metrics, reasons } from "@/lib/storefront";
 
 export const metadata: Metadata = {
@@ -17,9 +17,7 @@ export const metadata: Metadata = {
 };
 
 const bestSellers = getBestSellerProducts(6);
-const newDrops = getNewDropProducts(6);
 const homepageBestSellers = bestSellers.length ? bestSellers : getFallbackProducts(6);
-const homepageNewDrops = newDrops.length ? newDrops : getFallbackProducts(6);
 
 const whyAlpaca = [
   { title: "Soft dispatch", copy: "Fast prepaid fulfillment with careful finishing.", icon: Truck },
@@ -33,7 +31,7 @@ export default function HomePage() {
     <>
       <Suspense fallback={<div className="h-96 bg-[#FAF8F5]" />}>
         <FadeIn>
-          <section className="shell section-space grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+          <section className="shell pt-14 pb-20 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28 grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
             <div className="space-y-8 motion-safe:animate-fade-up">
               <div className="space-y-5">
                 <p className="eyebrow">ALPACA</p>
@@ -50,17 +48,11 @@ export default function HomePage() {
 
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href="/new-arrivals"
+                  href="/shop"
                   className="inline-flex items-center gap-2 rounded-xl border border-dark bg-dark px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:opacity-95"
                 >
-                  New Arrivals
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/shop"
-                  className="inline-flex items-center rounded-xl border border-line bg-white px-6 py-3.5 text-sm font-semibold text-dark transition hover:-translate-y-0.5 hover:border-dark"
-                >
                   Browse catalog
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
 
@@ -200,11 +192,6 @@ export default function HomePage() {
                         <p className="mt-2 text-sm leading-6 text-text-secondary">{reason.description}</p>
                       </div>
                     ))}
-                  </div>
-                </div>
-                <div className="grid gap-10 mt-5 lg:items-center">
-                  <div className="relative w-full overflow-hidden">
-                    <ProductCarousel products={homepageNewDrops} />
                   </div>
                 </div>
               </div>

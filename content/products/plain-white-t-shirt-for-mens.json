@@ -3,7 +3,7 @@
   "title": "Plain White T-shirt for Mens",
   "slug": "plain-white-t-shirt-for-mens",
   "price": 490,
-  "mrp": 784,
+  "mrp": 999,
   "stock": 300,
   "lowStockThreshold": 10,
   "sku": "ALP-OVE-001",
@@ -11,64 +11,44 @@
   "type": "fashion",
   "status": "published",
   "sizes": [
-    "S",
     "M",
     "L",
     "XL"
   ],
   "colors": [
-    "Warm Sand",
+    "White",
     "Black",
-    "Soft Ivory"
+    "Maroon",
+    "Green"
   ],
   "variants": [
     {
-      "sku": "ALP-OVE-001-WAR-S",
-      "size": "S",
-      "color": "Warm Sand",
-      "colorHex": "#D1C4A5",
-      "price": 490,
-      "mrp": 784,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-    },
-    {
-      "sku": "ALP-OVE-001-WAR-M",
+      "sku": "ALP-OVE-001-WHI-M",
       "size": "M",
-      "color": "Warm Sand",
-      "colorHex": "#D1C4A5",
+      "color": "White",
+      "colorHex": "#FFFFFF",
       "price": 490,
-      "mrp": 784,
+      "mrp": 999,
       "stock": 25,
       "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
     },
     {
-      "sku": "ALP-OVE-001-WAR-L",
+      "sku": "ALP-OVE-001-WHI-L",
       "size": "L",
-      "color": "Warm Sand",
-      "colorHex": "#D1C4A5",
+      "color": "White",
+      "colorHex": "#FFFFFF",
       "price": 490,
-      "mrp": 784,
+      "mrp": 999,
       "stock": 25,
       "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
     },
     {
-      "sku": "ALP-OVE-001-WAR-XL",
+      "sku": "ALP-OVE-001-WHI-XL",
       "size": "XL",
-      "color": "Warm Sand",
-      "colorHex": "#D1C4A5",
+      "color": "White",
+      "colorHex": "#FFFFFF",
       "price": 490,
-      "mrp": 784,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-    },
-    {
-      "sku": "ALP-OVE-001-BLA-S",
-      "size": "S",
-      "color": "Black",
-      "colorHex": "#000000",
-      "price": 490,
-      "mrp": 784,
+      "mrp": 999,
       "stock": 25,
       "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
     },
@@ -78,7 +58,7 @@
       "color": "Black",
       "colorHex": "#000000",
       "price": 490,
-      "mrp": 784,
+      "mrp": 999,
       "stock": 25,
       "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
     },
@@ -88,7 +68,7 @@
       "color": "Black",
       "colorHex": "#000000",
       "price": 490,
-      "mrp": 784,
+      "mrp": 999,
       "stock": 25,
       "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
     },
@@ -98,47 +78,67 @@
       "color": "Black",
       "colorHex": "#000000",
       "price": 490,
-      "mrp": 784,
+      "mrp": 999,
       "stock": 25,
       "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
     },
     {
-      "sku": "ALP-OVE-001-SOF-S",
-      "size": "S",
-      "color": "Soft Ivory",
-      "colorHex": "#F0EDE1",
-      "price": 490,
-      "mrp": 784,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-    },
-    {
-      "sku": "ALP-OVE-001-SOF-M",
+      "sku": "ALP-OVE-001-MAR-M",
       "size": "M",
-      "color": "Soft Ivory",
-      "colorHex": "#F0EDE1",
+      "color": "Maroon",
+      "colorHex": "#800000",
       "price": 490,
-      "mrp": 784,
+      "mrp": 999,
       "stock": 25,
       "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
     },
     {
-      "sku": "ALP-OVE-001-SOF-L",
+      "sku": "ALP-OVE-001-MAR-L",
       "size": "L",
-      "color": "Soft Ivory",
-      "colorHex": "#F0EDE1",
+      "color": "Maroon",
+      "colorHex": "#800000",
       "price": 490,
-      "mrp": 784,
+      "mrp": 999,
       "stock": 25,
       "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
     },
     {
-      "sku": "ALP-OVE-001-SOF-XL",
+      "sku": "ALP-OVE-001-MAR-XL",
       "size": "XL",
-      "color": "Soft Ivory",
-      "colorHex": "#F0EDE1",
+      "color": "Maroon",
+      "colorHex": "#800000",
       "price": 490,
-      "mrp": 784,
+      "mrp": 999,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-GRE-M",
+      "size": "M",
+      "color": "Green",
+      "colorHex": "#2E5A36",
+      "price": 490,
+      "mrp": 999,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-GRE-L",
+      "size": "L",
+      "color": "Green",
+      "colorHex": "#2E5A36",
+      "price": 490,
+      "mrp": 999,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-GRE-XL",
+      "size": "XL",
+      "color": "Green",
+      "colorHex": "#2E5A36",
+      "price": 490,
+      "mrp": 999,
       "stock": 25,
       "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
     }
@@ -149,20 +149,19 @@
     "/inventory/men/tshirts/plain-white-t-shirt03.jpg"
   ],
   "description": "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
-  "summary": "A dense oversized tee built for everyday rotation and clean structure.",
   "highlights": [
-    "240 GSM knit",
+    "180 GSM Pure 100% Cotton",
     "Structured neckline",
     "Easy everyday drape"
   ],
-  "material": "100% heavyweight cotton",
+  "material": "100% Cotton",
   "shippingLeadTime": "Dispatches within 48 hours",
   "featured": true,
   "bestSeller": true,
   "newDrop": false,
   "seo": {
     "metaTitle": "Plain White T-shirt for Mens | ALPAZA Luxury Essentials",
-    "metaDescription": "A dense oversized tee built for everyday rotation and clean structure.",
+    "metaDescription": "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
     "keywords": [
       "alpaca",
       "oversized",
@@ -170,5 +169,5 @@
       "minimalist"
     ]
   },
-  "updatedAt": "2026-08-18T09:27:49.962Z"
+  "updatedAt": "2026-08-18T14:17:48.556Z"
 }

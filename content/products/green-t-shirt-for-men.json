@@ -11,62 +11,42 @@
   "type": "fashion",
   "status": "published",
   "sizes": [
-    "S",
     "M",
     "L",
     "XL"
   ],
   "colors": [
-    "Warm Sand",
+    "White",
     "Black",
-    "Soft Ivory"
+    "Maroon",
+    "Green"
   ],
   "variants": [
     {
-      "sku": "ALP-OVE-003-WAR-S",
-      "size": "S",
-      "color": "Warm Sand",
-      "colorHex": "#D1C4A5",
-      "price": 599,
-      "mrp": 958,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-    },
-    {
-      "sku": "ALP-OVE-003-WAR-M",
+      "sku": "ALP-OVE-003-WHI-M",
       "size": "M",
-      "color": "Warm Sand",
-      "colorHex": "#D1C4A5",
+      "color": "White",
+      "colorHex": "#FFFFFF",
       "price": 599,
       "mrp": 958,
       "stock": 25,
       "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
     },
     {
-      "sku": "ALP-OVE-003-WAR-L",
+      "sku": "ALP-OVE-003-WHI-L",
       "size": "L",
-      "color": "Warm Sand",
-      "colorHex": "#D1C4A5",
+      "color": "White",
+      "colorHex": "#FFFFFF",
       "price": 599,
       "mrp": 958,
       "stock": 25,
       "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
     },
     {
-      "sku": "ALP-OVE-003-WAR-XL",
+      "sku": "ALP-OVE-003-WHI-XL",
       "size": "XL",
-      "color": "Warm Sand",
-      "colorHex": "#D1C4A5",
-      "price": 599,
-      "mrp": 958,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-    },
-    {
-      "sku": "ALP-OVE-003-BLA-S",
-      "size": "S",
-      "color": "Black",
-      "colorHex": "#000000",
+      "color": "White",
+      "colorHex": "#FFFFFF",
       "price": 599,
       "mrp": 958,
       "stock": 25,
@@ -103,40 +83,60 @@
       "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
     },
     {
-      "sku": "ALP-OVE-003-SOF-S",
-      "size": "S",
-      "color": "Soft Ivory",
-      "colorHex": "#F0EDE1",
-      "price": 599,
-      "mrp": 958,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-    },
-    {
-      "sku": "ALP-OVE-003-SOF-M",
+      "sku": "ALP-OVE-003-MAR-M",
       "size": "M",
-      "color": "Soft Ivory",
-      "colorHex": "#F0EDE1",
+      "color": "Maroon",
+      "colorHex": "#800000",
       "price": 599,
       "mrp": 958,
       "stock": 25,
       "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
     },
     {
-      "sku": "ALP-OVE-003-SOF-L",
+      "sku": "ALP-OVE-003-MAR-L",
       "size": "L",
-      "color": "Soft Ivory",
-      "colorHex": "#F0EDE1",
+      "color": "Maroon",
+      "colorHex": "#800000",
       "price": 599,
       "mrp": 958,
       "stock": 25,
       "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
     },
     {
-      "sku": "ALP-OVE-003-SOF-XL",
+      "sku": "ALP-OVE-003-MAR-XL",
       "size": "XL",
-      "color": "Soft Ivory",
-      "colorHex": "#F0EDE1",
+      "color": "Maroon",
+      "colorHex": "#800000",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-OVE-003-GRE-M",
+      "size": "M",
+      "color": "Green",
+      "colorHex": "#2E5A36",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-OVE-003-GRE-L",
+      "size": "L",
+      "color": "Green",
+      "colorHex": "#2E5A36",
+      "price": 599,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-OVE-003-GRE-XL",
+      "size": "XL",
+      "color": "Green",
+      "colorHex": "#2E5A36",
       "price": 599,
       "mrp": 958,
       "stock": 25,
@@ -147,21 +147,20 @@
     "/inventory/men/tshirts/green-men-tshirt-01.webp",
     "/inventory/men/tshirts/green-men-tshirt-02.webp"
   ],
-  "description": "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
-  "summary": "A dense oversized tee built for everyday rotation and clean structure.",
+  "description": "  ",
   "highlights": [
-    "240 GSM knit",
-    "Structured neckline",
-    "Easy everyday drape"
+    "180 GSM Pure 100% Cotton",
+    "Relaxed fit",
+    "Ribbed collar"
   ],
-  "material": "100% heavyweight cotton",
+  "material": "100% Cotton",
   "shippingLeadTime": "Dispatches within 48 hours",
-  "featured": true,
+  "featured": false,
   "bestSeller": true,
   "newDrop": false,
   "seo": {
     "metaTitle": "Green T-shirt for Men | ALPAZA Luxury Essentials",
-    "metaDescription": "A dense oversized tee built for everyday rotation and clean structure.",
+    "metaDescription": "  ",
     "keywords": [
       "alpaca",
       "oversized",
@@ -169,5 +168,5 @@
       "minimalist"
     ]
   },
-  "updatedAt": "2026-08-18T09:22:20.616Z"
+  "updatedAt": "2026-08-18T14:17:48.557Z"
 }

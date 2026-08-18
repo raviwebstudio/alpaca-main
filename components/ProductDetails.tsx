@@ -4,6 +4,8 @@ import {
   getCategoryLabel,
   getFallbackProducts,
   getRelatedProducts,
+  products,
+  ENABLE_HOME_DECOR,
   type Product,
 } from "@/data/products";
 import { FadeIn } from "@/components/storefront/fade-in";
@@ -26,11 +28,15 @@ const PRODUCT_FAQS = [
 ];
 
 export function ProductDetails({ product }: { product: Product }) {
-  const related = getRelatedProducts(product.slug, product.category, 4);
-  const similarProducts = related.length
-    ? related
-    : getFallbackProducts(5, product.type).filter((item) => item.slug !== product.slug).slice(0, 4);
-  const backHref = product.type === "decor" ? "/home-decor" : "/shop";
+  const isFashion = product.type === "fashion";
+  const tshirtProducts = products.filter((item) => item.type === "fashion");
+  const otherTshirts = tshirtProducts.filter((item) => item.slug !== product.slug);
+  const similarProducts = isFashion
+    ? (otherTshirts.length > 0 ? otherTshirts.slice(0, 4) : tshirtProducts.slice(0, 4))
+    : ENABLE_HOME_DECOR
+      ? getFallbackProducts(4, "decor").filter((item) => item.slug !== product.slug).slice(0, 4)
+      : tshirtProducts.slice(0, 4);
+  const backHref = product.type === "decor" && ENABLE_HOME_DECOR ? "/home-decor" : "/shop";
 
   return (
     <div className="shell section-space space-y-14">
@@ -41,7 +47,7 @@ export function ProductDetails({ product }: { product: Product }) {
             className="inline-flex items-center gap-2 text-sm font-semibold text-text-secondary transition hover:text-dark"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to {product.type === "decor" ? "home decor" : "shop"}
+            Back to {product.type === "decor" && ENABLE_HOME_DECOR ? "home decor" : "shop"}
           </Link>
           <p className="text-sm text-text-secondary">
             {getCategoryLabel(product.category)} / Ships {(product.shippingLeadTime ?? "dispatches within 48 hours").toLowerCase()}
@@ -101,67 +107,6 @@ export function ProductDetails({ product }: { product: Product }) {
 
           <div className="space-y-6">
             <div className="surface-card rounded-[32px] p-6 sm:p-8">
-              <p className="eyebrow">Product snapshot</p>
-              <div className="mt-5 space-y-5">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">
-                    Price
-                  </p>
-                  <p className="mt-2 text-3xl text-dark">{formatPrice(product.price)}</p>
-                </div>
-
-                {product.type === "fashion" ? (
-                  <>
-                    <div>
-                      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">
-                        Available sizes
-                      </p>
-                      <div className="mt-3 flex flex-wrap gap-3">
-                        {(product.sizes ?? []).map((size) => (
-                          <span
-                            key={size}
-                            className="rounded-xl border border-line bg-background px-4 py-2 text-sm font-semibold text-dark"
-                          >
-                            {size}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">
-                        Available colors
-                      </p>
-                      <div className="mt-3 flex flex-wrap gap-3">
-                        {(product.colors ?? []).map((color) => (
-                          <div
-                            key={color}
-                            className="flex items-center gap-3 rounded-xl border border-line bg-background px-4 py-2.5 text-sm font-semibold text-dark"
-                          >
-                            <span
-                              className="h-4 w-4 rounded-full border border-dark/10"
-                              style={{ backgroundColor: PRODUCT_COLOR_HEX[color] ?? "#1C1917" }}
-                              aria-hidden="true"
-                            />
-                            <span>{color}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </>
-                ) : null}
-                {product.type === "decor" ? (
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-text-secondary">
-                      Material
-                    </p>
-                    <p className="mt-2 text-lg font-semibold text-dark">{product.material}</p>
-                  </div>
-                ) : null}
-              </div>
-            </div>
-
-            <div className="surface-card rounded-[32px] p-6 sm:p-8">
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-soft">
@@ -197,11 +142,20 @@ export function ProductDetails({ product }: { product: Product }) {
                   <div>
                     <h3 className="text-2xl text-dark">Sold by ALPACA Studio</h3>
                     <p className="mt-2 text-sm leading-7 text-text-secondary">
-                      New Delhi, India. Usually responds within 24 hours.
+                      Meerut, India. Usually responds within 24 hours.
                     </p>
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div className="surface-card rounded-[32px] p-6 sm:p-8">
+              <p className="eyebrow">How checkout works</p>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-text-secondary sm:text-base">
+                <li>1. Choose the product configuration.</li>
+                <li>2. Add the product to cart or continue straight to cart.</li>
+                <li>3. Confirm address and payment on the next screens.</li>
+              </ol>
             </div>
           </div>
         </section>

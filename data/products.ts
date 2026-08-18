@@ -58,7 +58,9 @@ export const categoryDescriptions: Record<ProductCategory, string> = {
   "table-decor": "Small objects that bring function and stillness to daily spaces.",
 };
 
-export const products: Product[] = [
+export const ENABLE_HOME_DECOR = false;
+
+export const allProducts: Product[] = [
   {
     id: 1,
     title: "Plain White T-shirt for Mens",
@@ -66,17 +68,16 @@ export const products: Product[] = [
     price: 490,
     type: "fashion",
     category: "oversized",
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["Warm Sand", "Black", "Soft Ivory"],
-    material: "100% heavyweight cotton",
+    sizes: ["M", "L", "XL"],
+    colors: ["White", "Black", "Maroon", "Green"],
+    material: "100% Cotton",
     images: [
       "/inventory/men/tshirts/plain-white-t-shirt01.jpg",
       "/inventory/men/tshirts/plain-white-t-shirt02.webp",
       "/inventory/men/tshirts/plain-white-t-shirt03.jpg",
     ],
     description: "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
-    summary: "A dense oversized tee built for everyday rotation and clean structure.",
-    highlights: ["240 GSM knit", "Structured neckline", "Easy everyday drape"],
+    highlights: ["180 GSM Pure 100% Cotton", "Structured neckline", "Easy everyday drape"],
     shippingLeadTime: "Dispatches within 48 hours",
     featured: true,
     bestSeller: true,
@@ -88,9 +89,9 @@ export const products: Product[] = [
     price: 490,
     type: "fashion",
     category: "basics",
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["Black", "White"],
-    material: "95% cotton, 5% elastane rib",
+    sizes: ["M", "L", "XL"],
+    colors: ["White", "Black", "Maroon", "Green"],
+    material: "100% Cotton",
     images: [
       "/inventory/men/tshirts/mens-black-t-shirt01.webp",
       "/inventory/men/tshirts/mens-black-t-shirt02.webp",
@@ -107,16 +108,15 @@ export const products: Product[] = [
     price: 599,
     type: "fashion",
     category: "oversized",
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["Warm Sand", "Black", "Soft Ivory"],
-    material: "100% heavyweight cotton",
+    sizes: ["M", "L", "XL"],
+    colors: ["White", "Black", "Maroon", "Green"],
+    material: "100% Cotton",
     images: [
       "/inventory/men/tshirts/green-men-tshirt-01.webp",
       "/inventory/men/tshirts/green-men-tshirt-02.webp",
     ],
     description: "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
-    summary: "A dense oversized tee built for everyday rotation and clean structure.",
-    highlights: ["240 GSM knit", "Structured neckline", "Easy everyday drape"],
+    highlights: ["180 GSM Pure 100% Cotton", "Structured neckline", "Easy everyday drape"],
     shippingLeadTime: "Dispatches within 48 hours",
     featured: true,
     bestSeller: true,
@@ -128,13 +128,13 @@ export const products: Product[] = [
     price: 599,
     type: "fashion",
     category: "basics",
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["Black", "White"],
-    material: "95% cotton, 5% elastane rib",
+    sizes: ["M", "L", "XL"],
+    colors: ["White", "Black", "Maroon", "Green"],
+    material: "100% Cotton",
     images: [
-      "/inventory/men/tshirts/grey-mens-tshirt-01.webp",
-      "/inventory/men/tshirts/grey-mens-tshirt-02.webp",
-      "/inventory/men/tshirts/grey-mens-tshirt-03.webp",
+      "/inventory/men/tshirts/maroon-mens-tshirt-01.webp",
+      "/inventory/men/tshirts/maroon-mens-tshirt-01-02.webp",
+      "/inventory/men/tshirts/maroon-mens-tshirt-01-03.webp",
     ],
     description: "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
     summary: "A close-fit tee designed for layering, warm days, and a cleaner line.",
@@ -142,7 +142,6 @@ export const products: Product[] = [
     shippingLeadTime: "Dispatches within 48 hours",
     bestSeller: true,
   },
-
   {
     id: 101,
     title: "Radha Krishna Photo Frame | Home Decor |  12x18 inch",
@@ -150,43 +149,28 @@ export const products: Product[] = [
     price: 399,
     type: "decor",
     category: "frames",
-    material: "Wood",
     style: "Minimal",
+    material: "Wood",
     images: [
-      "/home_decor/Frame-01/01.jpg",
-      "/home_decor/Frame-01/02.jpg",
-      "/home_decor/Frame-01/03.jpg",
-      "/home_decor/Frame-01/04.jpg",
-      "/home_decor/last01.jpg",
-      "/home_decor/last02.jpg",
-      "/home_decor/last03.jpg",
-      "/home_decor/last04.jpg",
+      "/home_decor/frames/radha-krishna.webp",
     ],
-    description: "A slim wood frame designed to bring structure and warmth to calm everyday spaces.",
-    summary: "Slim wood framing for shelves, desks, and quiet walls.",
-    highlights: ["Hand-finished edge", "Portrait or landscape use", "Ready for modern rooms"],
-    shippingLeadTime: "Dispatches within 48 hours",
-    featured: true,
-    bestSeller: true,
+    description: "A balanced wall piece with quiet geometry and enough presence to anchor a room.",
+    summary: "Modern wall art with restrained proportion and soft contrast.",
+    highlights: ["Matte finish", "Lightweight mount", "Modern graphic system"],
+    shippingLeadTime: "Dispatches within 2-3 days",
+    newDrop: true,
   },
   {
     id: 102,
     title: "Radha Krishna Photo Frame | Home Decor |  12x18 inch",
-    slug: "radha-krishna-photo-frame",
-    price: 399,
+    slug: "12x18-photo-frame-new",
+    price: 499,
     type: "decor",
     category: "frames",
+    style: "Modern",
     material: "Wood",
-    style: "Minimal",
     images: [
-      "/home_decor/Frame-02/01.jpg",
-      "/home_decor/Frame-02/02.jpg",
-      "/home_decor/Frame-02/03.jpg",
-      "/home_decor/Frame-02/04.jpg",
-      "/home_decor/last01.jpg",
-      "/home_decor/last02.jpg",
-      "/home_decor/last03.jpg",
-      "/home_decor/last04.jpg",
+      "/home_decor/frames/12x18-frame.webp",
     ],
     description: "A balanced wall piece with quiet geometry and enough presence to anchor a room.",
     summary: "Modern wall art with restrained proportion and soft contrast.",
@@ -197,17 +181,34 @@ export const products: Product[] = [
   {
     id: 103,
     title: "Photo Frame | Home Decor |  12x18 inch",
-    slug: "12x18-photo-frame",
-    price: 399,
+    slug: "photo-frame-new",
+    price: 499,
     type: "decor",
     category: "frames",
+    style: "Modern",
     material: "Wood",
-    style: "Minimal",
     images: [
-      "/home_decor/Frame-03/01.jpg",
-      "/home_decor/Frame-03/02.jpg",
-      "/home_decor/Frame-03/03.jpg",
-      "/home_decor/Frame-03/04.jpg",
+      "/home_decor/Frame-02/01.jpg",
+      "/home_decor/Frame-02/02.jpg",
+      "/home_decor/Frame-02/03.jpg",
+      "/home_decor/Frame-02/04.jpg",
+    ],
+    description: "A balanced wall piece with quiet geometry and enough presence to anchor a room.",
+    summary: "Modern wall art with restrained proportion and soft contrast.",
+    highlights: ["Matte finish", "Lightweight mount", "Modern graphic system"],
+    shippingLeadTime: "Dispatches within 2-3 days",
+    newDrop: true,
+  },
+  {
+    id: 104,
+    title: "Frame | Home Decor | 12x18 inch",
+    slug: "wood-frame",
+    price: 599,
+    type: "decor",
+    category: "frames",
+    style: "Minimal",
+    material: "Wood",
+    images: [
       "/home_decor/last01.jpg",
       "/home_decor/last02.jpg",
       "/home_decor/last03.jpg",
@@ -222,6 +223,10 @@ export const products: Product[] = [
   },
 ];
 
+export const products: Product[] = ENABLE_HOME_DECOR
+  ? allProducts
+  : allProducts.filter((p) => p.type !== "decor");
+
 export const productCategories = ["oversized", "basics", "outerwear"] as ProductCategory[];
 export const decorCategories = ["frames", "wall-art", "table-decor"] as ProductCategory[];
 
@@ -231,11 +236,13 @@ export const productCategoryOptions: ProductCategoryOption[] = productCategories
   description: categoryDescriptions[value],
 }));
 
-export const decorCategoryOptions: ProductCategoryOption[] = decorCategories.map((value) => ({
-  value,
-  label: categoryLabels[value],
-  description: categoryDescriptions[value],
-}));
+export const decorCategoryOptions: ProductCategoryOption[] = ENABLE_HOME_DECOR
+  ? decorCategories.map((value) => ({
+    value,
+    label: categoryLabels[value],
+    description: categoryDescriptions[value],
+  }))
+  : [];
 
 const sizeOrder = ["XS", "S", "M", "L", "XL", "XXL"];
 

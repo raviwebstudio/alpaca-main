@@ -83,129 +83,172 @@ initialCategories.forEach((cat) => {
 });
 console.log(`✓ Seeded ${initialCategories.length} categories to content/categories/`);
 
-// 2. Read products from data/products.json or data/products.ts
-let rawProducts = [];
-try {
-  const pPath = path.join(rootDir, "data", "products.json");
-  if (fs.existsSync(pPath)) {
-    rawProducts = JSON.parse(fs.readFileSync(pPath, "utf-8"));
+// 2. Products
+const rawProducts = [
+  {
+    id: 1,
+    title: "Plain White T-shirt for Mens",
+    slug: "plain-white-t-shirt-for-mens",
+    price: 490,
+    mrp: 999,
+    type: "fashion",
+    category: "oversized",
+    sizes: ["M", "L", "XL"],
+    colors: ["White", "Black", "Maroon", "Green"],
+    material: "100% Cotton",
+    images: [
+      "/inventory/men/tshirts/plain-white-t-shirt01.jpg",
+      "/inventory/men/tshirts/plain-white-t-shirt02.webp",
+      "/inventory/men/tshirts/plain-white-t-shirt03.jpg",
+    ],
+    description: "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+    highlights: ["180 GSM Pure 100% Cotton", "Structured neckline", "Easy everyday drape"],
+    shippingLeadTime: "Dispatches within 48 hours",
+    featured: true,
+    bestSeller: true,
+  },
+  {
+    id: 2,
+    title: "Plain Black T-shirt for Mens",
+    slug: "plain-black-t-shirt-for-mens",
+    price: 490,
+    mrp: 999,
+    type: "fashion",
+    category: "basics",
+    sizes: ["M", "L", "XL"],
+    colors: ["White", "Black", "Maroon", "Green"],
+    material: "100% Cotton",
+    images: [
+      "/inventory/men/tshirts/mens-black-t-shirt01.webp",
+      "/inventory/men/tshirts/mens-black-t-shirt02.webp",
+    ],
+    description: "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
+    summary: " ",
+    highlights: ["Soft stretch", "Clean shoulder line", "Layering-ready"],
+    shippingLeadTime: "Dispatches within 48 hours",
+    featured: true,
+    newDrop: true,
+  },
+  {
+    id: 3,
+    title: "Green T-shirt for Men",
+    slug: "green-t-shirt-for-men",
+    price: 599,
+    mrp: 958,
+    type: "fashion",
+    category: "oversized",
+    sizes: ["M", "L", "XL"],
+    colors: ["White", "Black", "Maroon", "Green"],
+    material: "100% Cotton",
+    images: [
+      "/inventory/men/tshirts/green-men-tshirt-01.webp",
+      "/inventory/men/tshirts/green-men-tshirt-02.webp",
+    ],
+    description: "  ",
+    highlights: ["180 GSM Pure 100% Cotton", "Relaxed fit", "Ribbed collar"],
+    shippingLeadTime: "Dispatches within 48 hours",
+    bestSeller: true,
+  },
+  {
+    id: 4,
+    title: "Men's Grey T-shirt",
+    slug: "mens-grey-t-shirt",
+    price: 599,
+    mrp: 958,
+    type: "fashion",
+    category: "basics",
+    sizes: ["M", "L", "XL"],
+    colors: ["White", "Black", "Maroon", "Green"],
+    material: "100% Cotton",
+    images: [
+      "/inventory/men/tshirts/maroon-mens-tshirt-01.webp",
+      "/inventory/men/tshirts/maroon-mens-tshirt-01-02.webp",
+      "/inventory/men/tshirts/maroon-mens-tshirt-01-03.webp",
+    ],
+    description: "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
+    summary: " ",
+    highlights: ["Soft stretch", "Clean shoulder line", "Layering-ready"],
+    shippingLeadTime: "Dispatches within 48 hours",
+    bestSeller: true,
+  },
+  {
+    id: 101,
+    title: "Radha Krishna Photo Frame | Home Decor | 12x18 inch",
+    slug: "12x18-photo-frame",
+    price: 399,
+    mrp: 999,
+    type: "decor",
+    category: "frames",
+    sizes: ["12x18 inch"],
+    colors: ["Standard"],
+    material: "Synthetic Wood Frame with Glass",
+    images: [
+      "/home_decor/frames/radha-krishna.webp",
+    ],
+    description: "Elegant Radha Krishna Wall Painting Photo Frame for Living Room.",
+    highlights: ["High Definition Print", "Synthetic Wood Frame", "Ready to Hang"],
+    shippingLeadTime: "Dispatches within 24 hours",
+    featured: true,
+    bestSeller: true,
+  },
+  {
+    id: 102,
+    title: "12x18 Photo Frame | Home Decor",
+    slug: "12x18-photo-frame-new",
+    price: 499,
+    mrp: 1199,
+    type: "decor",
+    category: "frames",
+    sizes: ["12x18 inch"],
+    colors: ["Standard"],
+    material: "Synthetic Wood Frame with Glass",
+    images: [
+      "/home_decor/frames/12x18-frame.webp",
+    ],
+    description: "Premium 12x18 Wall Photo Frame for home and office decoration.",
+    highlights: ["Matte Finish", "Durable Backing", "Easy Wall Mounting"],
+    shippingLeadTime: "Dispatches within 24 hours",
+    featured: true,
+    newDrop: true,
   }
-} catch (e) {
-  console.warn("Could not read data/products.json, using fallback array");
-}
-
-if (!rawProducts || rawProducts.length === 0) {
-  rawProducts = [
-    {
-      id: 1,
-      title: "Plain White T-shirt for Mens",
-      slug: "plain-white-t-shirt-for-mens",
-      price: 490,
-      mrp: 999,
-      type: "fashion",
-      category: "oversized",
-      sizes: ["S", "M", "L", "XL"],
-      colors: ["Warm Sand", "Black", "Soft Ivory"],
-      material: "100% heavyweight cotton",
-      images: [
-        "/inventory/men/tshirts/plain-white-t-shirt01.jpg",
-        "/inventory/men/tshirts/plain-white-t-shirt02.webp",
-        "/inventory/men/tshirts/plain-white-t-shirt03.jpg",
-      ],
-      description: "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
-      summary: "A dense oversized tee built for everyday rotation and clean structure.",
-      highlights: ["240 GSM knit", "Structured neckline", "Easy everyday drape"],
-      shippingLeadTime: "Dispatches within 48 hours",
-      featured: true,
-      bestSeller: true,
-    },
-    {
-      id: 2,
-      title: "Plain Black T-shirt for Mens",
-      slug: "plain-black-t-shirt-for-mens",
-      price: 490,
-      mrp: 999,
-      type: "fashion",
-      category: "basics",
-      sizes: ["S", "M", "L", "XL"],
-      colors: ["Black", "White"],
-      material: "95% cotton, 5% elastane rib",
-      images: [
-        "/inventory/men/tshirts/mens-black-t-shirt01.webp",
-        "/inventory/men/tshirts/mens-black-t-shirt02.webp",
-      ],
-      description: "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
-      summary: "A close-fit tee designed for layering, warm days, and a cleaner line.",
-      highlights: ["Soft stretch", "Clean shoulder line", "Layering-ready"],
-      shippingLeadTime: "Dispatches within 48 hours",
-      featured: true,
-      newDrop: true,
-    },
-    {
-      id: 3,
-      title: "Green T-shirt for Men",
-      slug: "green-t-shirt-for-men",
-      price: 490,
-      mrp: 999,
-      type: "fashion",
-      category: "oversized",
-      sizes: ["S", "M", "L", "XL"],
-      colors: ["Moss Green", "Olive", "Forest"],
-      material: "100% combed cotton",
-      images: [
-        "/inventory/men/tshirts/mens-green-t-shirt01.webp",
-        "/inventory/men/tshirts/mens-green-t-shirt02.webp",
-      ],
-      description: "An earthy tone tee with an understated drape and relaxed collar construction.",
-      summary: "Subtle olive wash on heavy jersey.",
-      highlights: ["Garment-dyed wash", "Relaxed fit", "Ribbed collar"],
-      shippingLeadTime: "Dispatches within 48 hours",
-      bestSeller: true,
-    },
-    {
-      id: 4,
-      title: "Vintage Archival Wooden Frame",
-      slug: "vintage-archival-wooden-frame",
-      price: 1899,
-      mrp: 2499,
-      type: "decor",
-      category: "frames",
-      sizes: ["8x10", "12x16", "16x20"],
-      colors: ["Dark Walnut", "Natural Oak"],
-      material: "Solid Teakwood & Museum Glass",
-      images: [
-        "/home_decor/frames/vintage-frame.webp",
-      ],
-      description: "Solid wood frame crafted for gallery wall longevity with non-glare museum glass.",
-      summary: "Artisan wood frame for prints and photographs.",
-      highlights: ["Solid Teak", "Museum-grade UV protection", "Wall mount hardware included"],
-      shippingLeadTime: "Dispatches within 24 hours",
-      featured: true,
-      bestSeller: true,
-    }
-  ];
-}
+];
 
 rawProducts.forEach((p, idx) => {
   const slug = p.slug || `product-${p.id || idx + 1}`;
-  const sizes = Array.isArray(p.sizes) && p.sizes.length > 0 ? p.sizes : ["S", "M", "L", "XL"];
-  
-  // Normalize colors to array of objects with name and hex
-  let rawColors = Array.isArray(p.colors) && p.colors.length > 0 ? p.colors : ["Standard"];
+  const isClothing = p.type === "fashion" || p.category === "oversized" || p.category === "basics" || p.category === "outerwear";
+
+  const sizes = isClothing
+    ? ["M", "L", "XL"]
+    : Array.isArray(p.sizes) && p.sizes.length > 0
+      ? p.sizes.filter((s) => s !== "S")
+      : ["Standard"];
+
+  // Normalize colors
+  let rawColors = isClothing
+    ? ["White", "Black", "Maroon", "Green"]
+    : Array.isArray(p.colors) && p.colors.length > 0
+      ? p.colors
+      : ["Standard"];
+
   const normalizedColors = rawColors.map((c) => {
-    if (typeof c === "string") {
-      const name = c;
-      const lower = name.toLowerCase();
-      const hex = lower.includes("black") ? "#111111" : lower.includes("white") ? "#FFFFFF" : lower.includes("green") ? "#4A5D4E" : lower.includes("sand") ? "#D1C4A5" : "#D2C2B2";
-      return { name, hex };
-    }
-    return {
-      name: c.name || "Standard",
-      hex: c.hex || "#111111",
-    };
+    const name = typeof c === "string" ? c : c.name || "Standard";
+    const lower = name.toLowerCase();
+    const hex =
+      lower === "white"
+        ? "#FFFFFF"
+        : lower === "black"
+          ? "#000000"
+          : lower === "maroon"
+            ? "#800000"
+            : lower === "green"
+              ? "#2E5A36"
+              : typeof c === "object" && c.hex
+                ? c.hex
+                : "#111111";
+    return { name, hex };
   });
 
-  // Normalize images to array of string paths
+  // Normalize images
   let rawImages = Array.isArray(p.images) ? p.images : [];
   const normalizedImages = rawImages.map((img) => (typeof img === "string" ? img : img?.url)).filter(Boolean);
 
@@ -234,8 +277,19 @@ rawProducts.forEach((p, idx) => {
 
   const totalStock = variants.reduce((sum, v) => sum + v.stock, 0);
 
+  // Filter highlights to replace 240 GSM with 180 GSM
+  const rawHighlights = Array.isArray(p.highlights) ? p.highlights : ["180 GSM Pure 100% Cotton", "Structured neckline", "Easy everyday drape"];
+  const highlights = rawHighlights.map((h) =>
+    h === "240 GSM knit" || h.includes("240 GSM") ? "180 GSM Pure 100% Cotton" : h
+  );
+
+  // Clean description and summary of the old sentence
+  const oldSentence = "A dense oversized tee built for everyday rotation and clean structure.";
+  const cleanDescription = (p.description || "").replace(oldSentence, "").trim() || "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.";
+  const cleanSummary = p.summary === oldSentence ? undefined : (p.summary || "").replace(oldSentence, "").trim() || undefined;
+
   const productDoc = {
-    id: p.id || idx + 1,
+    id: String(p.id || idx + 1),
     title: p.title || p.name || "Alpaca Product",
     slug,
     price,
@@ -250,17 +304,17 @@ rawProducts.forEach((p, idx) => {
     colors: normalizedColors.map((c) => c.name),
     variants,
     images: normalizedImages,
-    description: p.description || "Premium artisan craft item.",
-    summary: p.summary || p.description || "",
-    highlights: Array.isArray(p.highlights) ? p.highlights : ["Premium Quality", "Artisan Finished"],
-    material: p.material || "100% Premium Cotton",
-    shippingLeadTime: p.shippingLeadTime || "Dispatches in 24-48 hours",
+    description: cleanDescription,
+    ...(cleanSummary ? { summary: cleanSummary } : {}),
+    highlights,
+    material: p.material || "100% heavyweight cotton",
+    shippingLeadTime: p.shippingLeadTime || "Dispatches within 48 hours",
     featured: Boolean(p.featured),
     bestSeller: Boolean(p.bestSeller),
     newDrop: Boolean(p.newDrop),
     seo: {
       metaTitle: `${p.title || "Alpaca Product"} | ALPAZA Luxury Essentials`,
-      metaDescription: p.summary || p.description || "Discover minimalist luxury essentials by ALPAZA.",
+      metaDescription: cleanDescription,
       keywords: ["alpaca", p.category || "apparel", "luxury", "minimalist"].filter(Boolean),
     },
     updatedAt: new Date().toISOString(),

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ENABLE_HOME_DECOR } from "@/data/products";
 
 export default function Footer() {
   return (
@@ -134,14 +135,16 @@ export default function Footer() {
                       Shop
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      href="/shop?category=home-decor"
-                      className="text-sm text-white/60 transition-colors duration-200 hover:text-white"
-                    >
-                      Home Decor
-                    </Link>
-                  </li>
+                  {ENABLE_HOME_DECOR && (
+                    <li>
+                      <Link
+                        href="/shop?category=home-decor"
+                        className="text-sm text-white/60 transition-colors duration-200 hover:text-white"
+                      >
+                        Home Decor
+                      </Link>
+                    </li>
+                  )}
                   <li>
                     <Link
                       href="/about"

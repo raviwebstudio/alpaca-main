@@ -5,11 +5,14 @@ import {
   deleteContentProduct,
   type ContentProduct,
 } from "@/lib/content";
-import { Product } from "@/data/products";
+import { Product, ENABLE_HOME_DECOR } from "@/data/products";
 
 export async function getProducts(): Promise<Product[]> {
   const contentProds = getContentProducts();
-  return contentProds.map((p) => ({
+  const filtered = ENABLE_HOME_DECOR
+    ? contentProds
+    : contentProds.filter((p) => p.type !== "decor");
+  return filtered.map((p) => ({
     id: Number(p.id) || 1,
     title: p.title,
     slug: p.slug,

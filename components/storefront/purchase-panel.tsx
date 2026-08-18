@@ -8,9 +8,10 @@ import { useCart } from "@/components/storefront/cart-provider";
 import { formatPrice } from "@/lib/storefront";
 
 export const PRODUCT_COLOR_HEX: Record<string, string> = {
-  "Warm Sand": "#D9C2A7",
+  White: "#FFFFFF",
   Black: "#111111",
-  "Soft Ivory": "#F5F1E8",
+  Maroon: "#800000",
+  Green: "#2E5A36",
 };
 
 export function PurchasePanel({ product }: { product: Product }) {
@@ -71,9 +72,6 @@ export function PurchasePanel({ product }: { product: Product }) {
           </p>
         </div>
         <p className="text-3xl font-semibold text-dark">{formatPrice(product.price)}</p>
-        <p className="text-sm text-text-secondary">
-          Sold by ALPACA Studio / {product.shippingLeadTime ?? "Dispatches within 48 hours"}
-        </p>
       </div>
 
       <div className="space-y-6">
@@ -86,11 +84,10 @@ export function PurchasePanel({ product }: { product: Product }) {
                   key={size}
                   type="button"
                   onClick={() => setSelectedSize(size)}
-                  className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition ${
-                    selectedSize === size
+                  className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition ${selectedSize === size
                       ? "border-dark bg-dark text-white"
                       : "border-line bg-white text-dark hover:-translate-y-0.5 hover:border-dark"
-                  }`}
+                    }`}
                 >
                   {size}
                 </button>
@@ -115,11 +112,10 @@ export function PurchasePanel({ product }: { product: Product }) {
                   key={color}
                   type="button"
                   onClick={() => setSelectedColor(color)}
-                  className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition ${
-                    selectedColor === color
+                  className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition ${selectedColor === color
                       ? "border-dark bg-white text-dark"
                       : "border-line bg-white/70 text-text-secondary hover:-translate-y-0.5 hover:border-dark"
-                  }`}
+                    }`}
                 >
                   <span className="flex items-center gap-2">
                     <span
@@ -171,17 +167,6 @@ export function PurchasePanel({ product }: { product: Product }) {
           <p className="font-semibold uppercase tracking-[0.24em] text-dark">Material</p>
           <p className="mt-2 leading-6">{product.material}</p>
         </div>
-      </div>
-
-      <div className="rounded-[24px] border border-line bg-background/80 p-5">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-text-secondary">
-          How checkout works
-        </p>
-        <ol className="mt-4 space-y-2 text-sm leading-6 text-text-secondary">
-          <li>1. Choose the product configuration.</li>
-          <li>2. Add the product to cart or continue straight to cart.</li>
-          <li>3. Confirm address and payment on the next screens.</li>
-        </ol>
       </div>
     </div>
   );

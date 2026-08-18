@@ -1,87 +1,50 @@
 {
   "id": "101",
-  "title": "Radha Krishna Photo Frame | Home Decor |  12x18 inch",
+  "title": "Radha Krishna Photo Frame | Home Decor | 12x18 inch",
   "slug": "12x18-photo-frame",
   "price": 399,
-  "mrp": 638,
-  "stock": 100,
+  "mrp": 999,
+  "stock": 25,
   "lowStockThreshold": 10,
   "sku": "ALP-FRA-101",
   "category": "frames",
   "type": "decor",
   "status": "published",
   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL"
+    "12x18 inch"
   ],
   "colors": [
     "Standard"
   ],
   "variants": [
     {
-      "sku": "ALP-FRA-101-STA-S",
-      "size": "S",
+      "sku": "ALP-FRA-101-STA-12x18 inch",
+      "size": "12x18 inch",
       "color": "Standard",
-      "colorHex": "#D2C2B2",
+      "colorHex": "#111111",
       "price": 399,
-      "mrp": 638,
+      "mrp": 999,
       "stock": 25,
-      "image": "/home_decor/Frame-01/01.jpg"
-    },
-    {
-      "sku": "ALP-FRA-101-STA-M",
-      "size": "M",
-      "color": "Standard",
-      "colorHex": "#D2C2B2",
-      "price": 399,
-      "mrp": 638,
-      "stock": 25,
-      "image": "/home_decor/Frame-01/01.jpg"
-    },
-    {
-      "sku": "ALP-FRA-101-STA-L",
-      "size": "L",
-      "color": "Standard",
-      "colorHex": "#D2C2B2",
-      "price": 399,
-      "mrp": 638,
-      "stock": 25,
-      "image": "/home_decor/Frame-01/01.jpg"
-    },
-    {
-      "sku": "ALP-FRA-101-STA-XL",
-      "size": "XL",
-      "color": "Standard",
-      "colorHex": "#D2C2B2",
-      "price": 399,
-      "mrp": 638,
-      "stock": 25,
-      "image": "/home_decor/Frame-01/01.jpg"
+      "image": "/home_decor/frames/radha-krishna.webp"
     }
   ],
   "images": [
-    "/home_decor/Frame-01/01.jpg",
-    "/home_decor/Frame-01/02.jpg",
-    "/home_decor/Frame-01/03.jpg",
-    "/home_decor/Frame-01/04.jpg"
+    "/home_decor/frames/radha-krishna.webp"
   ],
-  "description": "A slim wood frame designed to bring structure and warmth to calm everyday spaces.",
-  "summary": "Slim wood framing for shelves, desks, and quiet walls.",
+  "description": "Elegant Radha Krishna Wall Painting Photo Frame for Living Room.",
   "highlights": [
-    "Hand-finished edge",
-    "Portrait or landscape use",
-    "Ready for modern rooms"
+    "High Definition Print",
+    "Synthetic Wood Frame",
+    "Ready to Hang"
   ],
-  "material": "Wood",
-  "shippingLeadTime": "Dispatches within 48 hours",
+  "material": "Synthetic Wood Frame with Glass",
+  "shippingLeadTime": "Dispatches within 24 hours",
   "featured": true,
   "bestSeller": true,
   "newDrop": false,
   "seo": {
-    "metaTitle": "Radha Krishna Photo Frame | Home Decor |  12x18 inch | ALPAZA Luxury Essentials",
-    "metaDescription": "Slim wood framing for shelves, desks, and quiet walls.",
+    "metaTitle": "Radha Krishna Photo Frame | Home Decor | 12x18 inch | ALPAZA Luxury Essentials",
+    "metaDescription": "Elegant Radha Krishna Wall Painting Photo Frame for Living Room.",
     "keywords": [
       "alpaca",
       "frames",
@@ -89,5 +52,5 @@
       "minimalist"
     ]
   },
-  "updatedAt": "2026-08-18T09:22:20.616Z"
+  "updatedAt": "2026-08-18T14:17:48.558Z"
 }

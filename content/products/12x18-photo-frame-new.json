@@ -1,87 +1,50 @@
 {
-  "id": "103",
-  "title": "Photo Frame | Home Decor |  12x18 inch",
+  "id": "102",
+  "title": "12x18 Photo Frame | Home Decor",
   "slug": "12x18-photo-frame-new",
-  "price": 399,
-  "mrp": 638,
-  "stock": 100,
+  "price": 499,
+  "mrp": 1199,
+  "stock": 25,
   "lowStockThreshold": 10,
-  "sku": "ALP-FRA-103",
+  "sku": "ALP-FRA-102",
   "category": "frames",
   "type": "decor",
   "status": "published",
   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL"
+    "12x18 inch"
   ],
   "colors": [
     "Standard"
   ],
   "variants": [
     {
-      "sku": "ALP-FRA-103-STA-S",
-      "size": "S",
+      "sku": "ALP-FRA-102-STA-12x18 inch",
+      "size": "12x18 inch",
       "color": "Standard",
-      "colorHex": "#D2C2B2",
-      "price": 399,
-      "mrp": 638,
+      "colorHex": "#111111",
+      "price": 499,
+      "mrp": 1199,
       "stock": 25,
-      "image": "/home_decor/Frame-03/01.jpg"
-    },
-    {
-      "sku": "ALP-FRA-103-STA-M",
-      "size": "M",
-      "color": "Standard",
-      "colorHex": "#D2C2B2",
-      "price": 399,
-      "mrp": 638,
-      "stock": 25,
-      "image": "/home_decor/Frame-03/01.jpg"
-    },
-    {
-      "sku": "ALP-FRA-103-STA-L",
-      "size": "L",
-      "color": "Standard",
-      "colorHex": "#D2C2B2",
-      "price": 399,
-      "mrp": 638,
-      "stock": 25,
-      "image": "/home_decor/Frame-03/01.jpg"
-    },
-    {
-      "sku": "ALP-FRA-103-STA-XL",
-      "size": "XL",
-      "color": "Standard",
-      "colorHex": "#D2C2B2",
-      "price": 399,
-      "mrp": 638,
-      "stock": 25,
-      "image": "/home_decor/Frame-03/01.jpg"
+      "image": "/home_decor/frames/12x18-frame.webp"
     }
   ],
   "images": [
-    "/home_decor/Frame-03/01.jpg",
-    "/home_decor/Frame-03/02.jpg",
-    "/home_decor/Frame-03/03.jpg",
-    "/home_decor/Frame-03/04.jpg"
+    "/home_decor/frames/12x18-frame.webp"
   ],
-  "description": "A slim wood frame designed to bring structure and warmth to calm everyday spaces.",
-  "summary": "Slim wood framing for shelves, desks, and quiet walls.",
+  "description": "Premium 12x18 Wall Photo Frame for home and office decoration.",
   "highlights": [
-    "Hand-finished surface",
-    "Compact footprint",
-    "Works solo or grouped"
+    "Matte Finish",
+    "Durable Backing",
+    "Easy Wall Mounting"
   ],
-  "material": "Wood",
-  "shippingLeadTime": "Dispatches within 48 hours",
+  "material": "Synthetic Wood Frame with Glass",
+  "shippingLeadTime": "Dispatches within 24 hours",
   "featured": true,
   "bestSeller": false,
   "newDrop": true,
   "seo": {
-    "metaTitle": "Photo Frame | Home Decor |  12x18 inch | ALPAZA Luxury Essentials",
-    "metaDescription": "Slim wood framing for shelves, desks, and quiet walls.",
+    "metaTitle": "12x18 Photo Frame | Home Decor | ALPAZA Luxury Essentials",
+    "metaDescription": "Premium 12x18 Wall Photo Frame for home and office decoration.",
     "keywords": [
       "alpaca",
       "frames",
@@ -89,5 +52,5 @@
       "minimalist"
     ]
   },
-  "updatedAt": "2026-08-18T09:22:20.617Z"
+  "updatedAt": "2026-08-18T14:17:48.558Z"
 }

@@ -697,7 +697,7 @@ export function ProductEditorForm({ initialData, isEditing = false }: ProductEdi
                   type="text"
                   value={material}
                   onChange={(e) => setMaterial(e.target.value)}
-                  placeholder="100% Combed Cotton (240 GSM)"
+                  placeholder="100% Cotton (180 GSM)"
                   className="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-hidden focus:border-[#C8956C]"
                 />
               </div>
