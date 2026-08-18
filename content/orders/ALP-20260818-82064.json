@@ -1,0 +1,41 @@
+{
+  "orderId": "ALP-20260818-82064",
+  "placedAt": "2026-08-17T19:20:13.492Z",
+  "customer": {
+    "name": "Kabir Verma",
+    "email": "kabir@example.com",
+    "phone": "9871122334"
+  },
+  "address": {
+    "name": "Kabir Verma",
+    "email": "kabir@example.com",
+    "phone": "9871122334",
+    "address": "Villa 14, Palm Meadows",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560066"
+  },
+  "items": [
+    {
+      "id": "single-prod-1",
+      "productId": "ALP-PONCHO-01",
+      "title": "Handmade Alpaca Poncho",
+      "price": 5499,
+      "size": "One Size",
+      "color": "Heather Grey",
+      "quantity": 1
+    }
+  ],
+  "subtotal": 5499,
+  "shipping": 0,
+  "discount": 0,
+  "total": 5499,
+  "paymentMethod": "upi",
+  "paymentStatus": "CONFIRMED",
+  "orderStatus": "PLACED",
+  "sheetSynced": false,
+  "sheetSyncError": "Google Apps Script returned 401 Unauthorized. In Apps Script, click Deploy > Manage deployments > Edit > set 'Who has access' to 'Anyone' and redeploy.",
+  "sheetSyncTimestamp": null,
+  "trackingNumber": null,
+  "notes": null
+}

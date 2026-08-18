@@ -1,0 +1,893 @@
+[
+  {
+    "id": "1",
+    "title": "Plain White T-shirt for Mens",
+    "slug": "plain-white-t-shirt-for-mens",
+    "price": 490,
+    "mrp": 784,
+    "stock": 300,
+    "lowStockThreshold": 10,
+    "sku": "ALP-OVE-001",
+    "category": "oversized",
+    "type": "fashion",
+    "status": "published",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Warm Sand",
+      "Black",
+      "Soft Ivory"
+    ],
+    "variants": [
+      {
+        "sku": "ALP-OVE-001-WAR-S",
+        "size": "S",
+        "color": "Warm Sand",
+        "colorHex": "#D1C4A5",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-WAR-M",
+        "size": "M",
+        "color": "Warm Sand",
+        "colorHex": "#D1C4A5",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-WAR-L",
+        "size": "L",
+        "color": "Warm Sand",
+        "colorHex": "#D1C4A5",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-WAR-XL",
+        "size": "XL",
+        "color": "Warm Sand",
+        "colorHex": "#D1C4A5",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-BLA-S",
+        "size": "S",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-BLA-M",
+        "size": "M",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-BLA-L",
+        "size": "L",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-BLA-XL",
+        "size": "XL",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-SOF-S",
+        "size": "S",
+        "color": "Soft Ivory",
+        "colorHex": "#F0EDE1",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-SOF-M",
+        "size": "M",
+        "color": "Soft Ivory",
+        "colorHex": "#F0EDE1",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-SOF-L",
+        "size": "L",
+        "color": "Soft Ivory",
+        "colorHex": "#F0EDE1",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      },
+      {
+        "sku": "ALP-OVE-001-SOF-XL",
+        "size": "XL",
+        "color": "Soft Ivory",
+        "colorHex": "#F0EDE1",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+      }
+    ],
+    "images": [
+      "/inventory/men/tshirts/plain-white-t-shirt01.jpg",
+      "/inventory/men/tshirts/plain-white-t-shirt02.webp",
+      "/inventory/men/tshirts/plain-white-t-shirt03.jpg"
+    ],
+    "description": "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+    "summary": "A dense oversized tee built for everyday rotation and clean structure.",
+    "highlights": [
+      "240 GSM knit",
+      "Structured neckline",
+      "Easy everyday drape"
+    ],
+    "material": "100% heavyweight cotton",
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "featured": true,
+    "bestSeller": true,
+    "newDrop": false,
+    "seo": {
+      "metaTitle": "Plain White T-shirt for Mens | ALPAZA Luxury Essentials",
+      "metaDescription": "A dense oversized tee built for everyday rotation and clean structure.",
+      "keywords": [
+        "alpaca",
+        "oversized",
+        "luxury",
+        "minimalist"
+      ]
+    },
+    "updatedAt": "2026-08-18T09:27:49.962Z"
+  },
+  {
+    "id": "2",
+    "title": "Plain Black T-shirt for Mens",
+    "slug": "plain-black-t-shirt-for-mens",
+    "price": 490,
+    "mrp": 784,
+    "stock": 200,
+    "lowStockThreshold": 10,
+    "sku": "ALP-BAS-002",
+    "category": "basics",
+    "type": "fashion",
+    "status": "published",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Black",
+      "White"
+    ],
+    "variants": [
+      {
+        "sku": "ALP-BAS-002-BLA-S",
+        "size": "S",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      },
+      {
+        "sku": "ALP-BAS-002-BLA-M",
+        "size": "M",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      },
+      {
+        "sku": "ALP-BAS-002-BLA-L",
+        "size": "L",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      },
+      {
+        "sku": "ALP-BAS-002-BLA-XL",
+        "size": "XL",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      },
+      {
+        "sku": "ALP-BAS-002-WHI-S",
+        "size": "S",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      },
+      {
+        "sku": "ALP-BAS-002-WHI-M",
+        "size": "M",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      },
+      {
+        "sku": "ALP-BAS-002-WHI-L",
+        "size": "L",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      },
+      {
+        "sku": "ALP-BAS-002-WHI-XL",
+        "size": "XL",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "price": 490,
+        "mrp": 784,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      }
+    ],
+    "images": [
+      "/inventory/men/tshirts/mens-black-t-shirt01.webp",
+      "/inventory/men/tshirts/mens-black-t-shirt02.webp"
+    ],
+    "description": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
+    "summary": "A close-fit tee designed for layering, warm days, and a cleaner line.",
+    "highlights": [
+      "Soft stretch",
+      "Clean shoulder line",
+      "Layering-ready"
+    ],
+    "material": "95% cotton, 5% elastane rib",
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "featured": false,
+    "bestSeller": true,
+    "newDrop": false,
+    "seo": {
+      "metaTitle": "Plain Black T-shirt for Mens | ALPAZA Luxury Essentials",
+      "metaDescription": "A close-fit tee designed for layering, warm days, and a cleaner line.",
+      "keywords": [
+        "alpaca",
+        "basics",
+        "luxury",
+        "minimalist"
+      ]
+    },
+    "updatedAt": "2026-08-18T09:22:20.616Z"
+  },
+  {
+    "id": "3",
+    "title": "Green T-shirt for Men",
+    "slug": "green-t-shirt-for-men",
+    "price": 599,
+    "mrp": 958,
+    "stock": 300,
+    "lowStockThreshold": 10,
+    "sku": "ALP-OVE-003",
+    "category": "oversized",
+    "type": "fashion",
+    "status": "published",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Warm Sand",
+      "Black",
+      "Soft Ivory"
+    ],
+    "variants": [
+      {
+        "sku": "ALP-OVE-003-WAR-S",
+        "size": "S",
+        "color": "Warm Sand",
+        "colorHex": "#D1C4A5",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-WAR-M",
+        "size": "M",
+        "color": "Warm Sand",
+        "colorHex": "#D1C4A5",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-WAR-L",
+        "size": "L",
+        "color": "Warm Sand",
+        "colorHex": "#D1C4A5",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-WAR-XL",
+        "size": "XL",
+        "color": "Warm Sand",
+        "colorHex": "#D1C4A5",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-BLA-S",
+        "size": "S",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-BLA-M",
+        "size": "M",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-BLA-L",
+        "size": "L",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-BLA-XL",
+        "size": "XL",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-SOF-S",
+        "size": "S",
+        "color": "Soft Ivory",
+        "colorHex": "#F0EDE1",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-SOF-M",
+        "size": "M",
+        "color": "Soft Ivory",
+        "colorHex": "#F0EDE1",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-SOF-L",
+        "size": "L",
+        "color": "Soft Ivory",
+        "colorHex": "#F0EDE1",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-OVE-003-SOF-XL",
+        "size": "XL",
+        "color": "Soft Ivory",
+        "colorHex": "#F0EDE1",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+      }
+    ],
+    "images": [
+      "/inventory/men/tshirts/green-men-tshirt-01.webp",
+      "/inventory/men/tshirts/green-men-tshirt-02.webp"
+    ],
+    "description": "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+    "summary": "A dense oversized tee built for everyday rotation and clean structure.",
+    "highlights": [
+      "240 GSM knit",
+      "Structured neckline",
+      "Easy everyday drape"
+    ],
+    "material": "100% heavyweight cotton",
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "featured": true,
+    "bestSeller": true,
+    "newDrop": false,
+    "seo": {
+      "metaTitle": "Green T-shirt for Men | ALPAZA Luxury Essentials",
+      "metaDescription": "A dense oversized tee built for everyday rotation and clean structure.",
+      "keywords": [
+        "alpaca",
+        "oversized",
+        "luxury",
+        "minimalist"
+      ]
+    },
+    "updatedAt": "2026-08-18T09:22:20.616Z"
+  },
+  {
+    "id": "4",
+    "title": "Men's Grey T-shirt",
+    "slug": "mens-grey-t-shirt",
+    "price": 599,
+    "mrp": 958,
+    "stock": 200,
+    "lowStockThreshold": 10,
+    "sku": "ALP-BAS-004",
+    "category": "basics",
+    "type": "fashion",
+    "status": "published",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Black",
+      "White"
+    ],
+    "variants": [
+      {
+        "sku": "ALP-BAS-004-BLA-S",
+        "size": "S",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-BAS-004-BLA-M",
+        "size": "M",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-BAS-004-BLA-L",
+        "size": "L",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-BAS-004-BLA-XL",
+        "size": "XL",
+        "color": "Black",
+        "colorHex": "#000000",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-BAS-004-WHI-S",
+        "size": "S",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-BAS-004-WHI-M",
+        "size": "M",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-BAS-004-WHI-L",
+        "size": "L",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      },
+      {
+        "sku": "ALP-BAS-004-WHI-XL",
+        "size": "XL",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "price": 599,
+        "mrp": 958,
+        "stock": 25,
+        "image": "/inventory/men/tshirts/grey-mens-tshirt-01.webp"
+      }
+    ],
+    "images": [
+      "/inventory/men/tshirts/grey-mens-tshirt-01.webp",
+      "/inventory/men/tshirts/grey-mens-tshirt-02.webp",
+      "/inventory/men/tshirts/grey-mens-tshirt-03.webp"
+    ],
+    "description": "A minimal grey tee with a closer fit, soft hand-feel, and clean daily utility.",
+    "summary": "A close-fit tee designed for layering, warm days, and a cleaner line.",
+    "highlights": [
+      "Soft stretch",
+      "Clean shoulder line",
+      "Layering-ready"
+    ],
+    "material": "95% cotton, 5% elastane rib",
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "featured": false,
+    "bestSeller": true,
+    "newDrop": false,
+    "seo": {
+      "metaTitle": "Men's Grey T-shirt | ALPAZA Luxury Essentials",
+      "metaDescription": "A close-fit tee designed for layering, warm days, and a cleaner line.",
+      "keywords": [
+        "alpaca",
+        "basics",
+        "luxury",
+        "minimalist"
+      ]
+    },
+    "updatedAt": "2026-08-18T09:22:20.616Z"
+  },
+  {
+    "id": "101",
+    "title": "Radha Krishna Photo Frame | Home Decor |  12x18 inch",
+    "slug": "12x18-photo-frame",
+    "price": 399,
+    "mrp": 638,
+    "stock": 100,
+    "lowStockThreshold": 10,
+    "sku": "ALP-FRA-101",
+    "category": "frames",
+    "type": "decor",
+    "status": "published",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard"
+    ],
+    "variants": [
+      {
+        "sku": "ALP-FRA-101-STA-S",
+        "size": "S",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-01/01.jpg"
+      },
+      {
+        "sku": "ALP-FRA-101-STA-M",
+        "size": "M",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-01/01.jpg"
+      },
+      {
+        "sku": "ALP-FRA-101-STA-L",
+        "size": "L",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-01/01.jpg"
+      },
+      {
+        "sku": "ALP-FRA-101-STA-XL",
+        "size": "XL",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-01/01.jpg"
+      }
+    ],
+    "images": [
+      "/home_decor/Frame-01/01.jpg",
+      "/home_decor/Frame-01/02.jpg",
+      "/home_decor/Frame-01/03.jpg",
+      "/home_decor/Frame-01/04.jpg"
+    ],
+    "description": "A slim wood frame designed to bring structure and warmth to calm everyday spaces.",
+    "summary": "Slim wood framing for shelves, desks, and quiet walls.",
+    "highlights": [
+      "Hand-finished edge",
+      "Portrait or landscape use",
+      "Ready for modern rooms"
+    ],
+    "material": "Wood",
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "featured": true,
+    "bestSeller": true,
+    "newDrop": false,
+    "seo": {
+      "metaTitle": "Radha Krishna Photo Frame | Home Decor |  12x18 inch | ALPAZA Luxury Essentials",
+      "metaDescription": "Slim wood framing for shelves, desks, and quiet walls.",
+      "keywords": [
+        "alpaca",
+        "frames",
+        "luxury",
+        "minimalist"
+      ]
+    },
+    "updatedAt": "2026-08-18T09:22:20.616Z"
+  },
+  {
+    "id": "102",
+    "title": "Radha Krishna Photo Frame | Home Decor |  12x18 inch",
+    "slug": "radha-krishna-photo-frame",
+    "price": 399,
+    "mrp": 638,
+    "stock": 100,
+    "lowStockThreshold": 10,
+    "sku": "ALP-FRA-102",
+    "category": "frames",
+    "type": "decor",
+    "status": "published",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard"
+    ],
+    "variants": [
+      {
+        "sku": "ALP-FRA-102-STA-S",
+        "size": "S",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-02/01.jpg"
+      },
+      {
+        "sku": "ALP-FRA-102-STA-M",
+        "size": "M",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-02/01.jpg"
+      },
+      {
+        "sku": "ALP-FRA-102-STA-L",
+        "size": "L",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-02/01.jpg"
+      },
+      {
+        "sku": "ALP-FRA-102-STA-XL",
+        "size": "XL",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-02/01.jpg"
+      }
+    ],
+    "images": [
+      "/home_decor/Frame-02/01.jpg",
+      "/home_decor/Frame-02/02.jpg",
+      "/home_decor/Frame-02/03.jpg",
+      "/home_decor/Frame-02/04.jpg"
+    ],
+    "description": "A balanced wall piece with quiet geometry and enough presence to anchor a room.",
+    "summary": "Modern wall art with restrained proportion and soft contrast.",
+    "highlights": [
+      "Matte finish",
+      "Lightweight mount",
+      "Modern graphic system"
+    ],
+    "material": "Wood",
+    "shippingLeadTime": "Dispatches within 2-3 days",
+    "featured": false,
+    "bestSeller": false,
+    "newDrop": true,
+    "seo": {
+      "metaTitle": "Radha Krishna Photo Frame | Home Decor |  12x18 inch | ALPAZA Luxury Essentials",
+      "metaDescription": "Modern wall art with restrained proportion and soft contrast.",
+      "keywords": [
+        "alpaca",
+        "frames",
+        "luxury",
+        "minimalist"
+      ]
+    },
+    "updatedAt": "2026-08-18T09:22:20.616Z"
+  },
+  {
+    "id": "103",
+    "title": "Photo Frame | Home Decor |  12x18 inch",
+    "slug": "12x18-photo-frame-new",
+    "price": 399,
+    "mrp": 638,
+    "stock": 100,
+    "lowStockThreshold": 10,
+    "sku": "ALP-FRA-103",
+    "category": "frames",
+    "type": "decor",
+    "status": "published",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard"
+    ],
+    "variants": [
+      {
+        "sku": "ALP-FRA-103-STA-S",
+        "size": "S",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-03/01.jpg"
+      },
+      {
+        "sku": "ALP-FRA-103-STA-M",
+        "size": "M",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-03/01.jpg"
+      },
+      {
+        "sku": "ALP-FRA-103-STA-L",
+        "size": "L",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-03/01.jpg"
+      },
+      {
+        "sku": "ALP-FRA-103-STA-XL",
+        "size": "XL",
+        "color": "Standard",
+        "colorHex": "#D2C2B2",
+        "price": 399,
+        "mrp": 638,
+        "stock": 25,
+        "image": "/home_decor/Frame-03/01.jpg"
+      }
+    ],
+    "images": [
+      "/home_decor/Frame-03/01.jpg",
+      "/home_decor/Frame-03/02.jpg",
+      "/home_decor/Frame-03/03.jpg",
+      "/home_decor/Frame-03/04.jpg"
+    ],
+    "description": "A slim wood frame designed to bring structure and warmth to calm everyday spaces.",
+    "summary": "Slim wood framing for shelves, desks, and quiet walls.",
+    "highlights": [
+      "Hand-finished surface",
+      "Compact footprint",
+      "Works solo or grouped"
+    ],
+    "material": "Wood",
+    "shippingLeadTime": "Dispatches within 48 hours",
+    "featured": true,
+    "bestSeller": false,
+    "newDrop": true,
+    "seo": {
+      "metaTitle": "Photo Frame | Home Decor |  12x18 inch | ALPAZA Luxury Essentials",
+      "metaDescription": "Slim wood framing for shelves, desks, and quiet walls.",
+      "keywords": [
+        "alpaca",
+        "frames",
+        "luxury",
+        "minimalist"
+      ]
+    },
+    "updatedAt": "2026-08-18T09:22:20.617Z"
+  }
+]

@@ -1,0 +1,174 @@
+{
+  "id": "1",
+  "title": "Plain White T-shirt for Mens",
+  "slug": "plain-white-t-shirt-for-mens",
+  "price": 490,
+  "mrp": 784,
+  "stock": 300,
+  "lowStockThreshold": 10,
+  "sku": "ALP-OVE-001",
+  "category": "oversized",
+  "type": "fashion",
+  "status": "published",
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "colors": [
+    "Warm Sand",
+    "Black",
+    "Soft Ivory"
+  ],
+  "variants": [
+    {
+      "sku": "ALP-OVE-001-WAR-S",
+      "size": "S",
+      "color": "Warm Sand",
+      "colorHex": "#D1C4A5",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-WAR-M",
+      "size": "M",
+      "color": "Warm Sand",
+      "colorHex": "#D1C4A5",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-WAR-L",
+      "size": "L",
+      "color": "Warm Sand",
+      "colorHex": "#D1C4A5",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-WAR-XL",
+      "size": "XL",
+      "color": "Warm Sand",
+      "colorHex": "#D1C4A5",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-BLA-S",
+      "size": "S",
+      "color": "Black",
+      "colorHex": "#000000",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-BLA-M",
+      "size": "M",
+      "color": "Black",
+      "colorHex": "#000000",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-BLA-L",
+      "size": "L",
+      "color": "Black",
+      "colorHex": "#000000",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-BLA-XL",
+      "size": "XL",
+      "color": "Black",
+      "colorHex": "#000000",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-SOF-S",
+      "size": "S",
+      "color": "Soft Ivory",
+      "colorHex": "#F0EDE1",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-SOF-M",
+      "size": "M",
+      "color": "Soft Ivory",
+      "colorHex": "#F0EDE1",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-SOF-L",
+      "size": "L",
+      "color": "Soft Ivory",
+      "colorHex": "#F0EDE1",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    },
+    {
+      "sku": "ALP-OVE-001-SOF-XL",
+      "size": "XL",
+      "color": "Soft Ivory",
+      "colorHex": "#F0EDE1",
+      "price": 490,
+      "mrp": 784,
+      "stock": 25,
+      "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+    }
+  ],
+  "images": [
+    "/inventory/men/tshirts/plain-white-t-shirt01.jpg",
+    "/inventory/men/tshirts/plain-white-t-shirt02.webp",
+    "/inventory/men/tshirts/plain-white-t-shirt03.jpg"
+  ],
+  "description": "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+  "summary": "A dense oversized tee built for everyday rotation and clean structure.",
+  "highlights": [
+    "240 GSM knit",
+    "Structured neckline",
+    "Easy everyday drape"
+  ],
+  "material": "100% heavyweight cotton",
+  "shippingLeadTime": "Dispatches within 48 hours",
+  "featured": true,
+  "bestSeller": true,
+  "newDrop": false,
+  "seo": {
+    "metaTitle": "Plain White T-shirt for Mens | ALPAZA Luxury Essentials",
+    "metaDescription": "A dense oversized tee built for everyday rotation and clean structure.",
+    "keywords": [
+      "alpaca",
+      "oversized",
+      "luxury",
+      "minimalist"
+    ]
+  },
+  "updatedAt": "2026-08-18T09:27:49.962Z"
+}

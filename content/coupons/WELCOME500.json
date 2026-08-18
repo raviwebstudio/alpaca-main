@@ -1,0 +1,12 @@
+{
+  "code": "WELCOME500",
+  "discountType": "fixed",
+  "discountValue": 500,
+  "minOrderValue": 2499,
+  "maxDiscount": 500,
+  "expiresAt": "2026-12-31T23:59:59.000Z",
+  "isActive": true,
+  "usageLimit": 200,
+  "usageCount": 18,
+  "description": "Flat ₹500 off on first orders above ₹2,499"
+}

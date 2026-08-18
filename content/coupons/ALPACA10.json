@@ -1,0 +1,12 @@
+{
+  "code": "ALPACA10",
+  "discountType": "percentage",
+  "discountValue": 10,
+  "minOrderValue": 999,
+  "maxDiscount": 500,
+  "expiresAt": "2026-12-31T23:59:59.000Z",
+  "isActive": true,
+  "usageLimit": 500,
+  "usageCount": 42,
+  "description": "10% off on all orders above ₹999"
+}

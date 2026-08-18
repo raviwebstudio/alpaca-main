@@ -1,0 +1,13 @@
+{
+  "id": "cust-9819988776",
+  "name": "Sneha Kapoor",
+  "email": "sneha@example.com",
+  "phone": "9819988776",
+  "address": "Flat 901, Ocean View",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "pincode": "400050",
+  "totalSpent": 4545,
+  "ordersCount": 1,
+  "createdAt": "2026-08-17T19:20:15.248Z"
+}

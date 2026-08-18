@@ -1,0 +1,13 @@
+{
+  "id": "cust-9845012345",
+  "name": "Ananya Singhania",
+  "email": "ananya@example.com",
+  "phone": "9845012345",
+  "address": "Plot 78, Jubilee Hills",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "pincode": "500033",
+  "totalSpent": 6497,
+  "ordersCount": 1,
+  "createdAt": "2026-08-17T18:24:58.483Z"
+}

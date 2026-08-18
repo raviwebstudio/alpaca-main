@@ -1,0 +1,281 @@
+# Pages CMS Configuration for ALPAZA Luxury Marketplace
+# Documentation: https://pagescms.org/docs/configuration
+
+media:
+  input: public/products/media
+  output: /products/media
+
+content:
+  - name: products
+    label: Products
+    type: collection
+    path: content/products
+    format: json
+    filename: "{slug}.json"
+    view:
+      fields: [title, price, category, stock, status]
+      primary: title
+    fields:
+      - name: id
+        label: Product ID
+        type: number
+        required: true
+
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+
+      - name: price
+        label: Selling Price (₹)
+        type: number
+        required: true
+
+      - name: mrp
+        label: MRP / Compare Price (₹)
+        type: number
+
+      - name: stock
+        label: Total Stock
+        type: number
+        default: 0
+
+      - name: lowStockThreshold
+        label: Low Stock Threshold
+        type: number
+        default: 10
+
+      - name: sku
+        label: Base SKU
+        type: string
+        required: true
+
+      - name: category
+        label: Category
+        type: select
+        options:
+          - { label: "Oversized", value: "oversized" }
+          - { label: "Basics", value: "basics" }
+          - { label: "Outerwear", value: "outerwear" }
+          - { label: "Frames", value: "frames" }
+          - { label: "Wall Art", value: "wall-art" }
+          - { label: "Table Decor", value: "table-decor" }
+
+      - name: type
+        label: Department
+        type: select
+        options:
+          - { label: "Fashion", value: "fashion" }
+          - { label: "Home Decor", value: "decor" }
+
+      - name: status
+        label: Status
+        type: select
+        options:
+          - { label: "Published", value: "published" }
+          - { label: "Draft", value: "draft" }
+        default: "published"
+
+      - name: sizes
+        label: Available Sizes
+        type: list
+        field:
+          type: string
+
+      - name: colors
+        label: Available Colors
+        type: list
+        field:
+          type: string
+
+      - name: variants
+        label: Product Variants (Color + Size Matrix)
+        type: list
+        fields:
+          - { name: sku, label: "Variant SKU", type: string }
+          - { name: size, label: "Size", type: string }
+          - { name: color, label: "Color Name", type: string }
+          - { name: colorHex, label: "Color Hex", type: string }
+          - { name: price, label: "Variant Price (₹)", type: number }
+          - { name: mrp, label: "Variant MRP (₹)", type: number }
+          - { name: stock, label: "Stock Quantity", type: number }
+          - { name: image, label: "Variant Image", type: image }
+
+      - name: images
+        label: Product Images
+        type: list
+        field:
+          type: image
+
+      - name: summary
+        label: Summary / Subtitle
+        type: string
+
+      - name: description
+        label: Full Description
+        type: rich-text
+
+      - name: highlights
+        label: Product Highlights
+        type: list
+        field:
+          type: string
+
+      - name: material
+        label: Material & Composition
+        type: string
+
+      - name: shippingLeadTime
+        label: Shipping Time
+        type: string
+        default: "Dispatches in 24-48 hours"
+
+      - name: featured
+        label: Feature on Homepage
+        type: boolean
+        default: false
+
+      - name: bestSeller
+        label: Best Seller Badge
+        type: boolean
+        default: false
+
+      - name: newDrop
+        label: New Drop Badge
+        type: boolean
+        default: false
+
+      - name: seo
+        label: SEO Settings
+        type: object
+        fields:
+          - { name: metaTitle, label: "Meta Title", type: string }
+          - { name: metaDescription, label: "Meta Description", type: string }
+          - { name: keywords, label: "Keywords", type: list, field: { type: string } }
+
+  - name: categories
+    label: Categories
+    type: collection
+    path: content/categories
+    format: json
+    filename: "{slug}.json"
+    view:
+      fields: [name, slug, type, displayOrder]
+      primary: name
+    fields:
+      - { name: id, label: "Category ID", type: string, required: true }
+      - { name: name, label: "Name", type: string, required: true }
+      - { name: slug, label: "Slug", type: string, required: true }
+      - { name: description, label: "Description", type: string }
+      - { name: image, label: "Cover Image", type: image }
+      - name: type
+        label: Department
+        type: select
+        options:
+          - { label: "Fashion", value: "fashion" }
+          - { label: "Home Decor", value: "decor" }
+      - { name: displayOrder, label: "Display Order", type: number, default: 1 }
+
+  - name: orders
+    label: Orders
+    type: collection
+    path: content/orders
+    format: json
+    filename: "{orderId}.json"
+    view:
+      fields: [orderId, placedAt, total, paymentStatus, orderStatus]
+      primary: orderId
+    fields:
+      - { name: orderId, label: "Order ID", type: string, required: true }
+      - { name: placedAt, label: "Order Date", type: date }
+      - name: customer
+        label: Customer
+        type: object
+        fields:
+          - { name: name, label: "Name", type: string }
+          - { name: email, label: "Email", type: string }
+          - { name: phone, label: "Phone", type: string }
+      - name: address
+        label: Shipping Address
+        type: object
+        fields:
+          - { name: name, label: "Recipient Name", type: string }
+          - { name: phone, label: "Phone", type: string }
+          - { name: address, label: "Street Address", type: string }
+          - { name: city, label: "City", type: string }
+          - { name: state, label: "State", type: string }
+          - { name: pincode, label: "Pincode", type: string }
+      - name: items
+        label: Ordered Items
+        type: list
+        fields:
+          - { name: productId, label: "Product ID", type: string }
+          - { name: title, label: "Product Title", type: string }
+          - { name: size, label: "Size", type: string }
+          - { name: color, label: "Color", type: string }
+          - { name: quantity, label: "Quantity", type: number }
+          - { name: price, label: "Unit Price", type: number }
+          - { name: image, label: "Image", type: image }
+      - { name: subtotal, label: "Subtotal (₹)", type: number }
+      - { name: shipping, label: "Shipping (₹)", type: number }
+      - { name: discount, label: "Discount (₹)", type: number }
+      - { name: total, label: "Total Amount (₹)", type: number }
+      - { name: paymentMethod, label: "Payment Method", type: string }
+      - { name: paymentStatus, label: "Payment Status", type: string }
+      - { name: orderStatus, label: "Order Status", type: string }
+      - { name: sheetSynced, label: "Google Sheet Synced", type: boolean }
+      - { name: trackingNumber, label: "Courier Tracking Number", type: string }
+      - { name: notes, label: "Internal Notes", type: string }
+
+  - name: customers
+    label: Customers
+    type: collection
+    path: content/customers
+    format: json
+    filename: "{id}.json"
+    view:
+      fields: [name, phone, city, totalSpent, ordersCount]
+      primary: name
+    fields:
+      - { name: id, label: "Customer ID", type: string, required: true }
+      - { name: name, label: "Full Name", type: string, required: true }
+      - { name: email, label: "Email", type: string }
+      - { name: phone, label: "Phone Number", type: string, required: true }
+      - { name: address, label: "Address", type: string }
+      - { name: city, label: "City", type: string }
+      - { name: state, label: "State", type: string }
+      - { name: pincode, label: "Pincode", type: string }
+      - { name: totalSpent, label: "Total Spent (₹)", type: number, default: 0 }
+      - { name: ordersCount, label: "Total Orders", type: number, default: 0 }
+      - { name: createdAt, label: "First Seen", type: date }
+
+  - name: coupons
+    label: Coupons
+    type: collection
+    path: content/coupons
+    format: json
+    filename: "{code}.json"
+    view:
+      fields: [code, discountType, discountValue, isActive, usageCount]
+      primary: code
+    fields:
+      - { name: code, label: "Coupon Code", type: string, required: true }
+      - name: discountType
+        label: Discount Type
+        type: select
+        options:
+          - { label: "Percentage (%)", value: "percentage" }
+          - { label: "Fixed Amount (₹)", value: "fixed" }
+      - { name: discountValue, label: "Discount Value", type: number, required: true }
+      - { name: minOrderValue, label: "Minimum Order Amount (₹)", type: number, default: 0 }
+      - { name: maxDiscount, label: "Maximum Discount (₹)", type: number }
+      - { name: expiresAt, label: "Expiration Date", type: date }
+      - { name: isActive, label: "Active", type: boolean, default: true }
+      - { name: usageLimit, label: "Usage Limit", type: number, default: 100 }
+      - { name: usageCount, label: "Current Usage Count", type: number, default: 0 }
+      - { name: description, label: "Description / Terms", type: string }

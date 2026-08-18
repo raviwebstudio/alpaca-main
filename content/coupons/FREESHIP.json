@@ -1,0 +1,12 @@
+{
+  "code": "FREESHIP",
+  "discountType": "fixed",
+  "discountValue": 249,
+  "minOrderValue": 1499,
+  "maxDiscount": 249,
+  "expiresAt": "2026-12-31T23:59:59.000Z",
+  "isActive": true,
+  "usageLimit": 1000,
+  "usageCount": 65,
+  "description": "Free shipping voucher on orders above ₹1,499"
+}

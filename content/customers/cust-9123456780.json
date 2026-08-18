@@ -1,0 +1,13 @@
+{
+  "id": "cust-9123456780",
+  "name": "Priya Nair",
+  "email": "priya@example.com",
+  "phone": "9123456780",
+  "address": "Flat 4B, Palm Grove",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "pincode": "400050",
+  "totalSpent": 12296,
+  "ordersCount": 1,
+  "createdAt": "2026-08-18T08:15:50.761Z"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "cat-table-decor",
+  "name": "Table Decor",
+  "slug": "table-decor",
+  "description": "Small objects that bring function and stillness to daily spaces",
+  "image": "/home_decor/frames/acrylic-modern-frame.webp",
+  "type": "decor",
+  "displayOrder": 6
+}

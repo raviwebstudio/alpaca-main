@@ -1,0 +1,13 @@
+{
+  "id": "cust-9871122334",
+  "name": "Kabir Verma",
+  "email": "kabir@example.com",
+  "phone": "9871122334",
+  "address": "Villa 14, Palm Meadows",
+  "city": "Bengaluru",
+  "state": "Karnataka",
+  "pincode": "560066",
+  "totalSpent": 5499,
+  "ordersCount": 1,
+  "createdAt": "2026-08-17T19:20:13.492Z"
+}

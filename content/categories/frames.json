@@ -1,0 +1,9 @@
+{
+  "id": "cat-frames",
+  "name": "Frames",
+  "slug": "frames",
+  "description": "Structured frames for shelves, desks, and calm wall systems",
+  "image": "/home_decor/frames/vintage-frame.webp",
+  "type": "decor",
+  "displayOrder": 4
+}

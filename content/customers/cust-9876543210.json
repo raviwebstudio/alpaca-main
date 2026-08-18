@@ -1,0 +1,13 @@
+{
+  "id": "cust-9876543210",
+  "name": "Ravi Gautam",
+  "email": "ravi@example.com",
+  "phone": "9876543210",
+  "address": "123 Silk Board, Outer Ring Rd",
+  "city": "Bengaluru",
+  "state": "Karnataka",
+  "pincode": "560068",
+  "totalSpent": 5297,
+  "ordersCount": 1,
+  "createdAt": "2026-08-17T17:58:15.340Z"
+}

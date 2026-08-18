@@ -1,0 +1,46 @@
+{
+  "orderId": "ALP-20260818-39820",
+  "placedAt": "2026-08-17T19:39:24.609Z",
+  "customer": {
+    "name": "Ravi Kumar Gautam",
+    "email": "ravi.webstudio@gmail.com",
+    "phone": "7217217287"
+  },
+  "address": {
+    "name": "Ravi Kumar Gautam",
+    "email": "ravi.webstudio@gmail.com",
+    "phone": "7217217287",
+    "address": "South City 2",
+    "city": "Gurugam",
+    "state": "Haryana",
+    "pincode": "122018"
+  },
+  "items": [
+    {
+      "productId": "2",
+      "sellerId": "alpaca-studio",
+      "sellerName": "ALPACA Studio",
+      "slug": "plain-black-t-shirt-for-mens",
+      "title": "Plain Black T-shirt for Mens",
+      "price": 490,
+      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp",
+      "size": "S",
+      "color": "White",
+      "colorHex": "#1C1917",
+      "id": "alpaca-studio-2-S-#1C1917",
+      "quantity": 1
+    }
+  ],
+  "subtotal": 490,
+  "shipping": 249,
+  "discount": 0,
+  "total": 739,
+  "paymentMethod": "upi",
+  "paymentStatus": "CONFIRMED",
+  "orderStatus": "PLACED",
+  "sheetSynced": false,
+  "sheetSyncError": "Google Apps Script returned 401 Unauthorized. In Apps Script, click Deploy > Manage deployments > Edit > set 'Who has access' to 'Anyone' and redeploy.",
+  "sheetSyncTimestamp": null,
+  "trackingNumber": null,
+  "notes": null
+}

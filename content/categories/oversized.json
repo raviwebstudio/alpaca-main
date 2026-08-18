@@ -1,0 +1,9 @@
+{
+  "id": "cat-oversized",
+  "name": "Oversized",
+  "slug": "oversized",
+  "description": "Relaxed silhouettes with premium heavyweight cotton",
+  "image": "/assets/images/portrait-03.webp",
+  "type": "fashion",
+  "displayOrder": 1
+}

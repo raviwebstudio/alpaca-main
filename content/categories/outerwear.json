@@ -1,0 +1,9 @@
+{
+  "id": "cat-outerwear",
+  "name": "Outerwear",
+  "slug": "outerwear",
+  "description": "Layering pieces for commute, travel, and changing weather",
+  "image": "/assets/images/plain-clothing01.jpg",
+  "type": "fashion",
+  "displayOrder": 3
+}

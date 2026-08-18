@@ -1,0 +1,9 @@
+{
+  "id": "cat-basics",
+  "name": "Basics",
+  "slug": "basics",
+  "description": "Closer-to-body everyday essentials designed for repeat wear",
+  "image": "/assets/images/plain-clothing02.jpg",
+  "type": "fashion",
+  "displayOrder": 2
+}

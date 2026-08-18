@@ -1,0 +1,13 @@
+{
+  "id": "cust-9812345678",
+  "name": "Priya Sharma",
+  "email": "priya@example.com",
+  "phone": "9812345678",
+  "address": "45 Green Park Avenue",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "pincode": "110016",
+  "totalSpent": 4749,
+  "ordersCount": 1,
+  "createdAt": "2026-08-17T17:58:35.761Z"
+}
