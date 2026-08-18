@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import {
   getContentProductBySlug,
   getContentProductById,
@@ -58,6 +59,14 @@ export async function PUT(
 
     saveContentProduct(updated);
 
+    try {
+      revalidatePath("/", "layout");
+      revalidatePath("/shop");
+      revalidatePath("/home-decor");
+      revalidatePath("/new-arrivals");
+      revalidatePath(`/product/${slug}`);
+    } catch {}
+
     return NextResponse.json({ success: true, product: updated });
   } catch (error: any) {
     return NextResponse.json(
@@ -78,6 +87,13 @@ export async function DELETE(
     if (!success) {
       return NextResponse.json({ success: false, error: "Product not found or could not be deleted" }, { status: 404 });
     }
+
+    try {
+      revalidatePath("/", "layout");
+      revalidatePath("/shop");
+      revalidatePath("/home-decor");
+      revalidatePath("/new-arrivals");
+    } catch {}
 
     return NextResponse.json({ success: true, message: "Product deleted successfully" });
   } catch (error: any) {

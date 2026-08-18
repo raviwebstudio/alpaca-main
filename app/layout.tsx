@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
+import { SITE_IMAGES } from "@/lib/siteImages";
 
-const favicon = "/assets/favicon-black.png";
+const favicon = SITE_IMAGES.favicon;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://alpacaa.in"),

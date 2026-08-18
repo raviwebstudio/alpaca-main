@@ -1,8 +1,11 @@
 import { Suspense } from 'react'
-import { products, type Product } from '@/data/products'
+import { type Product } from '@/data/products'
+import { getProducts } from '@/lib/productStorage'
 import ProductCard from '@/components/ProductCard'
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "New Arrivals T-Shirts | ALPACA",
@@ -10,15 +13,11 @@ export const metadata: Metadata = {
     "Explore the latest t-shirts including oversized, minimal, and premium styles designed for everyday wear.",
 };
 
-function getNewArrivals(): Product[] {
-  // Sort by id descending to get newest first, take 24
-  return [...products]
-    .sort((a, b) => b.id - a.id)
-    .slice(0, 24)
-}
-
 export default async function NewArrivalsPage() {
-  const products = getNewArrivals()
+  const allProducts = await getProducts();
+  const products = [...allProducts]
+    .sort((a, b) => Number(b.id) - Number(a.id))
+    .slice(0, 24);
 
   return (
     <div style={{ minHeight: '100vh', background: '#FAF8F5' }}>

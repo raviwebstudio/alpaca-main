@@ -5,19 +5,21 @@ import { Suspense } from "react";
 import { ArrowRight, PackageCheck, ShieldCheck, Sparkles, Truck } from "lucide-react";
 import { BlogCard } from "@/components/storefront/blog-card";
 import { FadeIn } from "@/components/storefront/fade-in";
+import { InteractiveSiteImage } from "@/components/storefront/interactive-site-image";
 import { ProductCarousel } from "@/components/storefront/product-carousel";
 import { SectionHeading } from "@/components/storefront/section-heading";
 import { getBestSellerProducts, getFallbackProducts } from "@/data/products";
+import { getProducts } from "@/lib/productStorage";
 import { blogPosts, collections, metrics, reasons } from "@/lib/storefront";
+import { SITE_IMAGES } from "@/lib/siteImages";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "MADE FOR THE MOVE",
   description:
     "Discover ALPACA's premium essentials, oversized t-shirts, minimal basics, and new drops in a refined fashion storefront.",
 };
-
-const bestSellers = getBestSellerProducts(6);
-const homepageBestSellers = bestSellers.length ? bestSellers : getFallbackProducts(6);
 
 const whyAlpaca = [
   { title: "Soft dispatch", copy: "Fast prepaid fulfillment with careful finishing.", icon: Truck },
@@ -26,7 +28,11 @@ const whyAlpaca = [
   { title: "Move-ready", copy: "Made to travel from work, city, and weekend plans.", icon: PackageCheck },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const allProducts = await getProducts();
+  const bestSellers = getBestSellerProducts(6, "fashion", allProducts);
+  const homepageBestSellers = bestSellers.length ? bestSellers : getFallbackProducts(6, "fashion", allProducts);
+
   return (
     <>
       <Suspense fallback={<div className="h-96 bg-[#FAF8F5]" />}>
@@ -67,25 +73,25 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-5 md:grid-cols-[1fr_220px] motion-safe:animate-fade-up">
-              <div className="surface-card overflow-hidden rounded-[36px] shadow-premium sm:h-[520px] relative h-[500px] shadow-premium">
-                <Image
-                  src="/assets/images/portrait-01.jpg"
+              <div className="surface-card overflow-hidden rounded-[36px] shadow-premium sm:h-[520px] relative h-[500px]">
+                <InteractiveSiteImage
+                  src={SITE_IMAGES.homepage.heroPrimary}
                   alt="Hero Image"
-                  fill
                   priority
                   sizes="(min-width: 1024px) 42vw, 100vw"
-                  className="h-full w-full object-cover transition duration-300 hover:scale-[1.02]"
-                />
-                <div className="absolute inset-0 flex items-end bg-black/20 p-8">
-                  <div className="max-w-sm text-white">
-                    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/85">
-                      Premium everyday
-                    </p>
-                    <h2 className="mt-2 text-3xl text-white sm:text-[2.1rem]">
-                      Quiet layers built to carry long days well.
-                    </h2>
+                  containerClassName="h-full w-full"
+                >
+                  <div className="absolute inset-0 flex items-end bg-black/20 p-8 pointer-events-none">
+                    <div className="max-w-sm text-white">
+                      <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/85">
+                        Premium everyday
+                      </p>
+                      <h2 className="mt-2 text-3xl text-white sm:text-[2.1rem]">
+                        Quiet layers built to carry long days well.
+                      </h2>
+                    </div>
                   </div>
-                </div>
+                </InteractiveSiteImage>
               </div>
 
               <div className="grid gap-5">
@@ -98,12 +104,11 @@ export default function HomePage() {
                 </div>
                 <div className="surface-card rounded-[28px] p-3">
                   <div className="relative aspect-[3/4] overflow-hidden rounded-[22px]">
-                    <Image
-                      src="/assets/images/portrait-06.jpg"
+                    <InteractiveSiteImage
+                      src={SITE_IMAGES.homepage.heroSecondary}
                       alt="ALPACA secondary look"
-                      fill
                       sizes="220px"
-                      className="object-cover transition duration-700 hover:scale-[1.06]"
+                      containerClassName="w-full h-full"
                     />
                   </div>
                 </div>
@@ -122,7 +127,7 @@ export default function HomePage() {
                 title="The pieces customers keep returning to."
                 description="A horizontal edit with premium weight, softened structure, and clean utility across the week."
               />
-              <div className="mt-10 relative w-full overflow-hidden">
+              <div className="mt-10 relative w-full">
                 <ProductCarousel products={homepageBestSellers} />
               </div>
             </div>
@@ -155,12 +160,11 @@ export default function HomePage() {
                       </span>
                     </div>
                     <div className="relative min-h-[300px] overflow-hidden">
-                      <Image
+                      <InteractiveSiteImage
                         src={collection.image}
                         alt={collection.title}
-                        fill
                         sizes="(min-width: 1024px) 40vw, 100vw"
-                        className="object-cover transition duration-700 group-hover:scale-[1.05]"
+                        containerClassName="w-full h-full min-h-[300px]"
                       />
                     </div>
                   </div>
@@ -175,8 +179,16 @@ export default function HomePage() {
         <FadeIn delay={0.12}>
           <section className="relative z-[1] w-full overflow-hidden py-16 bg-[#FAF8F5]">
             <div className="shell motion-safe:animate-fade-up">
-              <div className="surface-card rounded-[36px] p-8 sm:p-12 lg:p-14">
-                <div>
+              <div className="surface-card relative overflow-hidden rounded-[36px] p-8 sm:p-12 lg:p-14">
+                <Image
+                  src={SITE_IMAGES.homepage.movementNotesBg}
+                  alt="ALPACA Fabric Texture Background"
+                  fill
+                  sizes="(min-width: 1280px) 1200px, 100vw"
+                  className="object-cover object-center pointer-events-none"
+                />
+                <div className="absolute inset-0 bg-[#FAF8F5]/85 backdrop-blur-[2px] pointer-events-none" />
+                <div className="relative z-10">
                   <p className="eyebrow">Movement notes</p>
                   <h2 className="mt-4 text-balance text-5xl leading-[0.96] text-dark sm:text-6xl">
                     A quieter wardrobe with enough range for real life.
@@ -187,7 +199,7 @@ export default function HomePage() {
                   </p>
                   <div className="mt-8 grid gap-4 sm:grid-cols-2">
                     {reasons.slice(0, 2).map((reason) => (
-                      <div key={reason.title} className="rounded-[24px] border border-line bg-background/80 p-5">
+                      <div key={reason.title} className="rounded-[24px] border border-line/80 bg-background/90 shadow-sm backdrop-blur-md p-5">
                         <h3 className="text-2xl text-dark">{reason.title}</h3>
                         <p className="mt-2 text-sm leading-6 text-text-secondary">{reason.description}</p>
                       </div>

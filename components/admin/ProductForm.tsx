@@ -221,7 +221,7 @@ export default function ProductForm({ initialData, productId, mode = "create" }:
           </div>
           {images.map((img, i) => (
             <div key={i} className="flex gap-4 items-center">
-              <input value={img.url} onChange={(e) => updateImage(i, "url", e.target.value)} placeholder="Image URL (e.g. /inventory/item.jpg)" className="flex-1 border rounded-lg px-3 py-1.5 text-sm" />
+              <input value={img.url} onChange={(e) => updateImage(i, "url", e.target.value)} placeholder="Image URL (e.g. /products/media/item.jpg)" className="flex-1 border rounded-lg px-3 py-1.5 text-sm" />
               <input value={img.alt} onChange={(e) => updateImage(i, "alt", e.target.value)} placeholder="Alt text" className="flex-1 border rounded-lg px-3 py-1.5 text-sm" />
               <button type="button" onClick={() => removeImage(i)} className="text-red-500 text-sm">Remove</button>
             </div>

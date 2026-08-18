@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { ShopPageContent } from "@/components/storefront/shop-page-content";
 import { normalizeProductCategory, normalizeProductSize } from "@/data/products";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Shop",
   description:

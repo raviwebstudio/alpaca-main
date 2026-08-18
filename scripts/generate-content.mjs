@@ -53,7 +53,7 @@ const initialCategories = [
     name: "Frames",
     slug: "frames",
     description: "Structured frames for shelves, desks, and calm wall systems",
-    image: "/home_decor/frames/vintage-frame.webp",
+    image: "/home_decor/Frame-01/01.jpg",
     type: "decor",
     displayOrder: 4,
   },
@@ -62,7 +62,7 @@ const initialCategories = [
     name: "Wall Art",
     slug: "wall-art",
     description: "Quiet graphic pieces designed to anchor modern rooms",
-    image: "/home_decor/frames/minimal-wood-frame.webp",
+    image: "/home_decor/Frame-02/01.jpg",
     type: "decor",
     displayOrder: 5,
   },
@@ -71,7 +71,7 @@ const initialCategories = [
     name: "Table Decor",
     slug: "table-decor",
     description: "Small objects that bring function and stillness to daily spaces",
-    image: "/home_decor/frames/acrylic-modern-frame.webp",
+    image: "/home_decor/Frame-03/01.jpg",
     type: "decor",
     displayOrder: 6,
   },
@@ -89,19 +89,19 @@ const rawProducts = [
     id: 1,
     title: "Plain White T-shirt for Mens",
     slug: "plain-white-t-shirt-for-mens",
-    price: 490,
+    price: 349,
     mrp: 999,
     type: "fashion",
     category: "oversized",
     sizes: ["M", "L", "XL"],
-    colors: ["White", "Black", "Maroon", "Green"],
+    colors: ["White"],
     material: "100% Cotton",
     images: [
-      "/inventory/men/tshirts/plain-white-t-shirt01.jpg",
-      "/inventory/men/tshirts/plain-white-t-shirt02.webp",
-      "/inventory/men/tshirts/plain-white-t-shirt03.jpg",
+      "/products/media/plain-white-t-shirt01.webp",
+      "/products/media/plain-white-t-shirt02.webp",
+      "/products/media/plain-white-t-shirt03.jpg",
     ],
-    description: "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+    description: " ",
     highlights: ["180 GSM Pure 100% Cotton", "Structured neckline", "Easy everyday drape"],
     shippingLeadTime: "Dispatches within 48 hours",
     featured: true,
@@ -111,38 +111,39 @@ const rawProducts = [
     id: 2,
     title: "Plain Black T-shirt for Mens",
     slug: "plain-black-t-shirt-for-mens",
-    price: 490,
+    price: 349,
     mrp: 999,
     type: "fashion",
     category: "basics",
     sizes: ["M", "L", "XL"],
-    colors: ["White", "Black", "Maroon", "Green"],
+    colors: ["Black"],
     material: "100% Cotton",
     images: [
-      "/inventory/men/tshirts/mens-black-t-shirt01.webp",
-      "/inventory/men/tshirts/mens-black-t-shirt02.webp",
+      "/products/media/mens-black-t-shirt01.webp",
+      "/products/media/mens-black-t-shirt02.webp",
     ],
     description: "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
     summary: " ",
     highlights: ["Soft stretch", "Clean shoulder line", "Layering-ready"],
     shippingLeadTime: "Dispatches within 48 hours",
     featured: true,
+    bestSeller: true,
     newDrop: true,
   },
   {
     id: 3,
     title: "Green T-shirt for Men",
     slug: "green-t-shirt-for-men",
-    price: 599,
+    price: 349,
     mrp: 958,
     type: "fashion",
     category: "oversized",
     sizes: ["M", "L", "XL"],
-    colors: ["White", "Black", "Maroon", "Green"],
+    colors: ["Green"],
     material: "100% Cotton",
     images: [
-      "/inventory/men/tshirts/green-men-tshirt-01.webp",
-      "/inventory/men/tshirts/green-men-tshirt-02.webp",
+      "/products/media/green-men-tshirt-01.webp",
+      "/products/media/green-men-tshirt-02.webp",
     ],
     description: "  ",
     highlights: ["180 GSM Pure 100% Cotton", "Relaxed fit", "Ribbed collar"],
@@ -150,25 +151,24 @@ const rawProducts = [
     bestSeller: true,
   },
   {
-    id: 4,
-    title: "Men's Grey T-shirt",
-    slug: "mens-grey-t-shirt",
-    price: 599,
+    id: 5,
+    title: "Maroon T-shirt for Men",
+    slug: "maroon-t-shirt-for-men",
+    price: 349,
     mrp: 958,
     type: "fashion",
-    category: "basics",
+    category: "oversized",
     sizes: ["M", "L", "XL"],
-    colors: ["White", "Black", "Maroon", "Green"],
+    colors: ["Maroon"],
     material: "100% Cotton",
     images: [
-      "/inventory/men/tshirts/maroon-mens-tshirt-01.webp",
-      "/inventory/men/tshirts/maroon-mens-tshirt-01-02.webp",
-      "/inventory/men/tshirts/maroon-mens-tshirt-01-03.webp",
+      "/products/media/maroon-mens-tshirt-01.webp",
     ],
-    description: "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
+    description: "A rich maroon tee with a calm oversized shape and premium everyday finish.",
     summary: " ",
-    highlights: ["Soft stretch", "Clean shoulder line", "Layering-ready"],
+    highlights: ["180 GSM Pure 100% Cotton", "Relaxed fit", "Ribbed collar"],
     shippingLeadTime: "Dispatches within 48 hours",
+    featured: true,
     bestSeller: true,
   },
   {
@@ -252,7 +252,7 @@ rawProducts.forEach((p, idx) => {
   let rawImages = Array.isArray(p.images) ? p.images : [];
   const normalizedImages = rawImages.map((img) => (typeof img === "string" ? img : img?.url)).filter(Boolean);
 
-  const price = typeof p.price === "number" ? p.price : 490;
+  const price = typeof p.price === "number" ? p.price : 349;
   const mrp = p.mrp || p.comparePrice || Math.round(price * 1.6);
   const baseSku = p.sku || `ALP-${(p.category || "GEN").toUpperCase().slice(0, 3)}-${String(p.id || idx + 1).padStart(3, "0")}`;
 
@@ -285,7 +285,7 @@ rawProducts.forEach((p, idx) => {
 
   // Clean description and summary of the old sentence
   const oldSentence = "A dense oversized tee built for everyday rotation and clean structure.";
-  const cleanDescription = (p.description || "").replace(oldSentence, "").trim() || "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.";
+  const cleanDescription = (p.description || "").replace(oldSentence, "").trim() || " ";
   const cleanSummary = p.summary === oldSentence ? undefined : (p.summary || "").replace(oldSentence, "").trim() || undefined;
 
   const productDoc = {

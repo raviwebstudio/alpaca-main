@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { BlogPost } from "@/lib/storefront";
+import { InteractiveSiteImage } from "@/components/storefront/interactive-site-image";
 
 export function BlogCard({ post }: { post: BlogPost }) {
   return (
@@ -10,12 +10,11 @@ export function BlogCard({ post }: { post: BlogPost }) {
       className="group surface-card overflow-hidden transition duration-500 hover:-translate-y-1 hover:shadow-premium"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
-        <Image
+        <InteractiveSiteImage
           src={post.coverImage}
           alt={post.title}
-          fill
           sizes="(min-width: 1024px) 33vw, 100vw"
-          className="object-cover transition duration-700 group-hover:scale-[1.03]"
+          containerClassName="w-full h-full"
         />
       </div>
       <div className="space-y-4 p-5">

@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { SITE_IMAGES } from '@/lib/siteImages';
 
 function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -256,7 +257,7 @@ export function SiteFooter() {
             <div>
               <div style={{ marginBottom: '16px' }}>
                 <Image
-                  src="/assets/logo-black.png"
+                  src={SITE_IMAGES.logo}
                   alt="ALPACA"
                   width={2316}
                   height={590}

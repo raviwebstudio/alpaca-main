@@ -1,11 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import { getOptimizedImageUrl } from "@/lib/imageUtils";
 
 export function ProductGallery({ images, alt }: { images: string[]; alt: string }) {
-  const [activeImage, setActiveImage] = useState(images[0]);
+  const safeImages = Array.isArray(images) && images.length > 0 ? images : ["/products/media/plain-white-t-shirt01.webp"];
+  const [activeImage, setActiveImage] = useState(safeImages[0]);
+
+  useEffect(() => {
+    if (images && images.length > 0) {
+      setActiveImage(images[0]);
+    }
+  }, [images]);
 
   return (
     <div className="min-w-0 space-y-4">
@@ -20,7 +28,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
             className="absolute inset-0"
           >
             <Image
-              src={activeImage}
+              src={getOptimizedImageUrl(activeImage)}
               alt={alt}
               fill
               sizes="(min-width: 1024px) 48vw, 100vw"
@@ -32,7 +40,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
       </div>
 
       <div className="flex gap-3 overflow-x-auto pb-1 no-scrollbar">
-        {images.map((image, index) => (
+        {safeImages.map((image, index) => (
           <motion.button
             key={`${image}-${index}`}
             type="button"
@@ -46,7 +54,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
             }`}
           >
             <Image
-              src={image}
+              src={getOptimizedImageUrl(image)}
               alt={`${alt} view ${index + 1}`}
               fill
               sizes="(min-width: 768px) 80px, 64px"

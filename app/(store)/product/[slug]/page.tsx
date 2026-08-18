@@ -9,6 +9,8 @@ type ProductPageProps = {
   }>;
 };
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
   const products = await getProducts();
   return products.map((product) => ({
@@ -29,13 +31,15 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     };
   }
 
+  const primaryImage = typeof product.images[0] === 'string' ? product.images[0] : (product.images[0] as any)?.url;
+
   return {
     title: product.title,
     description: product.summary ?? product.description,
     openGraph: {
       title: `${product.title} | ALPACA`,
       description: product.summary ?? product.description,
-      images: [typeof product.images[0] === 'string' ? product.images[0] : (product.images[0] as any).url],
+      images: primaryImage ? [primaryImage] : [],
     },
   };
 }
@@ -49,5 +53,5 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  return <ProductDetails product={product} />;
+  return <ProductDetails product={product} allProducts={products} />;
 }

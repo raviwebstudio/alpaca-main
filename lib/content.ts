@@ -154,6 +154,9 @@ export interface AnalyticsSummary {
   recentOrders: ContentOrder[];
   ordersByStatus: Record<string, number>;
   categoryBreakdown: Array<{ category: string; count: number; revenue: number }>;
+  ordersByDay?: Array<{ date: string; orders: number; revenue: number }>;
+  topProducts?: any[];
+  lowStockProducts?: any[];
 }
 
 // Directory Paths
@@ -563,6 +566,8 @@ export function getAnalyticsSummary(): AnalyticsSummary {
     revenue: stats.revenue,
   }));
 
+  const lowStockProducts = inventory.filter((item) => item.isLowStock || item.isOutOfStock);
+
   return {
     totalRevenue,
     totalOrders,
@@ -574,5 +579,8 @@ export function getAnalyticsSummary(): AnalyticsSummary {
     recentOrders: orders.slice(0, 8),
     ordersByStatus,
     categoryBreakdown,
+    ordersByDay: [],
+    topProducts: products.slice(0, 5),
+    lowStockProducts,
   };
 }

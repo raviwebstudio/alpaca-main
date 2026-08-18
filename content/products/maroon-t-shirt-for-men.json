@@ -1,0 +1,80 @@
+{
+  "id": "5",
+  "title": "Maroon T-shirt for Men",
+  "slug": "maroon-t-shirt-for-men",
+  "price": 349,
+  "mrp": 958,
+  "stock": 300,
+  "lowStockThreshold": 10,
+  "sku": "ALP-OVE-005",
+  "category": "oversized",
+  "type": "fashion",
+  "status": "published",
+  "sizes": [
+    "M",
+    "L",
+    "XL"
+  ],
+  "colors": [
+    "Maroon"
+  ],
+  "variants": [
+    {
+      "sku": "ALP-OVE-005-MAR-M",
+      "size": "M",
+      "color": "Maroon",
+      "colorHex": "#800000",
+      "price": 349,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/products/media/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-OVE-005-MAR-L",
+      "size": "L",
+      "color": "Maroon",
+      "colorHex": "#800000",
+      "price": 349,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/products/media/maroon-mens-tshirt-01.webp"
+    },
+    {
+      "sku": "ALP-OVE-005-MAR-XL",
+      "size": "XL",
+      "color": "Maroon",
+      "colorHex": "#800000",
+      "price": 349,
+      "mrp": 958,
+      "stock": 25,
+      "image": "/products/media/maroon-mens-tshirt-01.webp"
+    }
+  ],
+  "images": [
+    "/products/media/maroon-mens-tshirt-01.webp"
+  ],
+  "description": "A rich maroon tee with a calm oversized shape and premium everyday finish.",
+  "summary": "Rich maroon tee with a clean relaxed fit.",
+  "highlights": [
+    "180 GSM Pure 100% Cotton",
+    "Relaxed fit",
+    "Ribbed collar"
+  ],
+  "material": "100% Cotton",
+  "shippingLeadTime": "Dispatches within 48 hours",
+  "featured": true,
+  "bestSeller": true,
+  "newDrop": false,
+  "seo": {
+    "metaTitle": "Maroon T-shirt for Men | ALPAZA Luxury Essentials",
+    "metaDescription": "A rich maroon tee with a calm oversized shape and premium everyday finish.",
+    "keywords": [
+      "alpaca",
+      "oversized",
+      "luxury",
+      "minimalist"
+    ]
+  },
+  "updatedAt": "2026-08-18T14:17:48.557Z",
+  "badge": "Limited Edition"
+}

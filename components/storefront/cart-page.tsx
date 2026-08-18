@@ -7,6 +7,7 @@ import { CheckoutProgress } from "@/components/storefront/checkout-progress";
 import { FadeIn } from "@/components/storefront/fade-in";
 import { OrderSummaryCard } from "@/components/storefront/order-summary-card";
 import { useCart } from "@/components/storefront/cart-provider";
+import { getOptimizedImageUrl } from "@/lib/imageUtils";
 import { formatPrice } from "@/lib/storefront";
 
 export function CartPage() {
@@ -56,7 +57,7 @@ export function CartPage() {
             >
               <div className="group relative aspect-[4/5] overflow-hidden rounded-[24px] bg-surface-muted">
                 <Image
-                  src={item.image}
+                  src={getOptimizedImageUrl(item.image)}
                   alt={item.title}
                   fill
                   sizes="160px"

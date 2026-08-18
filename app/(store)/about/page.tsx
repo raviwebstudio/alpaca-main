@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SectionHeading } from "@/components/storefront/section-heading";
+import { AboutHeroImage } from "@/components/storefront/about-hero-image";
 import { reasons } from "@/lib/storefront";
 
 export const metadata: Metadata = {
@@ -17,6 +18,9 @@ const principles = [
 export default function AboutPage() {
   return (
     <div className="shell section-space space-y-16">
+      {/* Hero Editorial Lifestyle Image with Subtle Ken Burns Effect */}
+      <AboutHeroImage />
+
       <SectionHeading
         eyebrow="About ALPACA"
         title="A fashion brand built around pace, softness, and restraint."
@@ -61,7 +65,7 @@ export default function AboutPage() {
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {reasons.map((reason) => (
           <div key={reason.title} className="surface-card rounded-[28px] p-6">
-            <h3 className="text-3xl text-dark">{reason.title}</h3>
+            <h3 className="text-2xl text-dark">{reason.title}</h3>
             <p className="mt-3 text-sm leading-7 text-text-secondary">{reason.description}</p>
           </div>
         ))}

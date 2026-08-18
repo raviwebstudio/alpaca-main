@@ -30,6 +30,7 @@ export async function getProducts(): Promise<Product[]> {
     featured: p.featured,
     bestSeller: p.bestSeller,
     newDrop: p.newDrop,
+    updatedAt: p.updatedAt,
   }));
 }
 

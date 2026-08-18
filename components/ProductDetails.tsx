@@ -1,18 +1,16 @@
 import Link from "next/link";
-import { ArrowLeft, ShieldCheck, Store, Truck } from "lucide-react";
+import { ArrowLeft, Store, Truck } from "lucide-react";
 import {
   getCategoryLabel,
   getFallbackProducts,
-  getRelatedProducts,
   products,
   ENABLE_HOME_DECOR,
   type Product,
 } from "@/data/products";
 import { FadeIn } from "@/components/storefront/fade-in";
-import { ProductCarousel } from "@/components/storefront/product-carousel";
+import { ProductCard } from "@/components/ProductCard";
 import { ProductGallery } from "@/components/storefront/product-gallery";
-import { PRODUCT_COLOR_HEX, PurchasePanel } from "@/components/storefront/purchase-panel";
-import { formatPrice } from "@/lib/storefront";
+import { PurchasePanel } from "@/components/storefront/purchase-panel";
 
 const PRODUCT_FAQS = [
   {
@@ -27,14 +25,15 @@ const PRODUCT_FAQS = [
   },
 ];
 
-export function ProductDetails({ product }: { product: Product }) {
+export function ProductDetails({ product, allProducts }: { product: Product; allProducts?: Product[] }) {
   const isFashion = product.type === "fashion";
-  const tshirtProducts = products.filter((item) => item.type === "fashion");
+  const productList = allProducts && allProducts.length > 0 ? allProducts : products;
+  const tshirtProducts = productList.filter((item) => item.type === "fashion");
   const otherTshirts = tshirtProducts.filter((item) => item.slug !== product.slug);
   const similarProducts = isFashion
     ? (otherTshirts.length > 0 ? otherTshirts.slice(0, 4) : tshirtProducts.slice(0, 4))
     : ENABLE_HOME_DECOR
-      ? getFallbackProducts(4, "decor").filter((item) => item.slug !== product.slug).slice(0, 4)
+      ? getFallbackProducts(4, "decor", productList).filter((item) => item.slug !== product.slug).slice(0, 4)
       : tshirtProducts.slice(0, 4);
   const backHref = product.type === "decor" && ENABLE_HOME_DECOR ? "/home-decor" : "/shop";
 
@@ -49,9 +48,6 @@ export function ProductDetails({ product }: { product: Product }) {
             <ArrowLeft className="h-4 w-4" />
             Back to {product.type === "decor" && ENABLE_HOME_DECOR ? "home decor" : "shop"}
           </Link>
-          <p className="text-sm text-text-secondary">
-            {getCategoryLabel(product.category)} / Ships {(product.shippingLeadTime ?? "dispatches within 48 hours").toLowerCase()}
-          </p>
         </div>
       </FadeIn>
 
@@ -67,8 +63,9 @@ export function ProductDetails({ product }: { product: Product }) {
       </FadeIn>
 
       <FadeIn>
-        <section className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(300px,0.9fr)]">
-          <div className="space-y-8">
+        <section className="space-y-8">
+          {/* Top Information Row: Description & Delivery */}
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(300px,0.9fr)]">
             <div className="surface-card rounded-[32px] p-6 sm:p-8">
               <p className="eyebrow">Description</p>
               <h2 className="mt-4 text-4xl text-dark sm:text-5xl">What you are getting.</h2>
@@ -86,27 +83,6 @@ export function ProductDetails({ product }: { product: Product }) {
             </div>
 
             <div className="surface-card rounded-[32px] p-6 sm:p-8">
-              <p className="eyebrow">FAQ</p>
-              <div className="mt-5 divide-y divide-line">
-                {PRODUCT_FAQS.map((faq) => (
-                  <details key={faq.question} className="group py-5">
-                    <summary className="cursor-pointer list-none text-xl text-dark">
-                      <span className="flex items-center justify-between gap-4">
-                        {faq.question}
-                        <span className="text-sm font-semibold uppercase tracking-[0.24em] text-text-secondary transition group-open:rotate-45">
-                          +
-                        </span>
-                      </span>
-                    </summary>
-                    <p className="mt-4 max-w-3xl text-sm leading-7 text-text-secondary">{faq.answer}</p>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <div className="surface-card rounded-[32px] p-6 sm:p-8">
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-soft">
@@ -117,20 +93,6 @@ export function ProductDetails({ product }: { product: Product }) {
                     <p className="mt-2 text-sm leading-7 text-text-secondary">
                       {product.shippingLeadTime ?? "Dispatches within 48 hours"}. You will review your cart before entering address and
                       payment details.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-soft">
-                    <ShieldCheck className="h-5 w-5 text-dark" />
-                  </span>
-                  <div>
-                    <h3 className="text-2xl text-dark">{product.type === "decor" ? "Material and finish" : "Fit and fabric"}</h3>
-                    <p className="mt-2 text-sm leading-7 text-text-secondary">
-                      {product.type === "decor"
-                        ? `Made from ${product.material?.toLowerCase() ?? "premium materials"} for modern spaces.`
-                        : `Built for movement. Made from ${product.material?.toLowerCase() ?? "premium materials"}.`}
                     </p>
                   </div>
                 </div>
@@ -148,21 +110,47 @@ export function ProductDetails({ product }: { product: Product }) {
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="surface-card rounded-[32px] p-6 sm:p-8">
-              <p className="eyebrow">How checkout works</p>
-              <ol className="mt-4 space-y-3 text-sm leading-7 text-text-secondary sm:text-base">
-                <li>1. Choose the product configuration.</li>
-                <li>2. Add the product to cart or continue straight to cart.</li>
-                <li>3. Confirm address and payment on the next screens.</li>
-              </ol>
+          {/* Lower Information Row: How Checkout Works (Left) and FAQ (Right) - Exactly matching container width with equal height */}
+          <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2 items-stretch">
+            <div className="surface-card flex h-full flex-col justify-between rounded-[32px] p-6 sm:p-8">
+              <div>
+                <p className="eyebrow">How checkout works</p>
+                <ol className="mt-5 space-y-4 text-base leading-8 text-text-secondary sm:text-lg">
+                  <li>1. Choose the product configuration.</li>
+                  <li>2. Add the product to cart or continue straight to cart.</li>
+                  <li>3. Confirm address and payment on the next screens.</li>
+                </ol>
+              </div>
+            </div>
+
+            <div className="surface-card flex h-full flex-col justify-between rounded-[32px] p-6 sm:p-8">
+              <div>
+                <p className="eyebrow">FAQ</p>
+                <div className="mt-5 divide-y divide-line">
+                  {PRODUCT_FAQS.map((faq) => (
+                    <details key={faq.question} className="group py-5">
+                      <summary className="cursor-pointer list-none text-xl text-dark">
+                        <span className="flex items-center justify-between gap-4">
+                          {faq.question}
+                          <span className="text-sm font-semibold uppercase tracking-[0.24em] text-text-secondary transition group-open:rotate-45">
+                            +
+                          </span>
+                        </span>
+                      </summary>
+                      <p className="mt-4 max-w-3xl text-sm leading-7 text-text-secondary">{faq.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
       </FadeIn>
 
       <FadeIn>
-        <section className="min-w-0">
+        <section className="min-w-0 pt-6 sm:pt-10 md:pt-12">
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="eyebrow">Related products</p>
@@ -175,8 +163,12 @@ export function ProductDetails({ product }: { product: Product }) {
               </p>
             </div>
           </div>
-          <div className="mt-10 min-w-0">
-            <ProductCarousel products={similarProducts} />
+          <div className="mt-10 grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 w-full">
+            {tshirtProducts.slice(0, 4).map((item, index) => (
+              <FadeIn key={item.id} delay={0.02 * index} className="h-full">
+                <ProductCard product={item} className="h-full" />
+              </FadeIn>
+            ))}
           </div>
         </section>
       </FadeIn>
@@ -215,12 +207,18 @@ export function ProductFallback({ slug }: { slug: string }) {
       </FadeIn>
 
       <FadeIn delay={0.05}>
-        <section className="space-y-4">
+        <section className="space-y-6">
           <div>
             <p className="eyebrow">Available now</p>
             <h2 className="mt-3 text-4xl text-dark sm:text-5xl">Try one of these instead.</h2>
           </div>
-          <ProductCarousel products={suggestions} />
+          <div className="grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 w-full">
+            {suggestions.map((item, index) => (
+              <FadeIn key={item.id} delay={0.02 * index} className="h-full">
+                <ProductCard product={item} className="h-full" />
+              </FadeIn>
+            ))}
+          </div>
         </section>
       </FadeIn>
     </div>

@@ -13,6 +13,7 @@ export type Product = {
   title: string;
   slug: string;
   price: number;
+  mrp?: number;
   type: ProductType;
   category: ProductCategory;
   sizes?: string[];
@@ -27,6 +28,8 @@ export type Product = {
   featured?: boolean;
   bestSeller?: boolean;
   newDrop?: boolean;
+  badge?: string;
+  updatedAt?: string;
 };
 
 export type ProductFilters = {
@@ -65,82 +68,88 @@ export const allProducts: Product[] = [
     id: 1,
     title: "Plain White T-shirt for Mens",
     slug: "plain-white-t-shirt-for-mens",
-    price: 490,
+    price: 349,
     type: "fashion",
     category: "oversized",
     sizes: ["M", "L", "XL"],
-    colors: ["White", "Black", "Maroon", "Green"],
+    colors: ["White"],
     material: "100% Cotton",
     images: [
-      "/inventory/men/tshirts/plain-white-t-shirt01.jpg",
-      "/inventory/men/tshirts/plain-white-t-shirt02.webp",
-      "/inventory/men/tshirts/plain-white-t-shirt03.jpg",
+      "/products/media/plain-white-t-shirt01.webp",
+      "/products/media/plain-white-t-shirt02.webp",
+      "/products/media/plain-white-t-shirt03.jpg",
     ],
-    description: "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+    description: " ",
+    summary: "Clean heavyweight cotton tee for everyday wear.",
     highlights: ["180 GSM Pure 100% Cotton", "Structured neckline", "Easy everyday drape"],
     shippingLeadTime: "Dispatches within 48 hours",
     featured: true,
     bestSeller: true,
+    badge: "Signature",
   },
   {
     id: 2,
     title: "Plain Black T-shirt for Mens",
     slug: "plain-black-t-shirt-for-mens",
-    price: 490,
+    price: 349,
     type: "fashion",
     category: "basics",
     sizes: ["M", "L", "XL"],
-    colors: ["White", "Black", "Maroon", "Green"],
+    colors: ["Black"],
     material: "100% Cotton",
     images: [
-      "/inventory/men/tshirts/mens-black-t-shirt01.webp",
-      "/inventory/men/tshirts/mens-black-t-shirt02.webp",
+      "/products/media/mens-black-t-shirt01.webp",
+      "/products/media/mens-black-t-shirt02.webp",
     ],
     description: "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
-    summary: "A close-fit tee designed for layering, warm days, and a cleaner line.",
+    summary: "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
     highlights: ["Soft stretch", "Clean shoulder line", "Layering-ready"],
     shippingLeadTime: "Dispatches within 48 hours",
     bestSeller: true,
+    badge: "Bestseller",
   }, {
     id: 3,
     title: "Green T-shirt for Men",
     slug: "green-t-shirt-for-men",
-    price: 599,
+    price: 349,
     type: "fashion",
     category: "oversized",
     sizes: ["M", "L", "XL"],
-    colors: ["White", "Black", "Maroon", "Green"],
+    colors: ["Green"],
     material: "100% Cotton",
     images: [
-      "/inventory/men/tshirts/green-men-tshirt-01.webp",
-      "/inventory/men/tshirts/green-men-tshirt-02.webp",
+      "/products/media/green-men-tshirt-01.webp",
+      "/products/media/green-men-tshirt-02.webp",
     ],
-    description: "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+    description: " ",
+    summary: "Bold oversized tee built for everyday movement.",
     highlights: ["180 GSM Pure 100% Cotton", "Structured neckline", "Easy everyday drape"],
     shippingLeadTime: "Dispatches within 48 hours",
     featured: true,
     bestSeller: true,
+    badge: "New Drop",
   },
   {
     id: 4,
-    title: "Men's Grey T-shirt",
-    slug: "mens-grey-t-shirt",
-    price: 599,
+    title: "Maroon T-shirt for Men",
+    slug: "maroon-t-shirt-for-men",
+    price: 349,
+    mrp: 958,
     type: "fashion",
-    category: "basics",
+    category: "oversized",
     sizes: ["M", "L", "XL"],
-    colors: ["White", "Black", "Maroon", "Green"],
+    colors: ["Maroon"],
     material: "100% Cotton",
     images: [
-      "/inventory/men/tshirts/maroon-mens-tshirt-01.webp",
-      "/inventory/men/tshirts/maroon-mens-tshirt-01-02.webp",
-      "/inventory/men/tshirts/maroon-mens-tshirt-01-03.webp",
+      "/products/media/maroon-mens-tshirt-01.webp",
     ],
-    description: "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
-    summary: "A close-fit tee designed for layering, warm days, and a cleaner line.",
-    highlights: ["Soft stretch", "Clean shoulder line", "Layering-ready"],
+    description: "A rich maroon tee with a calm oversized shape and premium everyday finish.",
+    summary: "Rich maroon tee with a clean relaxed fit.",
+    highlights: ["180 GSM Pure 100% Cotton", "Relaxed fit", "Ribbed collar"],
     shippingLeadTime: "Dispatches within 48 hours",
+    featured: true,
     bestSeller: true,
+    badge: "Limited Edition",
   },
   {
     id: 101,
@@ -152,7 +161,7 @@ export const allProducts: Product[] = [
     style: "Minimal",
     material: "Wood",
     images: [
-      "/home_decor/frames/radha-krishna.webp",
+      "/home_decor/Frame-01/01.jpg",
     ],
     description: "A balanced wall piece with quiet geometry and enough presence to anchor a room.",
     summary: "Modern wall art with restrained proportion and soft contrast.",
@@ -170,7 +179,7 @@ export const allProducts: Product[] = [
     style: "Modern",
     material: "Wood",
     images: [
-      "/home_decor/frames/12x18-frame.webp",
+      "/home_decor/Frame-02/01.jpg",
     ],
     description: "A balanced wall piece with quiet geometry and enough presence to anchor a room.",
     summary: "Modern wall art with restrained proportion and soft contrast.",
@@ -203,7 +212,7 @@ export const allProducts: Product[] = [
     id: 104,
     title: "Frame | Home Decor | 12x18 inch",
     slug: "wood-frame",
-    price: 599,
+    price: 349,
     type: "decor",
     category: "frames",
     style: "Minimal",
@@ -255,31 +264,31 @@ export const getCategoryLabel = (category: ProductCategory | string) =>
 
 export const getColorLabel = (color: string) => color;
 
-export const getProductBySlug = (slug: string) =>
-  products.find((product) => product.slug === slug);
+export const getProductBySlug = (slug: string, source: Product[] = products) =>
+  source.find((product) => product.slug === slug);
 
-export const getRelatedProducts = (slug: string, category: ProductCategory, limit = 4) =>
-  products
+export const getRelatedProducts = (slug: string, category: ProductCategory, limit = 4, source: Product[] = products) =>
+  source
     .filter((product) => product.slug !== slug && product.category === category)
     .slice(0, limit);
 
-export const getFeaturedProducts = (limit = 15, type?: ProductType) =>
-  products
+export const getFeaturedProducts = (limit = 15, type?: ProductType, source: Product[] = products) =>
+  source
     .filter((product) => product.featured && (!type || product.type === type))
     .slice(0, limit);
 
-export const getBestSellerProducts = (limit = 6, type: ProductType = "fashion") =>
-  products
+export const getBestSellerProducts = (limit = 6, type: ProductType = "fashion", source: Product[] = products) =>
+  source
     .filter((product) => product.bestSeller && product.type === type)
     .slice(0, limit);
 
-export const getNewDropProducts = (limit = 6, type: ProductType = "fashion") =>
-  products
+export const getNewDropProducts = (limit = 6, type: ProductType = "fashion", source: Product[] = products) =>
+  source
     .filter((product) => product.newDrop && product.type === type)
     .slice(0, limit);
 
-export const getFallbackProducts = (limit = 4, type?: ProductType) => {
-  const scoped = type ? products.filter((product) => product.type === type) : products;
+export const getFallbackProducts = (limit = 4, type?: ProductType, source: Product[] = products) => {
+  const scoped = type ? source.filter((product) => product.type === type) : source;
   const featured = scoped.filter((product) => product.featured).slice(0, limit);
   return featured.length ? featured : scoped.slice(0, limit);
 };

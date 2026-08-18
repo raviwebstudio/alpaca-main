@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ENABLE_HOME_DECOR } from "@/data/products";
+import { SITE_IMAGES } from "@/lib/siteImages";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <img
-              src="/assets/images/plain-clothing02.jpg"
+              src={SITE_IMAGES.footer.heroBannerBg}
               alt="Premium clothing background"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -50,10 +51,10 @@ export default function Footer() {
       {/* ===== SECTION 2: FOOTER GRID ===== */}
       <section className="px-4 pb-16 pt-8 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
             {/* LEFT SIDE: Brand & Description */}
             <div className="lg:col-span-1">
-              <a href="/"><img src="/assets/logo-white.png" alt="ALPACA" className="footer-logo mb-5" /></a>
+              <a href="/"><img src={SITE_IMAGES.logoWhite} alt="ALPACA" className="footer-logo mb-5" /></a>
               <p className="mt-4 text-sm leading-relaxed text-white/60">
                 Minimal, premium essentials for everyday movement. Curated
                 oversized tees, refined basics, and new drops.
@@ -64,64 +65,15 @@ export default function Footer() {
                 <a href="mailto:contact@alpacaa.in" className="text-sm text-white/60 transition-colors duration-200 hover:text-white">Support@alpacaa.in</a>
               </div>
               {/* <div className="social-icons d-flex">
-                <a href="https://www.instagram.com/alpacaa.in/"><img src="https://thumbs.dreamstime.com/b/social-media-instagram-icon-transparent-background-172928815.jpg" alt="Instagram" className="w-8 h-8" /></a>
-                <a href="https://www.facebook.com/alpacaa.in/"><img src="https://www.logo.wine/a/logo/Facebook/Facebook-f_Logo-Blue-Logo.wine.svg" alt="Facebook" className="w-8 h-8" /></a>
-                <a href="https://whatsapp://send?phone=+918262948016"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/3840px-WhatsApp.svg.png" alt="Whatsapp" className="w-8 h-8" /></a>
+                <a href="https://www.instagram.com/alpacaa.in/"><img src={SITE_IMAGES.socialIcons.instagram} alt="Instagram" className="w-8 h-8" /></a>
+                <a href="https://www.facebook.com/alpacaa.in/"><img src={SITE_IMAGES.socialIcons.facebook} alt="Facebook" className="w-8 h-8" /></a>
+                <a href="https://whatsapp://send?phone=+918262948016"><img src={SITE_IMAGES.socialIcons.whatsapp} alt="Whatsapp" className="w-8 h-8" /></a>
               </div> */}
             </div>
 
             {/* RIGHT SIDE: Link Columns */}
-            <div className="grid grid-cols-2 gap-8 sm:col-span-1 sm:grid-cols-3 lg:col-span-3 lg:grid-cols-3">
-              {/* Column 1: Shop */}
-              <div>
-                <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#C8956C]">
-                  Shop
-                </h4>
-                <ul className="space-y-3">
-                  <li>
-                    <Link
-                      href="/shop"
-                      className="text-sm text-white/60 transition-colors duration-200 hover:text-white"
-                    >
-                      All Products
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/shop?category=new-arrivals"
-                      className="text-sm text-white/60 transition-colors duration-200 hover:text-white"
-                    >
-                      New Arrivals
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/shop?category=oversized"
-                      className="text-sm text-white/60 transition-colors duration-200 hover:text-white"
-                    >
-                      Oversized
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/shop?category=basics"
-                      className="text-sm text-white/60 transition-colors duration-200 hover:text-white"
-                    >
-                      Basics
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/shop?category=outerwear"
-                      className="text-sm text-white/60 transition-colors duration-200 hover:text-white"
-                    >
-                      Outerwear
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Column 2: Company */}
+            <div className="grid grid-cols-2 gap-8 sm:col-span-1 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-2 lg:pl-12">
+              {/* Column 1: Company / Quick Links */}
               <div>
                 <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#C8956C]">
                   Quick Links

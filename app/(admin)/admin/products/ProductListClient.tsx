@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { formatPrice } from "@/lib/storefront";
 import type { ContentProduct } from "@/lib/content";
+import { SITE_IMAGES } from "@/lib/siteImages";
 
 interface ProductListClientProps {
   initialProducts: ContentProduct[];
@@ -156,7 +157,7 @@ export function ProductListClient({ initialProducts }: ProductListClientProps) {
                 </tr>
               ) : (
                 filteredProducts.map((product) => {
-                  const image = product.images?.[0] || "/assets/images/plain-clothing01.jpg";
+                  const image = product.images?.[0] || SITE_IMAGES.placeholders.product;
                   const variantCount = product.variants?.length || 0;
                   const totalStock = product.stock || 0;
                   const isLow = totalStock > 0 && totalStock <= (product.lowStockThreshold || 10);

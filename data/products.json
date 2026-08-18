@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Plain White T-shirt for Mens",
     "slug": "plain-white-t-shirt-for-mens",
-    "price": 490,
+    "price": 349,
     "mrp": 999,
     "stock": 300,
     "lowStockThreshold": 10,
@@ -17,10 +17,7 @@
       "XL"
     ],
     "colors": [
-      "White",
-      "Black",
-      "Maroon",
-      "Green"
+      "White"
     ],
     "variants": [
       {
@@ -28,128 +25,39 @@
         "size": "M",
         "color": "White",
         "colorHex": "#FFFFFF",
-        "price": 490,
+        "price": 349,
         "mrp": 999,
         "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+        "image": "/products/media/plain-white-t-shirt01.webp"
       },
       {
         "sku": "ALP-OVE-001-WHI-L",
         "size": "L",
         "color": "White",
         "colorHex": "#FFFFFF",
-        "price": 490,
+        "price": 349,
         "mrp": 999,
         "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+        "image": "/products/media/plain-white-t-shirt01.webp"
       },
       {
         "sku": "ALP-OVE-001-WHI-XL",
         "size": "XL",
         "color": "White",
         "colorHex": "#FFFFFF",
-        "price": 490,
+        "price": 349,
         "mrp": 999,
         "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-      },
-      {
-        "sku": "ALP-OVE-001-BLA-M",
-        "size": "M",
-        "color": "Black",
-        "colorHex": "#000000",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-      },
-      {
-        "sku": "ALP-OVE-001-BLA-L",
-        "size": "L",
-        "color": "Black",
-        "colorHex": "#000000",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-      },
-      {
-        "sku": "ALP-OVE-001-BLA-XL",
-        "size": "XL",
-        "color": "Black",
-        "colorHex": "#000000",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-      },
-      {
-        "sku": "ALP-OVE-001-MAR-M",
-        "size": "M",
-        "color": "Maroon",
-        "colorHex": "#800000",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-      },
-      {
-        "sku": "ALP-OVE-001-MAR-L",
-        "size": "L",
-        "color": "Maroon",
-        "colorHex": "#800000",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-      },
-      {
-        "sku": "ALP-OVE-001-MAR-XL",
-        "size": "XL",
-        "color": "Maroon",
-        "colorHex": "#800000",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-      },
-      {
-        "sku": "ALP-OVE-001-GRE-M",
-        "size": "M",
-        "color": "Green",
-        "colorHex": "#2E5A36",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-      },
-      {
-        "sku": "ALP-OVE-001-GRE-L",
-        "size": "L",
-        "color": "Green",
-        "colorHex": "#2E5A36",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
-      },
-      {
-        "sku": "ALP-OVE-001-GRE-XL",
-        "size": "XL",
-        "color": "Green",
-        "colorHex": "#2E5A36",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/plain-white-t-shirt01.jpg"
+        "image": "/products/media/plain-white-t-shirt01.webp"
       }
     ],
     "images": [
-      "/inventory/men/tshirts/plain-white-t-shirt01.jpg",
-      "/inventory/men/tshirts/plain-white-t-shirt02.webp",
-      "/inventory/men/tshirts/plain-white-t-shirt03.jpg"
+      "/products/media/plain-white-t-shirt01.webp",
+      "/products/media/plain-white-t-shirt02.webp",
+      "/products/media/plain-white-t-shirt03.jpg"
     ],
-    "description": "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+    "description": " ",
+    "summary": "Clean heavyweight cotton tee for everyday wear.",
     "highlights": [
       "180 GSM Pure 100% Cotton",
       "Structured neckline",
@@ -162,7 +70,7 @@
     "newDrop": false,
     "seo": {
       "metaTitle": "Plain White T-shirt for Mens | ALPAZA Luxury Essentials",
-      "metaDescription": "A clean heavyweight cotton tee with a calm oversized shape and premium everyday finish.",
+      "metaDescription": " ",
       "keywords": [
         "alpaca",
         "oversized",
@@ -170,13 +78,14 @@
         "minimalist"
       ]
     },
-    "updatedAt": "2026-08-18T14:17:48.556Z"
+    "updatedAt": "2026-08-18T14:17:48.556Z",
+    "badge": "Signature"
   },
   {
     "id": "2",
     "title": "Plain Black T-shirt for Mens",
     "slug": "plain-black-t-shirt-for-mens",
-    "price": 490,
+    "price": 349,
     "mrp": 999,
     "stock": 300,
     "lowStockThreshold": 10,
@@ -190,139 +99,46 @@
       "XL"
     ],
     "colors": [
-      "White",
-      "Black",
-      "Maroon",
-      "Green"
+      "Black"
     ],
     "variants": [
-      {
-        "sku": "ALP-BAS-002-WHI-M",
-        "size": "M",
-        "color": "White",
-        "colorHex": "#FFFFFF",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-      },
-      {
-        "sku": "ALP-BAS-002-WHI-L",
-        "size": "L",
-        "color": "White",
-        "colorHex": "#FFFFFF",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-      },
-      {
-        "sku": "ALP-BAS-002-WHI-XL",
-        "size": "XL",
-        "color": "White",
-        "colorHex": "#FFFFFF",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-      },
       {
         "sku": "ALP-BAS-002-BLA-M",
         "size": "M",
         "color": "Black",
         "colorHex": "#000000",
-        "price": 490,
+        "price": 349,
         "mrp": 999,
         "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+        "image": "/products/media/mens-black-t-shirt01.webp"
       },
       {
         "sku": "ALP-BAS-002-BLA-L",
         "size": "L",
         "color": "Black",
         "colorHex": "#000000",
-        "price": 490,
+        "price": 349,
         "mrp": 999,
         "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+        "image": "/products/media/mens-black-t-shirt01.webp"
       },
       {
         "sku": "ALP-BAS-002-BLA-XL",
         "size": "XL",
         "color": "Black",
         "colorHex": "#000000",
-        "price": 490,
+        "price": 349,
         "mrp": 999,
         "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-      },
-      {
-        "sku": "ALP-BAS-002-MAR-M",
-        "size": "M",
-        "color": "Maroon",
-        "colorHex": "#800000",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-      },
-      {
-        "sku": "ALP-BAS-002-MAR-L",
-        "size": "L",
-        "color": "Maroon",
-        "colorHex": "#800000",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-      },
-      {
-        "sku": "ALP-BAS-002-MAR-XL",
-        "size": "XL",
-        "color": "Maroon",
-        "colorHex": "#800000",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-      },
-      {
-        "sku": "ALP-BAS-002-GRE-M",
-        "size": "M",
-        "color": "Green",
-        "colorHex": "#2E5A36",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-      },
-      {
-        "sku": "ALP-BAS-002-GRE-L",
-        "size": "L",
-        "color": "Green",
-        "colorHex": "#2E5A36",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-      },
-      {
-        "sku": "ALP-BAS-002-GRE-XL",
-        "size": "XL",
-        "color": "Green",
-        "colorHex": "#2E5A36",
-        "price": 490,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+        "image": "/products/media/mens-black-t-shirt01.webp"
       }
     ],
     "images": [
-      "/inventory/men/tshirts/mens-black-t-shirt01.webp",
-      "/inventory/men/tshirts/mens-black-t-shirt02.webp"
+      "/products/media/mens-black-t-shirt01.webp",
+      "/products/media/mens-black-t-shirt02.webp"
     ],
     "description": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
-    "summary": " ",
+    "summary": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
     "highlights": [
       "Soft stretch",
       "Clean shoulder line",
@@ -331,7 +147,7 @@
     "material": "100% Cotton",
     "shippingLeadTime": "Dispatches within 48 hours",
     "featured": true,
-    "bestSeller": false,
+    "bestSeller": true,
     "newDrop": true,
     "seo": {
       "metaTitle": "Plain Black T-shirt for Mens | ALPAZA Luxury Essentials",
@@ -343,13 +159,14 @@
         "minimalist"
       ]
     },
-    "updatedAt": "2026-08-18T14:17:48.557Z"
+    "updatedAt": "2026-08-18T14:17:48.557Z",
+    "badge": "Bestseller"
   },
   {
     "id": "3",
     "title": "Green T-shirt for Men",
     "slug": "green-t-shirt-for-men",
-    "price": 599,
+    "price": 349,
     "mrp": 958,
     "stock": 300,
     "lowStockThreshold": 10,
@@ -363,138 +180,46 @@
       "XL"
     ],
     "colors": [
-      "White",
-      "Black",
-      "Maroon",
       "Green"
     ],
     "variants": [
-      {
-        "sku": "ALP-OVE-003-WHI-M",
-        "size": "M",
-        "color": "White",
-        "colorHex": "#FFFFFF",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-OVE-003-WHI-L",
-        "size": "L",
-        "color": "White",
-        "colorHex": "#FFFFFF",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-OVE-003-WHI-XL",
-        "size": "XL",
-        "color": "White",
-        "colorHex": "#FFFFFF",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-OVE-003-BLA-M",
-        "size": "M",
-        "color": "Black",
-        "colorHex": "#000000",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-OVE-003-BLA-L",
-        "size": "L",
-        "color": "Black",
-        "colorHex": "#000000",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-OVE-003-BLA-XL",
-        "size": "XL",
-        "color": "Black",
-        "colorHex": "#000000",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-OVE-003-MAR-M",
-        "size": "M",
-        "color": "Maroon",
-        "colorHex": "#800000",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-OVE-003-MAR-L",
-        "size": "L",
-        "color": "Maroon",
-        "colorHex": "#800000",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-OVE-003-MAR-XL",
-        "size": "XL",
-        "color": "Maroon",
-        "colorHex": "#800000",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
-      },
       {
         "sku": "ALP-OVE-003-GRE-M",
         "size": "M",
         "color": "Green",
         "colorHex": "#2E5A36",
-        "price": 599,
+        "price": 349,
         "mrp": 958,
         "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+        "image": "/products/media/green-men-tshirt-01.webp"
       },
       {
         "sku": "ALP-OVE-003-GRE-L",
         "size": "L",
         "color": "Green",
         "colorHex": "#2E5A36",
-        "price": 599,
+        "price": 349,
         "mrp": 958,
         "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+        "image": "/products/media/green-men-tshirt-01.webp"
       },
       {
         "sku": "ALP-OVE-003-GRE-XL",
         "size": "XL",
         "color": "Green",
         "colorHex": "#2E5A36",
-        "price": 599,
+        "price": 349,
         "mrp": 958,
         "stock": 25,
-        "image": "/inventory/men/tshirts/green-men-tshirt-01.webp"
+        "image": "/products/media/green-men-tshirt-01.webp"
       }
     ],
     "images": [
-      "/inventory/men/tshirts/green-men-tshirt-01.webp",
-      "/inventory/men/tshirts/green-men-tshirt-02.webp"
+      "/products/media/green-men-tshirt-01.webp",
+      "/products/media/green-men-tshirt-02.webp"
     ],
     "description": "  ",
+    "summary": "Bold oversized tee built for everyday movement.",
     "highlights": [
       "180 GSM Pure 100% Cotton",
       "Relaxed fit",
@@ -515,18 +240,19 @@
         "minimalist"
       ]
     },
-    "updatedAt": "2026-08-18T14:17:48.557Z"
+    "updatedAt": "2026-08-18T14:17:48.557Z",
+    "badge": "New Drop"
   },
   {
-    "id": "4",
-    "title": "Men's Grey T-shirt",
-    "slug": "mens-grey-t-shirt",
-    "price": 599,
+    "id": "5",
+    "title": "Maroon T-shirt for Men",
+    "slug": "maroon-t-shirt-for-men",
+    "price": 349,
     "mrp": 958,
     "stock": 300,
     "lowStockThreshold": 10,
-    "sku": "ALP-BAS-004",
-    "category": "basics",
+    "sku": "ALP-OVE-005",
+    "category": "oversized",
     "type": "fashion",
     "status": "published",
     "sizes": [
@@ -535,272 +261,66 @@
       "XL"
     ],
     "colors": [
-      "White",
-      "Black",
-      "Maroon",
-      "Green"
+      "Maroon"
     ],
     "variants": [
       {
-        "sku": "ALP-BAS-004-WHI-M",
-        "size": "M",
-        "color": "White",
-        "colorHex": "#FFFFFF",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-BAS-004-WHI-L",
-        "size": "L",
-        "color": "White",
-        "colorHex": "#FFFFFF",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-BAS-004-WHI-XL",
-        "size": "XL",
-        "color": "White",
-        "colorHex": "#FFFFFF",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-BAS-004-BLA-M",
-        "size": "M",
-        "color": "Black",
-        "colorHex": "#000000",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-BAS-004-BLA-L",
-        "size": "L",
-        "color": "Black",
-        "colorHex": "#000000",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-BAS-004-BLA-XL",
-        "size": "XL",
-        "color": "Black",
-        "colorHex": "#000000",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-BAS-004-MAR-M",
+        "sku": "ALP-OVE-005-MAR-M",
         "size": "M",
         "color": "Maroon",
         "colorHex": "#800000",
-        "price": 599,
+        "price": 349,
         "mrp": 958,
         "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+        "image": "/products/media/maroon-mens-tshirt-01.webp"
       },
       {
-        "sku": "ALP-BAS-004-MAR-L",
+        "sku": "ALP-OVE-005-MAR-L",
         "size": "L",
         "color": "Maroon",
         "colorHex": "#800000",
-        "price": 599,
+        "price": 349,
         "mrp": 958,
         "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+        "image": "/products/media/maroon-mens-tshirt-01.webp"
       },
       {
-        "sku": "ALP-BAS-004-MAR-XL",
+        "sku": "ALP-OVE-005-MAR-XL",
         "size": "XL",
         "color": "Maroon",
         "colorHex": "#800000",
-        "price": 599,
+        "price": 349,
         "mrp": 958,
         "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-BAS-004-GRE-M",
-        "size": "M",
-        "color": "Green",
-        "colorHex": "#2E5A36",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-BAS-004-GRE-L",
-        "size": "L",
-        "color": "Green",
-        "colorHex": "#2E5A36",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
-      },
-      {
-        "sku": "ALP-BAS-004-GRE-XL",
-        "size": "XL",
-        "color": "Green",
-        "colorHex": "#2E5A36",
-        "price": 599,
-        "mrp": 958,
-        "stock": 25,
-        "image": "/inventory/men/tshirts/maroon-mens-tshirt-01.webp"
+        "image": "/products/media/maroon-mens-tshirt-01.webp"
       }
     ],
     "images": [
-      "/inventory/men/tshirts/maroon-mens-tshirt-01.webp",
-      "/inventory/men/tshirts/maroon-mens-tshirt-01-02.webp",
-      "/inventory/men/tshirts/maroon-mens-tshirt-01-03.webp"
+      "/products/media/maroon-mens-tshirt-01.webp"
     ],
-    "description": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
-    "summary": " ",
+    "description": "A rich maroon tee with a calm oversized shape and premium everyday finish.",
+    "summary": "Rich maroon tee with a clean relaxed fit.",
     "highlights": [
-      "Soft stretch",
-      "Clean shoulder line",
-      "Layering-ready"
+      "180 GSM Pure 100% Cotton",
+      "Relaxed fit",
+      "Ribbed collar"
     ],
     "material": "100% Cotton",
     "shippingLeadTime": "Dispatches within 48 hours",
-    "featured": false,
-    "bestSeller": true,
-    "newDrop": false,
-    "seo": {
-      "metaTitle": "Men's Grey T-shirt | ALPAZA Luxury Essentials",
-      "metaDescription": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
-      "keywords": [
-        "alpaca",
-        "basics",
-        "luxury",
-        "minimalist"
-      ]
-    },
-    "updatedAt": "2026-08-18T14:17:48.557Z"
-  },
-  {
-    "id": "101",
-    "title": "Radha Krishna Photo Frame | Home Decor | 12x18 inch",
-    "slug": "12x18-photo-frame",
-    "price": 399,
-    "mrp": 999,
-    "stock": 25,
-    "lowStockThreshold": 10,
-    "sku": "ALP-FRA-101",
-    "category": "frames",
-    "type": "decor",
-    "status": "published",
-    "sizes": [
-      "12x18 inch"
-    ],
-    "colors": [
-      "Standard"
-    ],
-    "variants": [
-      {
-        "sku": "ALP-FRA-101-STA-12x18 inch",
-        "size": "12x18 inch",
-        "color": "Standard",
-        "colorHex": "#111111",
-        "price": 399,
-        "mrp": 999,
-        "stock": 25,
-        "image": "/home_decor/frames/radha-krishna.webp"
-      }
-    ],
-    "images": [
-      "/home_decor/frames/radha-krishna.webp"
-    ],
-    "description": "Elegant Radha Krishna Wall Painting Photo Frame for Living Room.",
-    "highlights": [
-      "High Definition Print",
-      "Synthetic Wood Frame",
-      "Ready to Hang"
-    ],
-    "material": "Synthetic Wood Frame with Glass",
-    "shippingLeadTime": "Dispatches within 24 hours",
     "featured": true,
     "bestSeller": true,
     "newDrop": false,
     "seo": {
-      "metaTitle": "Radha Krishna Photo Frame | Home Decor | 12x18 inch | ALPAZA Luxury Essentials",
-      "metaDescription": "Elegant Radha Krishna Wall Painting Photo Frame for Living Room.",
+      "metaTitle": "Maroon T-shirt for Men | ALPAZA Luxury Essentials",
+      "metaDescription": "A rich maroon tee with a calm oversized shape and premium everyday finish.",
       "keywords": [
         "alpaca",
-        "frames",
+        "oversized",
         "luxury",
         "minimalist"
       ]
     },
-    "updatedAt": "2026-08-18T14:17:48.558Z"
-  },
-  {
-    "id": "102",
-    "title": "12x18 Photo Frame | Home Decor",
-    "slug": "12x18-photo-frame-new",
-    "price": 499,
-    "mrp": 1199,
-    "stock": 25,
-    "lowStockThreshold": 10,
-    "sku": "ALP-FRA-102",
-    "category": "frames",
-    "type": "decor",
-    "status": "published",
-    "sizes": [
-      "12x18 inch"
-    ],
-    "colors": [
-      "Standard"
-    ],
-    "variants": [
-      {
-        "sku": "ALP-FRA-102-STA-12x18 inch",
-        "size": "12x18 inch",
-        "color": "Standard",
-        "colorHex": "#111111",
-        "price": 499,
-        "mrp": 1199,
-        "stock": 25,
-        "image": "/home_decor/frames/12x18-frame.webp"
-      }
-    ],
-    "images": [
-      "/home_decor/frames/12x18-frame.webp"
-    ],
-    "description": "Premium 12x18 Wall Photo Frame for home and office decoration.",
-    "highlights": [
-      "Matte Finish",
-      "Durable Backing",
-      "Easy Wall Mounting"
-    ],
-    "material": "Synthetic Wood Frame with Glass",
-    "shippingLeadTime": "Dispatches within 24 hours",
-    "featured": true,
-    "bestSeller": false,
-    "newDrop": true,
-    "seo": {
-      "metaTitle": "12x18 Photo Frame | Home Decor | ALPAZA Luxury Essentials",
-      "metaDescription": "Premium 12x18 Wall Photo Frame for home and office decoration.",
-      "keywords": [
-        "alpaca",
-        "frames",
-        "luxury",
-        "minimalist"
-      ]
-    },
-    "updatedAt": "2026-08-18T14:17:48.558Z"
+    "updatedAt": "2026-08-18T14:17:48.557Z",
+    "badge": "Limited Edition"
   }
 ]

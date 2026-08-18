@@ -2,7 +2,7 @@
   "id": "2",
   "title": "Plain Black T-shirt for Mens",
   "slug": "plain-black-t-shirt-for-mens",
-  "price": 490,
+  "price": 349,
   "mrp": 999,
   "stock": 300,
   "lowStockThreshold": 10,
@@ -16,139 +16,46 @@
     "XL"
   ],
   "colors": [
-    "White",
-    "Black",
-    "Maroon",
-    "Green"
+    "Black"
   ],
   "variants": [
-    {
-      "sku": "ALP-BAS-002-WHI-M",
-      "size": "M",
-      "color": "White",
-      "colorHex": "#FFFFFF",
-      "price": 490,
-      "mrp": 999,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-    },
-    {
-      "sku": "ALP-BAS-002-WHI-L",
-      "size": "L",
-      "color": "White",
-      "colorHex": "#FFFFFF",
-      "price": 490,
-      "mrp": 999,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-    },
-    {
-      "sku": "ALP-BAS-002-WHI-XL",
-      "size": "XL",
-      "color": "White",
-      "colorHex": "#FFFFFF",
-      "price": 490,
-      "mrp": 999,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-    },
     {
       "sku": "ALP-BAS-002-BLA-M",
       "size": "M",
       "color": "Black",
       "colorHex": "#000000",
-      "price": 490,
+      "price": 349,
       "mrp": 999,
       "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      "image": "/products/media/mens-black-t-shirt01.webp"
     },
     {
       "sku": "ALP-BAS-002-BLA-L",
       "size": "L",
       "color": "Black",
       "colorHex": "#000000",
-      "price": 490,
+      "price": 349,
       "mrp": 999,
       "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      "image": "/products/media/mens-black-t-shirt01.webp"
     },
     {
       "sku": "ALP-BAS-002-BLA-XL",
       "size": "XL",
       "color": "Black",
       "colorHex": "#000000",
-      "price": 490,
+      "price": 349,
       "mrp": 999,
       "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-    },
-    {
-      "sku": "ALP-BAS-002-MAR-M",
-      "size": "M",
-      "color": "Maroon",
-      "colorHex": "#800000",
-      "price": 490,
-      "mrp": 999,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-    },
-    {
-      "sku": "ALP-BAS-002-MAR-L",
-      "size": "L",
-      "color": "Maroon",
-      "colorHex": "#800000",
-      "price": 490,
-      "mrp": 999,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-    },
-    {
-      "sku": "ALP-BAS-002-MAR-XL",
-      "size": "XL",
-      "color": "Maroon",
-      "colorHex": "#800000",
-      "price": 490,
-      "mrp": 999,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-    },
-    {
-      "sku": "ALP-BAS-002-GRE-M",
-      "size": "M",
-      "color": "Green",
-      "colorHex": "#2E5A36",
-      "price": 490,
-      "mrp": 999,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-    },
-    {
-      "sku": "ALP-BAS-002-GRE-L",
-      "size": "L",
-      "color": "Green",
-      "colorHex": "#2E5A36",
-      "price": 490,
-      "mrp": 999,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
-    },
-    {
-      "sku": "ALP-BAS-002-GRE-XL",
-      "size": "XL",
-      "color": "Green",
-      "colorHex": "#2E5A36",
-      "price": 490,
-      "mrp": 999,
-      "stock": 25,
-      "image": "/inventory/men/tshirts/mens-black-t-shirt01.webp"
+      "image": "/products/media/mens-black-t-shirt01.webp"
     }
   ],
   "images": [
-    "/inventory/men/tshirts/mens-black-t-shirt01.webp",
-    "/inventory/men/tshirts/mens-black-t-shirt02.webp"
+    "/products/media/mens-black-t-shirt01.webp",
+    "/products/media/mens-black-t-shirt02.webp"
   ],
   "description": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
-  "summary": " ",
+  "summary": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
   "highlights": [
     "Soft stretch",
     "Clean shoulder line",
@@ -157,7 +64,7 @@
   "material": "100% Cotton",
   "shippingLeadTime": "Dispatches within 48 hours",
   "featured": true,
-  "bestSeller": false,
+  "bestSeller": true,
   "newDrop": true,
   "seo": {
     "metaTitle": "Plain Black T-shirt for Mens | ALPAZA Luxury Essentials",
@@ -169,5 +76,6 @@
       "minimalist"
     ]
   },
-  "updatedAt": "2026-08-18T14:17:48.557Z"
+  "updatedAt": "2026-08-18T14:17:48.557Z",
+  "badge": "Bestseller"
 }

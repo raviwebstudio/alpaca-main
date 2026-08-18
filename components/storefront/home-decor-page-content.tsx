@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import ProductCard from "@/components/ProductCard";
 import { FadeIn } from "@/components/storefront/fade-in";
+import { InteractiveSiteImage } from "@/components/storefront/interactive-site-image";
 import {
   decorCategoryOptions,
   getBestSellerProducts,
@@ -14,6 +15,7 @@ import {
   type Product,
   type ProductCategory,
 } from "@/data/products";
+import { SITE_IMAGES } from "@/lib/siteImages";
 
 type DecorFilters = {
   category: ProductCategory | "all";
@@ -25,9 +27,10 @@ type DecorFilters = {
 const MATERIALS = ["all", "Wood", "Metal", "Glass", "Plastics", "Ceramic"];
 const STYLES = ["all", "Minimal", "Modern"];
 
-export function HomeDecorPageContent() {
-  const decorProducts = products.filter((product) => product.type === "decor");
-  const maxCatalogPrice = Math.max(...decorProducts.map((product) => product.price));
+export function HomeDecorPageContent({ products: dynamicProducts }: { products?: Product[] }) {
+  const allProductsList = dynamicProducts && dynamicProducts.length > 0 ? dynamicProducts : products;
+  const decorProducts = allProductsList.filter((product) => product.type === "decor");
+  const maxCatalogPrice = Math.max(...decorProducts.map((product) => product.price), 1000);
   const [filters, setFilters] = useState<DecorFilters>({
     category: "all",
     material: "all",
@@ -46,21 +49,20 @@ export function HomeDecorPageContent() {
       ),
     [decorProducts, filters],
   );
-  const bestInDecor = getBestSellerProducts(6, "decor");
-  const recentlyAdded = getNewDropProducts(6, "decor");
+  const bestInDecor = getBestSellerProducts(6, "decor", allProductsList);
+  const recentlyAdded = getNewDropProducts(6, "decor", allProductsList);
 
   return (
     <div className="overflow-hidden">
       <section className="relative min-h-[600px] overflow-hidden">
-        <Image
-          src="/assets/images/home-decor-bg.webp"
+        <InteractiveSiteImage
+          src={SITE_IMAGES.homeDecor.heroBanner}
           alt="ALPACA home decor"
-          fill
           priority
           sizes="100vw"
-          style={{ opacity: 1 }}
+          containerClassName="absolute inset-0 w-full h-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/10 pointer-events-none" />
         <div className="relative z-[1] mx-auto flex min-h-[560px] max-w-7xl items-center px-6">
           <FadeIn className="max-w-2xl text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white/80">

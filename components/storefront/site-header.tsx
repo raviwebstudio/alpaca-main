@@ -8,6 +8,7 @@ import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { navigation } from "@/lib/storefront";
 import { useCart } from "@/components/storefront/cart-provider";
+import { SITE_IMAGES } from "@/lib/siteImages";
 import { useEffect, useState } from "react";
 
 type StoredUser = {
@@ -88,7 +89,7 @@ export function SiteHeader() {
           </div> */}
           <span className="flex items-center">
             <Image
-              src="/assets/logo-black.png"
+              src={SITE_IMAGES.logo}
               alt="ALPACA Logo"
               width={2316}
               height={590}

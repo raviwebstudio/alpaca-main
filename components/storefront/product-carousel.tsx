@@ -53,19 +53,19 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
   if (!products || products.length === 0) return null;
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full">
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scroll-smooth pb-4 no-scrollbar [scrollbar-width:none]"
+        className="flex gap-6 overflow-x-auto scroll-smooth py-2 no-scrollbar [scrollbar-width:none]"
       >
         {products.map((product, index) => (
-  <div
-    key={`${product.id}-${product.slug}-${index}`} // 🔥 bulletproof
-    className="flex-shrink-0 w-[280px] md:w-[280px]"
-  >
-    <ProductCard product={product} className="h-full" />
-  </div>
-))}
+          <div
+            key={`${product.id}-${product.slug}-${index}`}
+            className="flex-shrink-0 w-[280px] md:w-[280px]"
+          >
+            <ProductCard product={product} className="h-full" />
+          </div>
+        ))}
       </div>
 
       <button
@@ -73,18 +73,18 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
         aria-label="Scroll products left"
         onClick={() => scrollByAmount(-1)}
         disabled={!scrollState.canScrollLeft}
-        className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white p-2 shadow md:inline-flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-40"
+        className="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white text-stone-800 shadow-md border border-stone-200/80 backdrop-blur-sm transition-all duration-200 hover:bg-white hover:shadow-lg hover:scale-105 disabled:cursor-not-allowed disabled:opacity-30"
       >
-        <ChevronLeft className="h-4 w-4" />
+        <ChevronLeft className="h-5 w-5" />
       </button>
       <button
         type="button"
         aria-label="Scroll products right"
         onClick={() => scrollByAmount(1)}
         disabled={!scrollState.canScrollRight}
-        className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white p-2 shadow md:inline-flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-40"
+        className="absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white text-stone-800 shadow-md border border-stone-200/80 backdrop-blur-sm transition-all duration-200 hover:bg-white hover:shadow-lg hover:scale-105 disabled:cursor-not-allowed disabled:opacity-30"
       >
-        <ChevronRight className="h-4 w-4" />
+        <ChevronRight className="h-5 w-5" />
       </button>
     </div>
   );

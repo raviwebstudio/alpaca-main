@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { formatPrice } from "@/lib/storefront";
 import type { InventoryItem } from "@/lib/content";
+import { SITE_IMAGES } from "@/lib/siteImages";
 
 interface InventoryManagerClientProps {
   initialItems: InventoryItem[];
@@ -252,7 +253,7 @@ export function InventoryManagerClient({ initialItems }: InventoryManagerClientP
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
                           <img
-                            src={item.image || "/assets/images/plain-clothing01.jpg"}
+                            src={item.image || SITE_IMAGES.placeholders.product}
                             alt=""
                             className="w-10 h-12 object-cover rounded-lg border border-stone-200 bg-stone-100 shrink-0"
                           />

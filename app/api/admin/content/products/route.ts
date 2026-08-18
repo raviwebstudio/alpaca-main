@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import {
   getContentProducts,
   saveContentProduct,
@@ -53,6 +54,13 @@ export async function POST(req: NextRequest) {
     };
 
     saveContentProduct(newProduct);
+
+    try {
+      revalidatePath("/", "layout");
+      revalidatePath("/shop");
+      revalidatePath("/home-decor");
+      revalidatePath("/new-arrivals");
+    } catch {}
 
     return NextResponse.json({ success: true, product: newProduct }, { status: 201 });
   } catch (error: any) {

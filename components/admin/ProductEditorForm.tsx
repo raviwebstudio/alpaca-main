@@ -49,7 +49,7 @@ export function ProductEditorForm({ initialData, isEditing = false }: ProductEdi
   const [images, setImages] = useState<string[]>(
     initialData?.images && initialData.images.length > 0
       ? initialData.images
-      : ["/inventory/men/tshirts/plain-white-t-shirt01.jpg"]
+      : ["/products/media/plain-white-t-shirt01.webp"]
   );
   const [newImageUrl, setNewImageUrl] = useState("");
 
@@ -798,7 +798,7 @@ export function ProductEditorForm({ initialData, isEditing = false }: ProductEdi
               <div className="flex gap-2">
                 <input
                   type="text"
-                  placeholder="/inventory/men/tshirts/... or https://"
+                  placeholder="/products/media/... or https://"
                   value={newImageUrl}
                   onChange={(e) => setNewImageUrl(e.target.value)}
                   className="flex-1 px-3 py-2 rounded-xl border border-stone-200 text-xs focus:outline-hidden font-mono"

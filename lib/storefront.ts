@@ -55,6 +55,7 @@ export type LegalDocument = {
 };
 
 import { ENABLE_HOME_DECOR } from "@/data/products";
+import { SITE_IMAGES } from "@/lib/siteImages";
 
 export const navigation = [
   { href: "/", label: "Home" },
@@ -72,7 +73,7 @@ export const collections = [
     description:
       "Heavyweight cotton tees cut with room to move, layered neutrals, and clean structure.",
     href: "/shop?category=oversized",
-    image: "/assets/images/portrait-03.webp",
+    image: SITE_IMAGES.collections.oversized,
   },
   {
     title: "Basics",
@@ -81,7 +82,7 @@ export const collections = [
     description:
       "Polished staples designed to anchor the wardrobe with softness, ease, and repeat wear.",
     href: "/shop?category=basics",
-    image: "/assets/images/plain-clothing02.jpg",
+    image: SITE_IMAGES.collections.basics,
 
   },
   {
@@ -91,7 +92,7 @@ export const collections = [
     description:
       "Soft hoodies, technical shells, and versatile outer layers designed for movement.",
     href: "/shop?category=outerwear",
-    image: "/assets/images/plain-clothing01.jpg",
+    image: SITE_IMAGES.collections.outerwear,
   },
   {
     title: "Casual Men Tshirts",
@@ -100,7 +101,7 @@ export const collections = [
     description:
       "Soft hoodies, technical shells, and versatile outer layers designed for movement.",
     href: "/shop?category=casual-men-tshirts",
-    image: "/assets/images/casual-men-tshirt.webp",
+    image: SITE_IMAGES.collections.casualMenTshirts,
   },
   {
     title: "Printed Women Tshirts",
@@ -109,7 +110,7 @@ export const collections = [
     description:
       "Soft hoodies, technical shells, and versatile outer layers designed for movement.",
     href: "/shop?category=printed-women-tshirts",
-    image: "/assets/images/printed-woman-tshirt.webp",
+    image: SITE_IMAGES.collections.printedWomenTshirts,
   },
 ];
 
@@ -153,7 +154,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-03-07",
     readingTime: "5 min read",
     category: "Style System",
-    coverImage: "/assets/images/blog-image-02.webp",
+    coverImage: SITE_IMAGES.blog.post1,
     sections: [
       {
         heading: "Start with proportion, not quantity",
@@ -181,7 +182,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-03-15",
     readingTime: "4 min read",
     category: "Fabric Notes",
-    coverImage: "/assets/images/plain-clothing01.jpg",
+    coverImage: SITE_IMAGES.blog.post2,
     sections: [
       {
         heading: "Weight defines presence",
@@ -209,7 +210,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-03-22",
     readingTime: "6 min read",
     category: "Movement",
-    coverImage: "/inventory/men/tshirts/mens-black-t-shirt01.webp",
+    coverImage: SITE_IMAGES.blog.post3,
     sections: [
       {
         heading: "Pack in layers, not outfits",
