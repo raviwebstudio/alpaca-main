@@ -11,8 +11,8 @@ const db = new PrismaClient({ adapter });
 async function main() {
   const hash = bcrypt.hashSync('Admin@1234', 12);
   const userHash = bcrypt.hashSync('User@1234', 12);
-  
-  await db.user.deleteMany({ where: { email: 'admin@alpaca.com' }});
+
+  await db.user.deleteMany({ where: { email: 'admin@alpaca.com' } });
   const admin = await db.user.create({
     data: {
       email: 'admin@alpaca.com',
@@ -25,7 +25,7 @@ async function main() {
   });
   console.log('Admin user created:', admin);
 
-  await db.user.deleteMany({ where: { email: 'user@alpaca.com' }});
+  await db.user.deleteMany({ where: { email: 'user@alpaca.com' } });
   const user = await db.user.create({
     data: {
       email: 'user@alpaca.com',
