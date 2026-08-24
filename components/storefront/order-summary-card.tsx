@@ -76,11 +76,11 @@ export function OrderSummaryCard({
           <span className="font-semibold text-dark">{formatPrice(subtotal)}</span>
         </div>
 
-        {/* Shipping with Strikethrough ₹249 -> FREE */}
+        {/* Shipping with Strikethrough ₹199 -> FREE */}
         <div className="flex items-center justify-between">
           <span>Shipping</span>
           <div className="flex items-center gap-1.5 font-semibold">
-            <span className="line-through text-[#78716C] text-xs">₹99</span>
+            <span className="line-through text-[#78716C] text-xs">₹199</span>
             <span className="text-emerald-700 font-bold">FREE</span>
           </div>
         </div>

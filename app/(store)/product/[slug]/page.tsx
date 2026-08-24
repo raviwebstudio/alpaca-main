@@ -53,5 +53,5 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  return <ProductDetails product={product} allProducts={products} />;
+  return <ProductDetails key={slug} product={product} allProducts={products} />;
 }

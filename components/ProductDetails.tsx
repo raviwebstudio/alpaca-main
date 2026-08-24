@@ -70,7 +70,7 @@ export function ProductDetails({ product, allProducts }: { product: Product; all
               <p className="eyebrow">Description</p>
               <h2 className="mt-4 text-4xl text-dark sm:text-5xl">What you are getting.</h2>
               <p className="mt-4 max-w-3xl text-base leading-8 text-text-secondary sm:text-lg">
-                {product.description}
+                {product.summary?.trim() || product.description?.trim()}
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">

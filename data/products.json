@@ -90,7 +90,7 @@
     "stock": 300,
     "lowStockThreshold": 10,
     "sku": "ALP-BAS-002",
-    "category": "basics",
+    "category": "oversized",
     "type": "fashion",
     "status": "published",
     "sizes": [
@@ -137,7 +137,7 @@
       "/products/media/mens-black-t-shirt01.webp",
       "/products/media/mens-black-t-shirt02.webp"
     ],
-    "description": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
+    "description": " ",
     "summary": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
     "highlights": [
       "Soft stretch",
@@ -298,8 +298,8 @@
     "images": [
       "/products/media/maroon-mens-tshirt-01.webp"
     ],
-    "description": "A rich maroon tee with a calm oversized shape and premium everyday finish.",
-    "summary": "Rich maroon tee with a clean relaxed fit.",
+    "description": " ",
+    "summary": "Rich maroon oversized tee with a relaxed fit and premium heavyweight feel.",
     "highlights": [
       " 180 GSM 100% Cotton",
       "Relaxed fit",

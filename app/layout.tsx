@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import { SITE_IMAGES } from "@/lib/siteImages";
+import { HistoryNavigationHandler } from "@/components/HistoryNavigationHandler";
 
 const favicon = SITE_IMAGES.favicon;
 
@@ -55,6 +56,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <CartProvider>
+          <HistoryNavigationHandler />
           {children}
         </CartProvider>
       </body>

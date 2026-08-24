@@ -209,7 +209,7 @@ export function SuccessPage() {
               <div className="flex items-center justify-between">
                 <span>Shipping</span>
                 <div className="flex items-center gap-1.5 font-semibold">
-                  <span className="line-through text-[#78716C] text-xs">₹249</span>
+                  <span className="line-through text-[#78716C] text-xs">₹199</span>
                   <span className="text-emerald-700 font-bold">FREE</span>
                 </div>
               </div>

@@ -51,10 +51,7 @@ export function PurchasePanel({ product }: { product: Product }) {
             {product.title}
           </h1>
           <p className="max-w-xl text-base leading-7 text-text-secondary">
-            {product.summary ?? product.description}
-          </p>
-          <p className="max-w-xl text-sm leading-7 text-text-secondary sm:text-base">
-            {product.description}
+            {product.summary?.trim() || product.description?.trim()}
           </p>
         </div>
         <p className="text-3xl font-semibold text-dark">{formatPrice(product.price)}</p>

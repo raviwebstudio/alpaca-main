@@ -7,7 +7,7 @@
   "stock": 300,
   "lowStockThreshold": 10,
   "sku": "ALP-BAS-002",
-  "category": "basics",
+  "category": "oversized",
   "type": "fashion",
   "status": "published",
   "sizes": [
@@ -54,7 +54,7 @@
     "/products/media/mens-black-t-shirt01.webp",
     "/products/media/mens-black-t-shirt02.webp"
   ],
-  "description": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
+  "description": " ",
   "summary": "A minimal black tee with a closer fit, soft hand-feel, and clean daily utility.",
   "highlights": [
     "Soft stretch",
