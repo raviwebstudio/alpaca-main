@@ -82,6 +82,10 @@ export function SuccessPage() {
   }
 
   const isSynced = Boolean(orderData.sheetSynced || orderData.sheetSyncStatus === "synced");
+  const isConfigMissing = Boolean(
+    orderData.sheetSyncError?.toLowerCase().includes("not configured") ||
+    orderData.sheetSyncError?.toLowerCase().includes("credentials")
+  );
 
   return (
     <section className="shell section-space space-y-8">
@@ -111,10 +115,15 @@ export function SuccessPage() {
                 <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
                 Saved to Google Sheets
               </span>
+            ) : isConfigMissing ? (
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 border border-amber-200 px-3 py-1 text-xs font-medium text-amber-800">
+                <span className="h-2 w-2 rounded-full bg-amber-500"></span>
+                Order Placed (Google Sheet Sync Pending)
+              </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-200 px-3 py-1 text-xs font-medium text-rose-800">
-                <span className="h-2 w-2 rounded-full bg-rose-500"></span>
-                {orderData.sheetSyncError ? `Sheet Error: ${orderData.sheetSyncError}` : "Google Sheet Sync Failed"}
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-stone-100 border border-stone-200 px-3 py-1 text-xs font-medium text-stone-700">
+                <span className="h-2 w-2 rounded-full bg-stone-400"></span>
+                Order Recorded
               </span>
             )}
           </div>

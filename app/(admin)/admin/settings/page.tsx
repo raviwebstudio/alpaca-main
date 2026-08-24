@@ -7,20 +7,14 @@ import {
   ShieldCheck,
   UserCircle,
 } from "lucide-react";
+import { getGoogleSheetsConfig } from "@/lib/env";
 
 export default function AdminSettingsPage() {
-  const serviceAccountConfigured = Boolean(
-    (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || process.env.GOOGLE_CLIENT_EMAIL) &&
-      (process.env.GOOGLE_PRIVATE_KEY || process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY) &&
-      (process.env.GOOGLE_SHEET_ID || process.env.GOOGLE_SPREADSHEET_ID)
-  );
-  const webhookConfigured = Boolean(
-    process.env.GOOGLE_SHEET_WEBHOOK_URL || process.env.GOOGLE_SHEETS_WEBHOOK_URL
-  );
-  const sheetIdConfigured = Boolean(
-    process.env.GOOGLE_SHEET_ID || process.env.GOOGLE_SPREADSHEET_ID
-  );
-  const isSyncActive = serviceAccountConfigured || webhookConfigured;
+  const config = getGoogleSheetsConfig();
+  const serviceAccountConfigured = config.hasServiceAccount;
+  const webhookConfigured = config.hasWebhook;
+  const sheetIdConfigured = Boolean(config.sheetId);
+  const isSyncActive = config.isConfigured;
 
   return (
     <div className="space-y-8 max-w-4xl pb-12">
@@ -126,7 +120,7 @@ export default function AdminSettingsPage() {
           <div className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-200">
             <span className="text-stone-700 font-medium">Spreadsheet Target ID:</span>
             <span className="font-mono text-stone-600">
-              {sheetIdConfigured ? "GOOGLE_SHEET_ID (Active)" : "Not Configured"}
+              {sheetIdConfigured ? `GOOGLE_SHEET_ID (${config.sheetId ? config.sheetId.slice(0, 6) + "..." : "Active"})` : "Not Configured"}
             </span>
           </div>
 

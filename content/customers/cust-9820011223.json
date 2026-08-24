@@ -1,0 +1,13 @@
+{
+  "id": "cust-9820011223",
+  "name": "Alex Mercer",
+  "email": "alex@example.com",
+  "phone": "9820011223",
+  "address": "100 Innovation Park",
+  "city": "Bengaluru",
+  "state": "Karnataka",
+  "pincode": "560100",
+  "totalSpent": 2998,
+  "ordersCount": 1,
+  "createdAt": "2026-08-24T12:51:42.347Z"
+}

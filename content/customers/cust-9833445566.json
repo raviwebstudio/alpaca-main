@@ -1,0 +1,13 @@
+{
+  "id": "cust-9833445566",
+  "name": "David Miller",
+  "email": "david@alpaca.com",
+  "phone": "9833445566",
+  "address": "42 Beacon Hill",
+  "city": "Pune",
+  "state": "Maharashtra",
+  "pincode": "411001",
+  "totalSpent": 2499,
+  "ordersCount": 1,
+  "createdAt": "2026-08-24T13:11:41.250Z"
+}

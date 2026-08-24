@@ -52,9 +52,10 @@ export type OrderRecord = {
   orderStatus?: string;
 };
 
-type CheckoutOverrides = {
+export type CheckoutOverrides = {
   address?: CheckoutAddress;
   paymentMethod?: PaymentMethod;
+  turnstileToken?: string;
 };
 
 type CartProductInput = Omit<CartItem, "id" | "quantity">;
@@ -297,6 +298,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       paymentStatus: "CONFIRMED",
       orderStatus: "PLACED",
       placedAt: new Date().toISOString(),
+      turnstileToken: overrides?.turnstileToken,
     };
 
     const response = await fetch("/api/orders/submit", {

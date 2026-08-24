@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, useCallback, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
@@ -11,6 +11,7 @@ import {
   useCart,
 } from "@/components/storefront/cart-provider";
 import { OrderSummaryCard } from "@/components/storefront/order-summary-card";
+import { TurnstileWidget } from "@/components/storefront/turnstile-widget";
 
 const PAYMENT_OPTIONS: Array<{ id: PaymentMethod; label: string; description: string }> = [
   {
@@ -44,9 +45,14 @@ export function PaymentPage() {
     submitOrder,
   } = useCart();
   const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>(paymentMethod);
+  const [turnstileToken, setTurnstileToken] = useState<string | undefined>(undefined);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderCompleted, setOrderCompleted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleTurnstileVerify = useCallback((token: string) => {
+    setTurnstileToken(token);
+  }, []);
 
   useEffect(() => {
     setSelectedMethod(paymentMethod);
@@ -76,7 +82,10 @@ export function PaymentPage() {
     setPaymentMethod(selectedMethod);
 
     try {
-      const order = await submitOrder({ paymentMethod: selectedMethod });
+      const order = await submitOrder({
+        paymentMethod: selectedMethod,
+        turnstileToken,
+      });
 
       if (order) {
         setOrderCompleted(true);
@@ -118,6 +127,9 @@ export function PaymentPage() {
             onSubmit={handleSubmit}
             className="surface-card rounded-[32px] p-6 sm:p-8"
           >
+          {/* Invisible Cloudflare Turnstile bot verification */}
+          <TurnstileWidget onVerify={handleTurnstileVerify} />
+
           <div className="space-y-3">
             <p className="eyebrow">Payment</p>
             <h1 className="text-balance text-4xl text-dark sm:text-5xl">Choose a prepaid method.</h1>

@@ -1,5 +1,11 @@
 import crypto from "crypto";
 import type { SpreadsheetRow } from "./orderService";
+import {
+  getGoogleSheetsConfig,
+  normalizePrivateKey,
+  maskEnvSecret,
+  type GoogleSheetsConfig,
+} from "./env";
 
 export const HEADERS = [
   "Order ID",
@@ -29,37 +35,9 @@ export const HEADERS = [
 // In-memory token cache to prevent repeated OAuth roundtrips
 let cachedAccessToken: { token: string; expiresAt: number } | null = null;
 
-/**
- * Format and normalize Google Service Account private key.
- * Handles escaped newlines (`\\n` -> `\n`), outer quotes, and trimming.
- */
-export function formatPrivateKey(rawKey?: string): string {
-  if (!rawKey) return "";
-  let key = rawKey.trim();
-
-  // Strip leading and trailing double or single quotes if present
-  if (
-    (key.startsWith('"') && key.endsWith('"')) ||
-    (key.startsWith("'") && key.endsWith("'"))
-  ) {
-    key = key.slice(1, -1);
-  }
-
-  // Replace literal '\n' sequences with real newline characters
-  key = key.replace(/\\n/g, "\n");
-
-  return key.trim();
-}
-
-/**
- * Mask sensitive credentials for safe logging in server logs.
- */
-export function maskString(str?: string, keepVisible: number = 4): string {
-  if (!str) return "[NOT_SET]";
-  const trimmed = str.trim();
-  if (trimmed.length <= keepVisible * 2) return "***";
-  return `${trimmed.slice(0, keepVisible)}...${trimmed.slice(-keepVisible)}`;
-}
+// Re-export helpers for backward compatibility
+export const formatPrivateKey = normalizePrivateKey;
+export const maskString = maskEnvSecret;
 
 /**
  * Retrieve Google Service Account access token using OAuth 2.0 JWT Bearer flow.
@@ -76,7 +54,7 @@ export async function getGoogleServiceAccountAccessToken(
     return cachedAccessToken.token;
   }
 
-  const normalizedKey = formatPrivateKey(privateKey);
+  const normalizedKey = normalizePrivateKey(privateKey);
   if (!normalizedKey || !normalizedKey.includes("PRIVATE KEY")) {
     const keyError =
       "Invalid GOOGLE_PRIVATE_KEY format: Must be a valid PEM formatted RSA private key containing '-----BEGIN PRIVATE KEY-----'.";
@@ -116,7 +94,7 @@ export async function getGoogleServiceAccountAccessToken(
   const jwtAssertion = `${unsignedToken}.${signature}`;
 
   console.log(
-    `[GoogleSheetsAPI] Requesting OAuth access token for service account ${maskString(clientEmail, 6)}...`
+    `[GoogleSheetsAPI] Requesting OAuth access token for service account ${maskEnvSecret(clientEmail, 6)}...`
   );
 
   const tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
@@ -185,7 +163,7 @@ export async function appendRowsViaGoogleSheetsApi(
     )}/values/${encodeURIComponent(range)}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
 
     console.log(
-      `[GoogleSheetsAPI] Appending ${rows.length} row(s) for Order ${orderId} to spreadsheet ${maskString(
+      `[GoogleSheetsAPI] Appending ${rows.length} row(s) for Order ${orderId} to spreadsheet ${maskEnvSecret(
         sheetId,
         4
       )} (tab: ${tabName})...`
@@ -299,7 +277,6 @@ async function initializeSheetTabWithHeaders(
   accessToken: string,
   tabName: string
 ): Promise<void> {
-  // 1. Add sheet tab if missing
   try {
     await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(sheetId)}:batchUpdate`, {
       method: "POST",
@@ -323,7 +300,6 @@ async function initializeSheetTabWithHeaders(
     console.warn(`[GoogleSheetsAPI] Tab creation notice:`, tabErr);
   }
 
-  // 2. Add header row
   const headerUrl = `https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(
     sheetId
   )}/values/${encodeURIComponent(`${tabName}!A1:V1`)}?valueInputOption=USER_ENTERED`;
@@ -372,10 +348,8 @@ export async function sendToGoogleSheetWebhook(
   webhookUrl?: string,
   maxRetries: number = 3
 ): Promise<{ success: boolean; error?: string; rowsAdded?: number }> {
-  let url =
-    webhookUrl ||
-    process.env.GOOGLE_SHEET_WEBHOOK_URL ||
-    process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  const config = getGoogleSheetsConfig();
+  let url = webhookUrl || config.webhookUrl;
 
   if (!url || !url.trim()) {
     const errorMsg =
@@ -427,7 +401,7 @@ export async function sendToGoogleSheetWebhook(
         },
         body: JSON.stringify({
           action: "ADD_ORDERS",
-          sheetId: process.env.GOOGLE_SHEET_ID ? process.env.GOOGLE_SHEET_ID.trim() : undefined,
+          sheetId: config.sheetId,
           rows,
         }),
         redirect: "follow",
@@ -540,8 +514,7 @@ export async function sendToGoogleSheetWebhook(
 
 /**
  * Unified Google Sheet Sync Function.
- * Automatically chooses between direct Google Sheets API v4 (Service Account)
- * and Google Apps Script Webhook depending on environment variables configured in process.env.
+ * Uses centralized getGoogleSheetsConfig() from lib/env.ts.
  */
 export async function syncOrderToGoogleSheets(
   rows: SpreadsheetRow[]
@@ -551,37 +524,19 @@ export async function syncOrderToGoogleSheets(
   rowsAdded?: number;
   method?: "service_account" | "webhook";
 }> {
-  const serviceAccountEmail =
-    process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ||
-    process.env.GOOGLE_CLIENT_EMAIL ||
-    process.env.GOOGLE_SERVICE_ACCOUNT_CLIENT_EMAIL;
-
-  const rawPrivateKey =
-    process.env.GOOGLE_PRIVATE_KEY ||
-    process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY;
-
-  const sheetId =
-    process.env.GOOGLE_SHEET_ID ||
-    process.env.GOOGLE_SPREADSHEET_ID ||
-    process.env.SPREADSHEET_ID;
-
-  const tabName = process.env.GOOGLE_SHEET_NAME || "Orders";
-
-  const webhookUrl =
-    process.env.GOOGLE_SHEET_WEBHOOK_URL ||
-    process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  const config = getGoogleSheetsConfig();
 
   // 1. Try Direct Google Sheets API if Service Account credentials exist
-  if (serviceAccountEmail && rawPrivateKey && sheetId) {
+  if (config.hasServiceAccount && config.serviceAccountEmail && config.privateKey && config.sheetId) {
     console.log(
       `[GoogleSheetSync] Service Account credentials detected. Using Direct Google Sheets API v4...`
     );
     const apiResult = await appendRowsViaGoogleSheetsApi(
       rows,
-      sheetId.trim(),
-      serviceAccountEmail.trim(),
-      rawPrivateKey,
-      tabName
+      config.sheetId,
+      config.serviceAccountEmail,
+      config.privateKey,
+      config.sheetName
     );
 
     if (apiResult.success) {
@@ -597,9 +552,9 @@ export async function syncOrderToGoogleSheets(
     );
 
     // If webhook is also available, try it as fallback
-    if (webhookUrl) {
+    if (config.webhookUrl) {
       console.log(`[GoogleSheetSync] Attempting Webhook fallback...`);
-      const webhookResult = await sendToGoogleSheetWebhook(rows, webhookUrl);
+      const webhookResult = await sendToGoogleSheetWebhook(rows, config.webhookUrl);
       if (webhookResult.success) {
         return {
           success: true,
@@ -617,9 +572,9 @@ export async function syncOrderToGoogleSheets(
   }
 
   // 2. Try Google Apps Script Webhook if configured
-  if (webhookUrl) {
+  if (config.hasWebhook && config.webhookUrl) {
     console.log(`[GoogleSheetSync] Google Sheets Webhook URL detected. Using Webhook sync...`);
-    const webhookResult = await sendToGoogleSheetWebhook(rows, webhookUrl);
+    const webhookResult = await sendToGoogleSheetWebhook(rows, config.webhookUrl);
     return {
       success: webhookResult.success,
       error: webhookResult.error,

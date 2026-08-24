@@ -1,0 +1,39 @@
+{
+  "orderId": "ALP-20260824-66002",
+  "placedAt": "2026-08-24T13:11:41.250Z",
+  "customer": {
+    "name": "David Miller",
+    "email": "david@alpaca.com",
+    "phone": "9833445566"
+  },
+  "address": {
+    "name": "David Miller",
+    "email": "david@alpaca.com",
+    "phone": "9833445566",
+    "address": "42 Beacon Hill",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001"
+  },
+  "items": [
+    {
+      "id": "prod-555",
+      "productId": "555",
+      "title": "Alpaca Signature Hoodie",
+      "price": 2499,
+      "size": "L",
+      "color": "Oatmeal",
+      "quantity": 1
+    }
+  ],
+  "subtotal": 2499,
+  "shipping": 0,
+  "discount": 0,
+  "total": 2499,
+  "paymentMethod": "card",
+  "paymentStatus": "CONFIRMED",
+  "orderStatus": "PLACED",
+  "sheetSynced": true,
+  "sheetSyncError": null,
+  "sheetSyncTimestamp": "2026-08-24T13:11:45.099Z"
+}
