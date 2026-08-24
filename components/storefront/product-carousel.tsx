@@ -73,7 +73,7 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
         aria-label="Scroll products left"
         onClick={() => scrollByAmount(-1)}
         disabled={!scrollState.canScrollLeft}
-        className="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white text-stone-800 shadow-md border border-stone-200/80 backdrop-blur-sm transition-all duration-200 hover:bg-white hover:shadow-lg hover:scale-105 disabled:cursor-not-allowed disabled:opacity-30"
+        className="absolute -left-8 sm:-left-10 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white text-stone-800 shadow-md border border-stone-200/80 backdrop-blur-sm transition-all duration-200 hover:bg-white hover:shadow-lg hover:scale-105 disabled:cursor-not-allowed disabled:opacity-30"
       >
         <ChevronLeft className="h-5 w-5" />
       </button>
