@@ -129,9 +129,6 @@ export function CartPage() {
                         >
                           {item.title}
                         </Link>
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-secondary">
-                          Sold by {item.sellerName}
-                        </p>
                         <p className="text-sm text-text-secondary">
                           Size {item.size} / {item.color}
                         </p>
@@ -161,11 +158,10 @@ export function CartPage() {
                               key={size}
                               type="button"
                               onClick={() => setEditSize(size)}
-                              className={`rounded-xl border px-3.5 py-1.5 text-xs font-semibold transition ${
-                                editSize === size
+                              className={`rounded-xl border px-3.5 py-1.5 text-xs font-semibold transition ${editSize === size
                                   ? "border-dark bg-dark text-white"
                                   : "border-line bg-white text-dark hover:-translate-y-0.5 hover:border-dark"
-                              }`}
+                                }`}
                             >
                               {size}
                             </button>
@@ -184,11 +180,10 @@ export function CartPage() {
                               key={color}
                               type="button"
                               onClick={() => setEditColor(color)}
-                              className={`rounded-xl border px-3 py-1.5 text-xs font-semibold transition ${
-                                editColor === color
+                              className={`rounded-xl border px-3 py-1.5 text-xs font-semibold transition ${editColor === color
                                   ? "border-dark bg-white text-dark shadow-xs ring-1 ring-dark"
                                   : "border-line bg-white/80 text-text-secondary hover:-translate-y-0.5 hover:border-dark"
-                              }`}
+                                }`}
                             >
                               <span className="flex items-center gap-1.5">
                                 <span
@@ -250,11 +245,10 @@ export function CartPage() {
                       <button
                         type="button"
                         onClick={() => (isEditing ? handleCancelEdit() : handleStartEdit(item))}
-                        className={`inline-flex items-center gap-1.5 rounded-xl border px-3.5 py-2 text-xs font-semibold transition ${
-                          isEditing
+                        className={`inline-flex items-center gap-1.5 rounded-xl border px-3.5 py-2 text-xs font-semibold transition ${isEditing
                             ? "border-dark bg-dark text-white"
                             : "border-line bg-white text-dark hover:-translate-y-0.5 hover:border-dark"
-                        }`}
+                          }`}
                       >
                         <Edit2 className="h-3.5 w-3.5" />
                         {isEditing ? "Close" : "Edit"}
@@ -282,7 +276,7 @@ export function CartPage() {
             subtotal={subtotal}
             shipping={shipping}
             total={total}
-            note="Complimentary shipping unlocks automatically on orders above INR 4,999."
+            note="Complimentary shipping unlocks automatically on orders above INR 2,999."
             footer={
               <Link
                 href="/checkout/address"

@@ -103,8 +103,7 @@ const DEFAULT_ADDRESS: CheckoutAddress = {
   pincode: "",
 };
 
-const getShipping = (subtotal: number, itemCount: number) =>
-  subtotal >= 4999 ? 0 : itemCount ? 249 : 0;
+const getShipping = (_subtotal: number, _itemCount: number) => 0;
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);

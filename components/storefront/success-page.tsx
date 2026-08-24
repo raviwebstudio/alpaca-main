@@ -81,6 +81,12 @@ export function SuccessPage() {
     return null;
   }
 
+  const totalMrp = orderData.items.reduce((sum, item) => {
+    const itemMrp = item.price === 349 ? 699 : item.price * 2;
+    return sum + itemMrp * item.quantity;
+  }, 0);
+  const launchOfferDiscount = Math.max(totalMrp - orderData.subtotal, 0);
+
   return (
     <section className="shell section-space space-y-8">
       <FadeIn>
@@ -164,11 +170,6 @@ export function SuccessPage() {
                 <div key={item.id} className="flex items-center justify-between gap-4 text-sm border-b border-line/40 pb-3 last:border-b-0">
                   <div>
                     <p className="font-semibold text-dark">{item.title}</p>
-                    {item.sellerName && (
-                      <p className="mt-0.5 text-xs uppercase tracking-[0.18em] text-text-secondary">
-                        {item.sellerName}
-                      </p>
-                    )}
                     <p className="mt-1 text-text-secondary">
                       {item.color} / {item.size} / Qty {item.quantity}
                     </p>
@@ -179,27 +180,52 @@ export function SuccessPage() {
                 </div>
               ))}
             </div>
+
             <div className="mt-6 space-y-3 border-t border-line pt-6 text-sm text-text-secondary">
+              {/* Total MRP with Strikethrough */}
+              <div className="flex items-center justify-between">
+                <span>MRP</span>
+                <span className="line-through text-[#78716C] font-medium">{formatPrice(totalMrp)}</span>
+              </div>
+
+              {/* Launch Offer Discount with Badge */}
+              {launchOfferDiscount > 0 && (
+                <div className="flex items-center justify-between text-emerald-700">
+                  <span className="flex items-center gap-1.5">
+                    Launch Offer
+                    <span className="inline-flex items-center rounded-md bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold text-emerald-800 tracking-wide">
+                      50% OFF
+                    </span>
+                  </span>
+                  <span className="font-semibold">-{formatPrice(launchOfferDiscount)}</span>
+                </div>
+              )}
+
               <div className="flex items-center justify-between">
                 <span>Subtotal</span>
                 <span className="font-semibold text-dark">{formatPrice(orderData.subtotal)}</span>
               </div>
+
               <div className="flex items-center justify-between">
                 <span>Shipping</span>
-                <span className="font-semibold text-dark">
-                  {orderData.shipping === 0 ? "Free" : formatPrice(orderData.shipping)}
-                </span>
+                <div className="flex items-center gap-1.5 font-semibold">
+                  <span className="line-through text-[#78716C] text-xs">₹249</span>
+                  <span className="text-emerald-700 font-bold">FREE</span>
+                </div>
               </div>
+
               {orderData.discount ? (
                 <div className="flex items-center justify-between text-emerald-700">
                   <span>Discount</span>
                   <span className="font-semibold">-{formatPrice(orderData.discount)}</span>
                 </div>
               ) : null}
+
               <div className="flex items-center justify-between border-t border-line pt-4">
-                <span className="text-base font-semibold text-dark">Total paid</span>
+                <span className="text-base font-semibold text-dark">Total Payable</span>
                 <span className="text-base font-semibold text-dark">{formatPrice(orderData.total)}</span>
               </div>
+
               <div className="flex items-center justify-between pt-1">
                 <span>Estimated delivery</span>
                 <span className="font-semibold text-dark">2-4 business days</span>
