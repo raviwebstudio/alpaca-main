@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Generate deduplication signature based on customer phone, subtotal, and items length
+    // Generate deduplication signature based on customer phone, total, items length, and payment method
     const dedupeKey = `${body.address.phone}_${body.total}_${body.items.length}_${body.paymentMethod}`;
     const lastSeen = recentSubmissions.get(dedupeKey);
 
@@ -55,6 +55,24 @@ export async function POST(req: NextRequest) {
 
     const result = await processOrderSubmission(body);
 
+    // Return error if sheet write fails (never return false success)
+    if (!result.success || !result.sheetSynced) {
+      console.error(
+        `[SubmitOrderAPI] Google Sheet synchronization failed for order ${result.orderId}: ${result.sheetSyncError}`
+      );
+      return NextResponse.json(
+        {
+          success: false,
+          orderId: result.orderId,
+          order: result.order,
+          sheetSynced: false,
+          sheetSyncError: result.sheetSyncError || "Failed to record order to Google Sheet.",
+          error: result.sheetSyncError || "Failed to record order to Google Sheet.",
+        },
+        { status: 502 }
+      );
+    }
+
     return NextResponse.json(
       {
         success: true,
@@ -67,7 +85,7 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     );
   } catch (error: any) {
-    console.error("[SubmitOrderAPI] Error processing order:", error);
+    console.error("[SubmitOrderAPI] Unhandled error processing order:", error);
     return NextResponse.json(
       {
         success: false,

@@ -3,17 +3,24 @@ import {
   ExternalLink,
   FileSpreadsheet,
   FolderGit2,
-  Layers,
-  Settings as SettingsIcon,
+  KeyRound,
   ShieldCheck,
   UserCircle,
-  Database,
-  RefreshCw,
 } from "lucide-react";
 
 export default function AdminSettingsPage() {
-  const webhookConfigured = Boolean(process.env.GOOGLE_SHEET_WEBHOOK_URL);
-  const sheetIdConfigured = Boolean(process.env.GOOGLE_SHEET_ID);
+  const serviceAccountConfigured = Boolean(
+    (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || process.env.GOOGLE_CLIENT_EMAIL) &&
+      (process.env.GOOGLE_PRIVATE_KEY || process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY) &&
+      (process.env.GOOGLE_SHEET_ID || process.env.GOOGLE_SPREADSHEET_ID)
+  );
+  const webhookConfigured = Boolean(
+    process.env.GOOGLE_SHEET_WEBHOOK_URL || process.env.GOOGLE_SHEETS_WEBHOOK_URL
+  );
+  const sheetIdConfigured = Boolean(
+    process.env.GOOGLE_SHEET_ID || process.env.GOOGLE_SPREADSHEET_ID
+  );
+  const isSyncActive = serviceAccountConfigured || webhookConfigured;
 
   return (
     <div className="space-y-8 max-w-4xl pb-12">
@@ -88,32 +95,45 @@ export default function AdminSettingsPage() {
                 Google Sheets Auto-Sync
               </h2>
               <p className="text-xs text-[#78716C]">
-                22-column real-time order appending via Google Apps Script Webhook
+                22-column real-time order appending via Google Sheets API (Service Account) or Webhook
               </p>
             </div>
           </div>
 
           <span
             className={`px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider ${
-              webhookConfigured ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-800"
+              isSyncActive ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-800"
             }`}
           >
-            {webhookConfigured ? "Configured" : "Pending Setup"}
+            {serviceAccountConfigured
+              ? "Service Account Active"
+              : webhookConfigured
+              ? "Webhook Active"
+              : "Pending Setup"}
           </span>
         </div>
 
         <div className="space-y-3 pt-2 text-xs">
           <div className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-200">
-            <span className="text-stone-700 font-medium">Webhook URL Environment Variable:</span>
+            <span className="text-stone-700 font-medium">Service Account Auth:</span>
             <span className="font-mono text-stone-600">
-              {webhookConfigured ? "GOOGLE_SHEET_WEBHOOK_URL (Active)" : "Not Configured"}
+              {serviceAccountConfigured
+                ? "GOOGLE_SERVICE_ACCOUNT_EMAIL + GOOGLE_PRIVATE_KEY (Active)"
+                : "Not Configured"}
             </span>
           </div>
 
           <div className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-200">
             <span className="text-stone-700 font-medium">Spreadsheet Target ID:</span>
             <span className="font-mono text-stone-600">
-              {sheetIdConfigured ? "GOOGLE_SHEET_ID (Active)" : "Default Code.gs Target"}
+              {sheetIdConfigured ? "GOOGLE_SHEET_ID (Active)" : "Not Configured"}
+            </span>
+          </div>
+
+          <div className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-200">
+            <span className="text-stone-700 font-medium">Webhook URL Fallback:</span>
+            <span className="font-mono text-stone-600">
+              {webhookConfigured ? "GOOGLE_SHEET_WEBHOOK_URL (Active)" : "Not Configured"}
             </span>
           </div>
         </div>

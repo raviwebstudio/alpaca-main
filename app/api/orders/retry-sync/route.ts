@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import {
   getLocalStoredOrders,
   saveOrderToLocalStore,
-  sendToGoogleSheetWebhook,
+  syncOrderToGoogleSheets,
 } from "@/lib/orderService";
 
 export async function GET() {
@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
     const errors: Array<{ orderId: string; error: string }> = [];
 
     for (const order of targets) {
-      const result = await sendToGoogleSheetWebhook(order.rows);
+      const result = await syncOrderToGoogleSheets(order.rows);
       if (result.success) {
         order.sheetSynced = true;
         order.sheetSyncError = null;

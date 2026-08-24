@@ -1,13 +1,13 @@
 {
   "id": "cust-7217217287",
-  "name": "Ravi Kumar Gautam",
+  "name": "test",
   "email": "ravi.webstudio@gmail.com",
   "phone": "7217217287",
   "address": "South City 2",
   "city": "Gurugam",
   "state": "Haryana",
   "pincode": "122018",
-  "totalSpent": 4543,
-  "ordersCount": 6,
+  "totalSpent": 5141,
+  "ordersCount": 7,
   "createdAt": "2026-08-18T08:30:34.823Z"
 }

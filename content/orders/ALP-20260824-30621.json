@@ -1,0 +1,39 @@
+{
+  "orderId": "ALP-20260824-30621",
+  "placedAt": "2026-08-24T12:26:02.105Z",
+  "customer": {
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "phone": "9876543210"
+  },
+  "address": {
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "phone": "9876543210",
+    "address": "456 Market St",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560001"
+  },
+  "items": [
+    {
+      "id": "prod-1",
+      "productId": "1",
+      "title": "Classic Cotton Tee",
+      "price": 799,
+      "size": "M",
+      "color": "Black",
+      "quantity": 1
+    }
+  ],
+  "subtotal": 799,
+  "shipping": 0,
+  "discount": 0,
+  "total": 799,
+  "paymentMethod": "upi",
+  "paymentStatus": "CONFIRMED",
+  "orderStatus": "PLACED",
+  "sheetSynced": true,
+  "sheetSyncError": null,
+  "sheetSyncTimestamp": "2026-08-24T12:26:04.806Z"
+}
