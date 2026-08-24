@@ -6,6 +6,7 @@ import {
   maskWebhookUrl,
   HEADERS,
 } from "./googleSheets";
+import { normalizePhone } from "./security";
 
 export interface OrderItemInput {
   id: string;
@@ -128,12 +129,14 @@ export function formatOrderToSpreadsheetRows(
     hour12: true,
   });
 
+  const cleanPhone = normalizePhone(address.phone) || address.phone || "N/A";
+
   return items.map((item) => ({
     "Order ID": orderId,
     "Order Date": formattedDate,
     "Customer Name": address.name || "N/A",
     "Email": address.email || "N/A",
-    "Phone": address.phone || "N/A",
+    "Phone": cleanPhone,
     "Address": address.address || "N/A",
     "City": address.city || "N/A",
     "State": address.state || "N/A",
@@ -158,45 +161,55 @@ export function formatOrderToSpreadsheetRows(
  * Ensure the local fallback data store exists and save order safely.
  * Gracefully handles read-only filesystems in serverless production environments.
  */
-export function saveOrderToLocalStore(order: StoredOrderRecord): void {
+export function saveOrderToLocalStore(order: StoredOrderRecord): boolean {
   try {
-    const dir = path.dirname(ORDERS_FILE_PATH);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-
-    let orders: StoredOrderRecord[] = [];
-    if (fs.existsSync(ORDERS_FILE_PATH)) {
+    const dataDir = path.dirname(ORDERS_FILE_PATH);
+    if (!fs.existsSync(dataDir)) {
       try {
-        const content = fs.readFileSync(ORDERS_FILE_PATH, "utf-8");
-        orders = JSON.parse(content);
-      } catch {
-        orders = [];
+        fs.mkdirSync(dataDir, { recursive: true });
+      } catch (mkdirErr) {
+        // Read-only filesystem in Vercel production serverless
+        console.warn("[OrderStore] Cannot create data dir (read-only filesystem):", mkdirErr);
+        return false;
       }
     }
 
-    const existingIndex = orders.findIndex((o) => o.orderId === order.orderId);
-    if (existingIndex >= 0) {
-      orders[existingIndex] = order;
-    } else {
-      orders.unshift(order);
+    let currentOrders: StoredOrderRecord[] = [];
+    if (fs.existsSync(ORDERS_FILE_PATH)) {
+      try {
+        const fileData = fs.readFileSync(ORDERS_FILE_PATH, "utf-8");
+        currentOrders = JSON.parse(fileData);
+        if (!Array.isArray(currentOrders)) currentOrders = [];
+      } catch {
+        currentOrders = [];
+      }
     }
 
-    fs.writeFileSync(ORDERS_FILE_PATH, JSON.stringify(orders, null, 2), "utf-8");
+    // Insert or update order by orderId
+    const existingIndex = currentOrders.findIndex((o) => o.orderId === order.orderId);
+    if (existingIndex >= 0) {
+      currentOrders[existingIndex] = order;
+    } else {
+      currentOrders.unshift(order);
+    }
+
+    fs.writeFileSync(ORDERS_FILE_PATH, JSON.stringify(currentOrders, null, 2), "utf-8");
+    return true;
   } catch (err) {
-    // In serverless environments (e.g. Vercel), local filesystem may be read-only
-    console.warn("[OrderStore] Local persistence skipped (read-only filesystem or serverless):", err);
+    console.warn("[OrderStore] Failed to persist order locally (normal in Vercel serverless):", err);
+    return false;
   }
 }
 
 /**
- * Get all stored orders from local fallback store.
+ * Get stored orders from local fallback file.
  */
 export function getLocalStoredOrders(): StoredOrderRecord[] {
   try {
     if (fs.existsSync(ORDERS_FILE_PATH)) {
-      const content = fs.readFileSync(ORDERS_FILE_PATH, "utf-8");
-      return JSON.parse(content);
+      const fileData = fs.readFileSync(ORDERS_FILE_PATH, "utf-8");
+      const orders = JSON.parse(fileData);
+      return Array.isArray(orders) ? orders : [];
     }
   } catch (err) {
     console.warn("[OrderStore] Failed to read stored orders:", err);
@@ -238,9 +251,14 @@ export async function processOrderSubmission(
 }> {
   const orderId = payload.orderId || generateOrderId();
   const placedAt = payload.placedAt || new Date().toISOString();
+  const cleanPhone = normalizePhone(payload.address?.phone || "");
 
   const completePayload = {
     ...payload,
+    address: {
+      ...payload.address,
+      phone: cleanPhone,
+    },
     orderId,
     placedAt,
     paymentStatus: payload.paymentStatus || "CONFIRMED",

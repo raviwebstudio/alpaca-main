@@ -102,7 +102,7 @@ const rawProducts = [
       "/products/media/plain-white-t-shirt03.jpg",
     ],
     description: " ",
-    highlights: ["180 GSM Pure 100% Cotton", "Structured neckline", "Easy everyday drape"],
+    highlights: [" 180 GSM 100% Cotton", "Structured neckline", "Easy everyday drape"],
     shippingLeadTime: "Dispatches within 48 hours",
     featured: true,
     bestSeller: true,
@@ -146,7 +146,7 @@ const rawProducts = [
       "/products/media/green-men-tshirt-02.webp",
     ],
     description: "  ",
-    highlights: ["180 GSM Pure 100% Cotton", "Relaxed fit", "Ribbed collar"],
+    highlights: [" 180 GSM 100% Cotton", "Relaxed fit", "Ribbed collar"],
     shippingLeadTime: "Dispatches within 48 hours",
     bestSeller: true,
   },
@@ -166,7 +166,7 @@ const rawProducts = [
     ],
     description: "A rich maroon tee with a calm oversized shape and premium everyday finish.",
     summary: " ",
-    highlights: ["180 GSM Pure 100% Cotton", "Relaxed fit", "Ribbed collar"],
+    highlights: [" 180 GSM 100% Cotton", "Relaxed fit", "Ribbed collar"],
     shippingLeadTime: "Dispatches within 48 hours",
     featured: true,
     bestSeller: true,
@@ -278,9 +278,9 @@ rawProducts.forEach((p, idx) => {
   const totalStock = variants.reduce((sum, v) => sum + v.stock, 0);
 
   // Filter highlights to replace 240 GSM with 180 GSM
-  const rawHighlights = Array.isArray(p.highlights) ? p.highlights : ["180 GSM Pure 100% Cotton", "Structured neckline", "Easy everyday drape"];
+  const rawHighlights = Array.isArray(p.highlights) ? p.highlights : [" 180 GSM 100% Cotton", "Structured neckline", "Easy everyday drape"];
   const highlights = rawHighlights.map((h) =>
-    h === "240 GSM knit" || h.includes("240 GSM") ? "180 GSM Pure 100% Cotton" : h
+    h === "240 GSM knit" || h.includes("240 GSM") ? " 180 GSM 100% Cotton" : h
   );
 
   // Clean description and summary of the old sentence

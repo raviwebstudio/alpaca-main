@@ -38,11 +38,28 @@ const config: Config = {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-8px)" }
+        },
+        modal: {
+          from: { opacity: "0", transform: "scale(0.96)" },
+          to: { opacity: "1", transform: "scale(1)" }
+        },
+        "popup-open": {
+          from: { opacity: "0", transform: "scale(0.96)" },
+          to: { opacity: "1", transform: "scale(1)" }
+        },
+        "sticker-bounce": {
+          "0%": { opacity: "0", transform: "scale(0.5)" },
+          "60%": { opacity: "1", transform: "scale(1.18)" },
+          "80%": { transform: "scale(0.94)" },
+          "100%": { transform: "scale(1)" }
         }
       },
       animation: {
         "fade-up": "fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both",
-        float: "float 7s ease-in-out infinite"
+        float: "float 7s ease-in-out infinite",
+        modal: "popup-open 200ms cubic-bezier(0.16, 1, 0.3, 1) both",
+        "popup-open": "popup-open 200ms cubic-bezier(0.16, 1, 0.3, 1) both",
+        "sticker-bounce": "sticker-bounce 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 100ms both"
       },
       maxWidth: {
         shell: "1220px"

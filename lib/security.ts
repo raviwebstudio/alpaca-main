@@ -2,6 +2,29 @@ import { getTurnstileConfig } from "./env";
 import type { OrderSubmissionPayload } from "./orderService";
 
 // ============================================================================
+// Phone Normalization & Validation Helper
+// ============================================================================
+
+export const normalizePhone = (value: string): string => {
+  const cleaned = (value || "").replace(/\D/g, "");
+
+  if (cleaned.startsWith("91") && cleaned.length === 12) {
+    return cleaned.slice(2);
+  }
+
+  if (cleaned.startsWith("0") && cleaned.length === 11) {
+    return cleaned.slice(1);
+  }
+
+  return cleaned;
+};
+
+export const isValidIndianPhone = (value: string): boolean => {
+  const phone = normalizePhone(value);
+  return /^[6-9]\d{9}$/.test(phone);
+};
+
+// ============================================================================
 // 1. In-Memory Rate Limiter (Max 5 requests per IP every 10 minutes)
 // ============================================================================
 
@@ -73,11 +96,6 @@ export function checkRateLimit(ip: string): {
 // 2. Duplicate Order Detector (Same Phone + Products within 2 minutes)
 // ============================================================================
 
-interface DuplicateOrderRecord {
-  key: string;
-  timestamp: number;
-}
-
 const duplicateOrderStore = new Map<string, number>();
 const DUPLICATE_WINDOW_MS = 2 * 60 * 1000; // 2 minutes
 
@@ -97,7 +115,7 @@ export function createOrderDedupeKey(
   phone: string,
   items: Array<{ productId: string | number; size?: string; color?: string; quantity?: number }>
 ): string {
-  const normalizedPhone = phone.replace(/\D/g, "").slice(-10);
+  const normalizedPhone = normalizePhone(phone);
   const sortedItemsKey = items
     .map(
       (it) =>
@@ -209,7 +227,6 @@ export async function verifyTurnstileToken(
     };
   } catch (err: any) {
     console.error("[Security] Error calling Cloudflare Turnstile API:", err);
-    // On unexpected network error connecting to Cloudflare, fail safe or return descriptive error
     return {
       success: false,
       error: "Security verification service temporarily unavailable.",
@@ -244,11 +261,10 @@ export function validateOrderPayload(
     return { valid: false, error: "Please enter a valid customer name (minimum 2 characters)." };
   }
 
-  const phone = address.phone?.trim().replace(/\D/g, "");
-  if (!phone || phone.length < 10 || phone.length > 15) {
+  if (!isValidIndianPhone(address.phone)) {
     return {
       valid: false,
-      error: "Please enter a valid 10-digit mobile number.",
+      error: "Please enter a valid Indian mobile number.",
     };
   }
 

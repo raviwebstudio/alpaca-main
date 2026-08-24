@@ -75,6 +75,10 @@ type CartContextValue = {
   addItem: (item: CartProductInput) => void;
   addToCart: (item: CartProductInput) => void;
   updateQuantity: (id: string, quantity: number) => void;
+  updateItem: (
+    oldId: string,
+    updates: { size?: string; color?: string; colorHex?: string }
+  ) => void;
   removeItem: (id: string) => void;
   removeFromCart: (id: string) => void;
   clearCart: () => void;
@@ -221,6 +225,49 @@ export function CartProvider({ children }: { children: ReactNode }) {
     );
   };
 
+  const updateItem = (
+    oldId: string,
+    updates: { size?: string; color?: string; colorHex?: string }
+  ) => {
+    setItems((prev) => {
+      const targetIndex = prev.findIndex((item) => item.id === oldId);
+      if (targetIndex === -1) return prev;
+
+      const target = prev[targetIndex];
+      const newSize = updates.size ?? target.size;
+      const newColor = updates.color ?? target.color;
+      const newColorHex = updates.colorHex ?? target.colorHex;
+
+      const newId = `${target.sellerId}-${target.productId}-${newSize}-${newColorHex}`;
+
+      if (newId === oldId) {
+        return prev;
+      }
+
+      const existingNewIndex = prev.findIndex((item) => item.id === newId);
+
+      if (existingNewIndex > -1) {
+        // Merge quantities and remove old item
+        const updated = [...prev];
+        updated[existingNewIndex] = {
+          ...updated[existingNewIndex],
+          quantity: updated[existingNewIndex].quantity + target.quantity,
+        };
+        return updated.filter((item) => item.id !== oldId);
+      }
+
+      const updated = [...prev];
+      updated[targetIndex] = {
+        ...target,
+        id: newId,
+        size: newSize,
+        color: newColor,
+        colorHex: newColorHex,
+      };
+      return updated;
+    });
+  };
+
   const removeItem = (id: string) => {
     setItems((current) => current.filter((entry) => entry.id !== id));
   };
@@ -360,6 +407,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     addItem,
     addToCart: addItem,
     updateQuantity,
+    updateItem,
     removeItem,
     removeFromCart: removeItem,
     clearCart,

@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowRight, ShoppingBag } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getCategoryLabel, type Product } from "@/data/products";
 import { useCart } from "@/components/storefront/cart-provider";
 import { formatPrice } from "@/lib/storefront";
@@ -22,17 +22,9 @@ export function PurchasePanel({ product }: { product: Product }) {
   const colors = product.colors ?? [];
   const [selectedSize, setSelectedSize] = useState(sizes[0] ?? "One Size");
   const [selectedColor, setSelectedColor] = useState(colors[0] ?? product.material ?? "Natural");
-  const [addedToCart, setAddedToCart] = useState(false);
 
-  useEffect(() => {
-    if (!addedToCart) return;
-    const timeout = window.setTimeout(() => setAddedToCart(false), 1800);
-    return () => window.clearTimeout(timeout);
-  }, [addedToCart]);
-
-  const handleAddCurrentItem = () => {
-    if (addedToCart) return false;
-    if (isFashion && (!selectedSize || !selectedColor)) return false;
+  const handleBuyNow = () => {
+    if (isFashion && (!selectedSize || !selectedColor)) return;
 
     addToCart({
       productId: product.id,
@@ -46,14 +38,8 @@ export function PurchasePanel({ product }: { product: Product }) {
       color: isFashion ? selectedColor : product.material ?? "Decor",
       colorHex: PRODUCT_COLOR_HEX[selectedColor] ?? "#1C1917",
     });
-    setAddedToCart(true);
-    return true;
-  };
 
-  const handleBuyNow = () => {
-    if (handleAddCurrentItem()) {
-      router.push("/cart");
-    }
+    router.push("/cart");
   };
 
   return (
@@ -135,16 +121,8 @@ export function PurchasePanel({ product }: { product: Product }) {
       <div className="grid gap-3">
         <button
           type="button"
-          onClick={handleAddCurrentItem}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-dark bg-dark px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:opacity-95"
-        >
-          <ShoppingBag className="h-4 w-4" />
-          {addedToCart ? "Added to Cart" : "Add to Cart"}
-        </button>
-        <button
-          type="button"
           onClick={handleBuyNow}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 py-3.5 text-sm font-semibold text-dark transition hover:-translate-y-0.5 hover:border-dark"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-dark bg-dark px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:opacity-95"
         >
           Buy Now
           <ArrowRight className="h-4 w-4" />

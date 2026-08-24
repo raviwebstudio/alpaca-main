@@ -49,10 +49,29 @@ export function PaymentPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderCompleted, setOrderCompleted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [confirmedOrderId, setConfirmedOrderId] = useState<string | null>(null);
 
   const handleTurnstileVerify = useCallback((token: string) => {
     setTurnstileToken(token);
   }, []);
+
+  const goToSuccess = useCallback(() => {
+    if (confirmedOrderId) {
+      router.push(`/checkout/success?orderId=${encodeURIComponent(confirmedOrderId)}`);
+    }
+  }, [confirmedOrderId, router]);
+
+  useEffect(() => {
+    if (!showThankYou) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        goToSuccess();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [showThankYou, goToSuccess]);
 
   useEffect(() => {
     setSelectedMethod(paymentMethod);
@@ -89,7 +108,9 @@ export function PaymentPage() {
 
       if (order) {
         setOrderCompleted(true);
-        router.push(`/checkout/success?orderId=${encodeURIComponent(order.reference)}`);
+        setIsSubmitting(false);
+        setConfirmedOrderId(order.reference);
+        setShowThankYou(true);
       } else {
         setErrorMessage("Unable to complete order. Please try again.");
         setIsSubmitting(false);
@@ -258,6 +279,60 @@ export function PaymentPage() {
           />
         </FadeIn>
       </div>
+
+      {/* Order Confirmation Popup */}
+      {showThankYou && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm transition-opacity duration-200"
+          onClick={goToSuccess}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-[480px] rounded-[24px] bg-white p-7 sm:p-9 shadow-2xl text-center animate-[popup-open_200ms_cubic-bezier(0.16,1,0.3,1)_both]"
+          >
+            {/* Close button */}
+            <button
+              type="button"
+              onClick={goToSuccess}
+              className="absolute right-5 top-5 inline-flex h-8 w-8 items-center justify-center rounded-full text-xl leading-none text-dark/60 transition hover:bg-stone-100 hover:text-dark"
+              aria-label="Close modal"
+            >
+              ×
+            </button>
+
+            {/* Centered celebration sticker / icon badge */}
+            <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-[#F3E8DA] shadow-xs animate-[sticker-bounce_500ms_cubic-bezier(0.34,1.56,0.64,1)_100ms_both]">
+              <span className="text-3xl select-none" role="img" aria-label="Celebration">
+                🎉
+              </span>
+            </div>
+
+            {/* Small label */}
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.28em] text-[#8C827A]">
+              ORDER CONFIRMED
+            </p>
+
+            {/* Main heading */}
+            <h2 className="mb-3 font-serif text-3xl sm:text-[34px] font-bold leading-tight text-dark">
+              Yay! Your order is on its way ✨
+            </h2>
+
+            {/* Body text */}
+            <p className="mb-8 text-sm sm:text-base leading-relaxed text-[#6E655D]">
+              Thank you for choosing ALPAZA. We&apos;ve received your order successfully and our team is getting it ready with care. You&apos;ll receive delivery updates on your phone and email shortly.
+            </p>
+
+            {/* Single Action Button */}
+            <button
+              type="button"
+              onClick={goToSuccess}
+              className="inline-flex h-[52px] w-full items-center justify-center rounded-[14px] bg-black text-sm font-semibold text-white transition hover:opacity-90 active:scale-[0.99]"
+            >
+              View Order
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

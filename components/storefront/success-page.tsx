@@ -81,12 +81,6 @@ export function SuccessPage() {
     return null;
   }
 
-  const isSynced = Boolean(orderData.sheetSynced || orderData.sheetSyncStatus === "synced");
-  const isConfigMissing = Boolean(
-    orderData.sheetSyncError?.toLowerCase().includes("not configured") ||
-    orderData.sheetSyncError?.toLowerCase().includes("credentials")
-  );
-
   return (
     <section className="shell section-space space-y-8">
       <FadeIn>
@@ -106,26 +100,10 @@ export function SuccessPage() {
             We are getting it ready now. Dispatch updates will follow shortly on your registered phone
             number and email.
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-6 flex items-center justify-center">
             <p className="rounded-full bg-[#F8F5F2] border border-line px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.2em] text-dark">
               Order ID: {orderData.reference}
             </p>
-            {isSynced ? (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-xs font-medium text-emerald-800">
-                <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
-                Saved to Google Sheets
-              </span>
-            ) : isConfigMissing ? (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 border border-amber-200 px-3 py-1 text-xs font-medium text-amber-800">
-                <span className="h-2 w-2 rounded-full bg-amber-500"></span>
-                Order Placed (Google Sheet Sync Pending)
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-stone-100 border border-stone-200 px-3 py-1 text-xs font-medium text-stone-700">
-                <span className="h-2 w-2 rounded-full bg-stone-400"></span>
-                Order Recorded
-              </span>
-            )}
           </div>
         </div>
 

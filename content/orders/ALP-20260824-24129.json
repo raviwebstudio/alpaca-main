@@ -1,0 +1,39 @@
+{
+  "orderId": "ALP-20260824-24129",
+  "placedAt": "2026-08-24T14:03:21.954Z",
+  "customer": {
+    "name": "Ravi Gautam",
+    "email": "ravi@example.com",
+    "phone": "7217217287"
+  },
+  "address": {
+    "name": "Ravi Gautam",
+    "email": "ravi@example.com",
+    "phone": "7217217287",
+    "address": "Green Glen Layout, Bellandur",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560103"
+  },
+  "items": [
+    {
+      "id": "prod-701",
+      "productId": "701",
+      "title": "Minimalist Crewneck",
+      "price": 1499,
+      "size": "M",
+      "color": "Black",
+      "quantity": 1
+    }
+  ],
+  "subtotal": 1499,
+  "shipping": 0,
+  "discount": 0,
+  "total": 1499,
+  "paymentMethod": "upi",
+  "paymentStatus": "CONFIRMED",
+  "orderStatus": "PLACED",
+  "sheetSynced": true,
+  "sheetSyncError": null,
+  "sheetSyncTimestamp": "2026-08-24T14:03:24.838Z"
+}

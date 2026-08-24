@@ -11,6 +11,25 @@ import {
 } from "@/components/storefront/cart-provider";
 import { OrderSummaryCard } from "@/components/storefront/order-summary-card";
 
+const normalizePhone = (value: string) => {
+  const cleaned = (value || "").replace(/\D/g, "");
+
+  if (cleaned.startsWith("91") && cleaned.length === 12) {
+    return cleaned.slice(2);
+  }
+
+  if (cleaned.startsWith("0") && cleaned.length === 11) {
+    return cleaned.slice(1);
+  }
+
+  return cleaned;
+};
+
+const isValidIndianPhone = (value: string) => {
+  const phone = normalizePhone(value);
+  return /^[6-9]\d{9}$/.test(phone);
+};
+
 export function AddressPage() {
   const router = useRouter();
   const {
@@ -23,6 +42,7 @@ export function AddressPage() {
     saveCheckoutAddress,
   } = useCart();
   const [formState, setFormState] = useState<CheckoutAddress>(checkoutAddress);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     setFormState(checkoutAddress);
@@ -36,6 +56,7 @@ export function AddressPage() {
 
   const handleChange =
     (field: keyof CheckoutAddress) => (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setErrorMessage(null);
       setFormState((current) => ({
         ...current,
         [field]: event.target.value,
@@ -44,10 +65,19 @@ export function AddressPage() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!isValidIndianPhone(formState.phone)) {
+      setErrorMessage("Please enter a valid Indian mobile number.");
+      return;
+    }
+
+    setErrorMessage(null);
+    const cleanPhone = normalizePhone(formState.phone);
+
     saveCheckoutAddress({
       name: formState.name.trim(),
       email: formState.email ? formState.email.trim() : "",
-      phone: formState.phone.trim(),
+      phone: cleanPhone,
       address: formState.address.trim(),
       city: formState.city.trim(),
       state: formState.state.trim(),
@@ -92,6 +122,12 @@ export function AddressPage() {
             </p>
           </div>
 
+          {errorMessage && (
+            <div className="mt-6 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">
+              {errorMessage}
+            </div>
+          )}
+
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             <label className="grid gap-2 sm:col-span-2">
               <span className="text-sm font-semibold text-dark">Name</span>
@@ -120,8 +156,7 @@ export function AddressPage() {
               <span className="text-sm font-semibold text-dark">Phone</span>
               <input
                 required
-                inputMode="numeric"
-                pattern="[0-9]{10}"
+                type="tel"
                 value={formState.phone}
                 onChange={handleChange("phone")}
                 className="rounded-2xl border border-line bg-background px-4 py-3.5 text-sm text-dark outline-none transition focus:border-dark"
