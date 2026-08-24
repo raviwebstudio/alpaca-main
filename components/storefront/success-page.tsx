@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle2, CloudCheck, AlertCircle } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { CheckoutProgress } from "@/components/storefront/checkout-progress";
 import { FadeIn } from "@/components/storefront/fade-in";
 import { formatPrice } from "@/lib/storefront";
@@ -49,7 +49,8 @@ export function SuccessPage() {
               paymentStatus: data.order.paymentStatus || "CONFIRMED",
               orderStatus: data.order.orderStatus || "PLACED",
               placedAt: data.order.placedAt || new Date().toISOString(),
-              sheetSynced: data.order.sheetSynced,
+              sheetSynced: data.order.sheetSynced ?? (data.order.sheetSyncStatus === "synced"),
+              sheetSyncStatus: data.order.sheetSyncStatus || (data.order.sheetSynced ? "synced" : "failed"),
               sheetSyncError: data.order.sheetSyncError,
             });
           }
@@ -80,6 +81,8 @@ export function SuccessPage() {
     return null;
   }
 
+  const isSynced = Boolean(orderData.sheetSynced || orderData.sheetSyncStatus === "synced");
+
   return (
     <section className="shell section-space space-y-8">
       <FadeIn>
@@ -103,15 +106,15 @@ export function SuccessPage() {
             <p className="rounded-full bg-[#F8F5F2] border border-line px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.2em] text-dark">
               Order ID: {orderData.reference}
             </p>
-            {orderData.sheetSynced ? (
+            {isSynced ? (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-xs font-medium text-emerald-800">
                 <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
-                Google Sheet Synced
+                Saved to Google Sheets
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 border border-amber-200 px-3 py-1 text-xs font-medium text-amber-800">
-                <span className="h-2 w-2 rounded-full bg-amber-500"></span>
-                Saved Securely (Sheet Sync Pending)
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-200 px-3 py-1 text-xs font-medium text-rose-800">
+                <span className="h-2 w-2 rounded-full bg-rose-500"></span>
+                {orderData.sheetSyncError ? `Sheet Error: ${orderData.sheetSyncError}` : "Google Sheet Sync Failed"}
               </span>
             )}
           </div>

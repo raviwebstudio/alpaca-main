@@ -18,7 +18,13 @@ export async function GET(
 
     return NextResponse.json({
       success: true,
-      order,
+      order: {
+        ...order,
+        sheetSyncStatus: order.sheetSyncStatus || (order.sheetSynced ? "synced" : "failed"),
+      },
+      sheetSynced: order.sheetSynced,
+      sheetSyncStatus: order.sheetSyncStatus || (order.sheetSynced ? "synced" : "failed"),
+      sheetSyncError: order.sheetSyncError || null,
     });
   } catch (error: any) {
     return NextResponse.json(

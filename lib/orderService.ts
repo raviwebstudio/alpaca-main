@@ -74,6 +74,7 @@ export interface StoredOrderRecord extends OrderSubmissionPayload {
   orderId: string;
   placedAt: string;
   sheetSynced: boolean;
+  sheetSyncStatus: "synced" | "failed" | "pending";
   sheetSyncError?: string | null;
   sheetSyncTimestamp?: string | null;
   rows: SpreadsheetRow[];
@@ -222,7 +223,7 @@ export { sendToGoogleSheetWebhook, maskWebhookUrl, syncOrderToGoogleSheets };
 
 /**
  * Main order processing service function.
- * Synchronizes orders to Google Sheets and only returns success if the sheet write succeeds.
+ * Synchronizes orders to Google Sheets and sets sheetSyncStatus appropriately.
  */
 export async function processOrderSubmission(
   payload: OrderSubmissionPayload
@@ -231,6 +232,7 @@ export async function processOrderSubmission(
   orderId: string;
   order: StoredOrderRecord;
   sheetSynced: boolean;
+  sheetSyncStatus: "synced" | "failed";
   sheetSyncError?: string | null;
   message: string;
 }> {
@@ -255,6 +257,7 @@ export async function processOrderSubmission(
     orderId,
     placedAt,
     sheetSynced: sheetResult.success,
+    sheetSyncStatus: sheetResult.success ? "synced" : "failed",
     sheetSyncError: sheetResult.error || null,
     sheetSyncTimestamp: sheetResult.success ? new Date().toISOString() : null,
     rows,
@@ -297,6 +300,7 @@ export async function processOrderSubmission(
     orderId,
     order: storedRecord,
     sheetSynced: sheetResult.success,
+    sheetSyncStatus: sheetResult.success ? "synced" : "failed",
     sheetSyncError: sheetResult.error || null,
     message: sheetResult.success
       ? "Order placed and recorded to Google Sheet successfully."

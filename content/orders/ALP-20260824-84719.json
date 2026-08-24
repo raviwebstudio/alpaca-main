@@ -1,0 +1,39 @@
+{
+  "orderId": "ALP-20260824-84719",
+  "placedAt": "2026-08-24T12:34:21.901Z",
+  "customer": {
+    "name": "Sarah Connor",
+    "email": "sarah@example.com",
+    "phone": "9811122334"
+  },
+  "address": {
+    "name": "Sarah Connor",
+    "email": "sarah@example.com",
+    "phone": "9811122334",
+    "address": "789 Cyber Way",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400050"
+  },
+  "items": [
+    {
+      "id": "prod-101",
+      "productId": "101",
+      "title": "Alpaca Oversized Tee",
+      "price": 1299,
+      "size": "L",
+      "color": "Sage Green",
+      "quantity": 1
+    }
+  ],
+  "subtotal": 1299,
+  "shipping": 0,
+  "discount": 0,
+  "total": 1299,
+  "paymentMethod": "upi",
+  "paymentStatus": "CONFIRMED",
+  "orderStatus": "PLACED",
+  "sheetSynced": true,
+  "sheetSyncError": null,
+  "sheetSyncTimestamp": "2026-08-24T12:34:25.803Z"
+}

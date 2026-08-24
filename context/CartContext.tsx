@@ -46,6 +46,7 @@ export type OrderRecord = {
   paymentMethod: PaymentMethod;
   placedAt: string;
   sheetSynced?: boolean;
+  sheetSyncStatus?: "synced" | "failed" | "pending";
   sheetSyncError?: string | null;
   paymentStatus?: string;
   orderStatus?: string;
@@ -263,6 +264,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
       paymentMethod: method,
       placedAt: new Date().toISOString(),
       sheetSynced: false,
+      sheetSyncStatus: "failed",
+      sheetSyncError: "Offline order fallback",
       paymentStatus: "CONFIRMED",
       orderStatus: "PLACED",
     };
@@ -296,47 +299,48 @@ export function CartProvider({ children }: { children: ReactNode }) {
       placedAt: new Date().toISOString(),
     };
 
-    try {
-      const response = await fetch("/api/orders/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+    const response = await fetch("/api/orders/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
-      const data = await response.json();
+    const data = await response.json();
 
-      if (response.ok && data.success) {
-        const order: OrderRecord = {
-          reference: data.orderId || data.order?.orderId || `ALP-${Date.now().toString().slice(-6)}`,
-          items: [...items],
-          subtotal,
-          shipping,
-          discount: 0,
-          total,
-          address,
-          paymentMethod: method,
-          placedAt: data.order?.placedAt || payload.placedAt,
-          sheetSynced: data.sheetSynced,
-          sheetSyncError: data.sheetSyncError,
-          paymentStatus: "CONFIRMED",
-          orderStatus: "PLACED",
-        };
+    if (response.ok && data.success) {
+      const order: OrderRecord = {
+        reference: data.orderId || data.order?.orderId || `ALP-${Date.now().toString().slice(-6)}`,
+        items: [...items],
+        subtotal,
+        shipping,
+        discount: 0,
+        total,
+        address,
+        paymentMethod: method,
+        placedAt: data.order?.placedAt || payload.placedAt,
+        sheetSynced: true,
+        sheetSyncStatus: "synced",
+        sheetSyncError: null,
+        paymentStatus: "CONFIRMED",
+        orderStatus: "PLACED",
+      };
 
-        setLastOrder(order);
-        setItems([]);
-        setCheckoutAddress(DEFAULT_ADDRESS);
-        setPaymentMethodState("upi");
+      setLastOrder(order);
+      setItems([]);
+      setCheckoutAddress(DEFAULT_ADDRESS);
+      setPaymentMethodState("upi");
 
-        return order;
-      }
-    } catch (err) {
-      console.warn("[CartContext] API order submission error, falling back locally:", err);
+      return order;
     }
 
-    // Fallback locally so order is never lost
-    return completeOrder(overrides);
+    const errorMsg =
+      data.error ||
+      data.sheetSyncError ||
+      `Order submission failed (HTTP ${response.status}).`;
+    console.error("[CartContext] Google Sheet write failure:", errorMsg);
+    throw new Error(errorMsg);
   };
 
   const value: CartContextValue = {
