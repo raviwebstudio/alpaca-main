@@ -12,19 +12,6 @@ import { ProductCard } from "@/components/ProductCard";
 import { ProductGallery } from "@/components/storefront/product-gallery";
 import { PurchasePanel } from "@/components/storefront/purchase-panel";
 
-const PRODUCT_FAQS = [
-  {
-    question: "How does checkout work?",
-    answer:
-      "Add the product to cart, review your bag, enter delivery address, and continue to payment.",
-  },
-  {
-    question: "When will my order ship?",
-    answer:
-      "In-stock orders usually dispatch within 48 hours. You will see the next step clearly at each checkout stage.",
-  },
-];
-
 export function ProductDetails({ product, allProducts }: { product: Product; allProducts?: Product[] }) {
   const isFashion = product.type === "fashion";
   const productList = allProducts && allProducts.length > 0 ? allProducts : products;
@@ -112,40 +99,6 @@ export function ProductDetails({ product, allProducts }: { product: Product; all
             </div>
           </div>
 
-          {/* Lower Information Row: How Checkout Works (Left) and FAQ (Right) - Exactly matching container width with equal height */}
-          <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2 items-stretch">
-            <div className="surface-card flex h-full flex-col justify-between rounded-[32px] p-6 sm:p-8">
-              <div>
-                <p className="eyebrow">How checkout works</p>
-                <ol className="mt-5 space-y-4 text-base leading-8 text-text-secondary sm:text-lg">
-                  <li>1. Choose the product configuration.</li>
-                  <li>2. Add the product to cart or continue straight to cart.</li>
-                  <li>3. Confirm address and payment on the next screens.</li>
-                </ol>
-              </div>
-            </div>
-
-            <div className="surface-card flex h-full flex-col justify-between rounded-[32px] p-6 sm:p-8">
-              <div>
-                <p className="eyebrow">FAQ</p>
-                <div className="mt-5 divide-y divide-line">
-                  {PRODUCT_FAQS.map((faq) => (
-                    <details key={faq.question} className="group py-5">
-                      <summary className="cursor-pointer list-none text-xl text-dark">
-                        <span className="flex items-center justify-between gap-4">
-                          {faq.question}
-                          <span className="text-sm font-semibold uppercase tracking-[0.24em] text-text-secondary transition group-open:rotate-45">
-                            +
-                          </span>
-                        </span>
-                      </summary>
-                      <p className="mt-4 max-w-3xl text-sm leading-7 text-text-secondary">{faq.answer}</p>
-                    </details>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
       </FadeIn>
 
